@@ -18,12 +18,9 @@
  */
 package demoapp.dom.featured.causewayext.cal.vm;
 
+import java.io.Serializable;
+
 import jakarta.inject.Named;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 
 import org.apache.causeway.applib.annotation.DomainObject;
 import org.apache.causeway.applib.annotation.Editing;
@@ -34,21 +31,19 @@ import org.apache.causeway.applib.annotation.PropertyLayout;
 import org.apache.causeway.applib.annotation.Title;
 import org.apache.causeway.extensions.fullcalendar.applib.value.CalendarEvent;
 
-import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
-import demoapp.dom.featured.causewayext.cal.holder.CausewayCalendarEventHolder2;
 import lombok.Getter;
 import lombok.Setter;
 
+import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
+import demoapp.dom.featured.causewayext.cal.holder.CausewayCalendarEventHolder2;
+
 //tag::class[]
-@XmlRootElement(name = "root")
-@XmlType
-@XmlAccessorType(XmlAccessType.FIELD)
 @Named("demo.CausewayCalendarEventVm")
 @DomainObject(
         nature=Nature.VIEW_MODEL)
-@lombok.NoArgsConstructor                                                       // <.>
 public class CausewayCalendarEventVm
-        implements HasAsciiDocDescription, CausewayCalendarEventHolder2 {
+        implements HasAsciiDocDescription, CausewayCalendarEventHolder2,
+        Serializable { // <.>
 
 //end::class[]
     public CausewayCalendarEventVm(final CalendarEvent initialValue) {
@@ -59,13 +54,11 @@ public class CausewayCalendarEventVm
 //tag::class[]
     @Title(prepend = "CalendarEvent view model: ")
     @PropertyLayout(fieldSetId = "read-only-properties", sequence = "1")
-    @XmlElement(required = true)                                                // <.>
     @Getter @Setter
     private CalendarEvent readOnlyProperty;
 
     @Property(editing = Editing.ENABLED)                                        // <.>
     @PropertyLayout(fieldSetId = "editable-properties", sequence = "1")
-    @XmlElement(required = true)
     @Getter @Setter
     private CalendarEvent readWriteProperty;
 
