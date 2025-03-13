@@ -89,21 +89,21 @@ extends PanelAbstract<ManagedObject, UiObjectWkt>  {
     private Image createMapComponent(final String id, final WhereInTheWorldPage vm)  {
         val bytes = geoapifyClient.toJpeg(
                         vm.getLatitude(), vm.getLongitude(), vm.getZoom());  // <.>
-        return new Image(id, new ByteArrayResource("image/jpeg", bytes));    // <.>
+        return new Image(id, new ByteArrayResource("image/jpeg", bytes));   // <.>
     }
 //end::createMapComponent[]
 
 //tag::createPropertyComponent[]
     private Component createPropertyComponent(final String propertyId) {
         val managedObject = getModel().getManagedObject();
-        val spec = managedObject.getSpecification();                               // <.>
-        val property = spec.getPropertyElseFail(propertyId);                      // <.>
+        val spec = managedObject.objSpec();                                   // <.>
+        val property = spec.getPropertyElseFail(propertyId);                 // <.>
 
         val scalarModel =
-                getModel().getPropertyModel(                                       // <.>
+                getModel().getPropertyModel(                                   // <.>
                     property, ViewOrEditMode.VIEWING,
                     RenderingHint.REGULAR);
-        return getComponentFactoryRegistry().createComponent(                      // <.>
+        return getComponentFactoryRegistry().createComponent(                 // <.>
                 propertyId, UiComponentType.ATTRIBUTE_NAME_AND_VALUE, scalarModel);
     }
 //end::createPropertyComponent[]

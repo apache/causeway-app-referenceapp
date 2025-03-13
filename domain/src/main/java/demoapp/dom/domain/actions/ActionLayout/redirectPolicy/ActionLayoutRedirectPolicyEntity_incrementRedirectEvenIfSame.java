@@ -21,7 +21,6 @@ package demoapp.dom.domain.actions.ActionLayout.redirectPolicy;
 import org.apache.causeway.applib.annotation.Action;
 import org.apache.causeway.applib.annotation.ActionLayout;
 import org.apache.causeway.applib.annotation.MemberSupport;
-import org.apache.causeway.applib.annotation.Redirect;
 import org.apache.causeway.applib.annotation.SemanticsOf;
 
 import lombok.RequiredArgsConstructor;
@@ -29,7 +28,7 @@ import lombok.RequiredArgsConstructor;
 //tag::class[]
 @Action(semantics = SemanticsOf.IDEMPOTENT)
 @ActionLayout(
-    redirectPolicy = Redirect.EVEN_IF_SAME                  // <.>
+    /*redirectPolicy = Redirect.EVEN_IF_SAME*/                  // <.>
 )
 @RequiredArgsConstructor
 public class ActionLayoutRedirectPolicyEntity_incrementRedirectEvenIfSame {

@@ -23,20 +23,19 @@ import jakarta.inject.Inject;
 import org.apache.causeway.applib.annotation.Action;
 import org.apache.causeway.applib.annotation.ActionLayout;
 import org.apache.causeway.applib.annotation.MemberSupport;
-import org.apache.causeway.applib.annotation.Redirect;
 import org.apache.causeway.applib.annotation.SemanticsOf;
 
 import lombok.RequiredArgsConstructor;
 
 //tag::class[]
 @Action(semantics = SemanticsOf.IDEMPOTENT)
-@ActionLayout(redirectPolicy = Redirect.EVEN_IF_SAME)       // <.>
+@ActionLayout(/*redirectPolicy = Redirect.EVEN_IF_SAME*/)       // <.>
 @RequiredArgsConstructor
 public class PropertyDomainEventPage_changeControlStrategy {
 
     private final PropertyDomainEventPage page;
 
-    @MemberSupport public PropertyDomainEventPage act(PropertyDomainEventControlStrategy controlStrategy) {
+    @MemberSupport public PropertyDomainEventPage act(final PropertyDomainEventControlStrategy controlStrategy) {
         subscriber.controlStrategy = controlStrategy;
         return page;
     }
