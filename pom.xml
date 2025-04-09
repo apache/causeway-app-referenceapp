@@ -17,12 +17,12 @@
 	<parent>
         <groupId>org.apache.causeway.app</groupId>
         <artifactId>causeway-app-starter-parent</artifactId>
-        <version>3.0.0-SNAPSHOT</version>
+        <version>3.4.0-SNAPSHOT</version>
     </parent>
 
 	<groupId>org.apache.causeway.examples.apps</groupId>
 	<artifactId>reference-app-parent</artifactId>
-	<version>3.0.0-SNAPSHOT</version> <!-- seems superfluous, but is required for the maven set plugin to work -->
+	<version>3.4.0-SNAPSHOT</version> <!-- seems superfluous, but is required for the maven set plugin to work -->
 
 	<name>Reference App - Parent</name>
 
