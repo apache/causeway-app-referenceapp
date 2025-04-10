@@ -67,10 +67,6 @@
 			<artifactId>causeway-extensions-secman-encryption-spring</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.causeway.extensions</groupId>
-			<artifactId>causeway-extensions-secman-delegated-shiro</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.apache.causeway.testing</groupId>
 			<artifactId>causeway-testing-h2console-ui</artifactId>
 		</dependency>
