@@ -30,8 +30,9 @@ public class PrimeNumberGenerator {
             primeNumberFactory.newPrimeNumber(nextPrime);
             wrapperFactory.asyncWrap(
                     this,
-                    AsyncControl.returningVoid().withSkipRules()
-            ).calculatePrimeNumbersAsync(nextPrime, upTo);          // <.>
+                    AsyncControl.defaults().withSkipRules())
+            .acceptAsync(proxy->
+                    proxy.calculatePrimeNumbersAsync(nextPrime, upTo));// <.>
         }
     }
 

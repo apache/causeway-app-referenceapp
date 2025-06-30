@@ -41,7 +41,7 @@ import org.apache.causeway.applib.annotation.Where;
 import org.apache.causeway.applib.services.message.MessageService;
 import org.apache.causeway.applib.services.wrapper.WrapperFactory;
 
-import static org.apache.causeway.applib.services.wrapper.control.SyncControl.control;
+import static org.apache.causeway.applib.services.wrapper.control.SyncControl.defaults;
 
 import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
 import lombok.Getter;
@@ -146,7 +146,7 @@ public class ActionSemanticsPage implements HasAsciiDocDescription {
     public ActionSemanticsPage reportPropertyForSafeAndRequestCacheable() {
         int val = 0;
         for (int i=0; i<5; i++) {                                                   // <.>
-            val = wrapperFactory.wrap(this, control().withSkipRules())              // <.>
+            val = wrapperFactory.wrap(this, defaults().withSkipRules())              // <.>
                     .queryPropertyForSafeAndRequestCacheable();
         }
         messageService.informUser(String.format(

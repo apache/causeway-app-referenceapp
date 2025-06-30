@@ -23,9 +23,10 @@ public class WrapperFactoryDemoPage_createPrimes {
     public WrapperFactoryDemoPage act(final Integer upTo) {
         primeNumberRepository.removeAll();
         wrapperFactory.asyncWrap(                               // <.>
-                primeNumberGenerator,                           // <.>
-                AsyncControl.returningVoid().withSkipRules()    // <.>
-        ).calculatePrimeNumbersAsync(1, upTo);                  // <.>
+            primeNumberGenerator,                               // <.>
+            AsyncControl.defaults().withSkipRules())            // <.>
+        .acceptAsync(proxy->
+            proxy.calculatePrimeNumbersAsync(1, upTo));         // <.>
         return page;
     }
 // end::class[]
