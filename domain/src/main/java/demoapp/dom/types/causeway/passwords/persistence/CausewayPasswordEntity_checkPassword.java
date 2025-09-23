@@ -40,7 +40,7 @@ public class CausewayPasswordEntity_checkPassword {
     private final CausewayPasswordEntity entity;
 
     public CausewayPasswordEntity act(final Password confirm) {
-        if(entity.getReadWriteProperty().checkPassword(confirm.getPassword())) {
+        if(entity.getReadWriteProperty().checkPassword(confirm.password())) {
             messageService.informUser("passwords did match");
         } else {
             messageService.warnUser("passwords did not match");

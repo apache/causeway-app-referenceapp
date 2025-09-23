@@ -19,15 +19,21 @@
 package demoapp.dom._infra.resources;
 
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
+import java.util.concurrent.atomic.AtomicReference;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.springframework.boot.test.context.runner.ApplicationContextRunner;
+import org.springframework.boot.test.util.TestPropertyValues;
 import org.springframework.mock.env.MockEnvironment;
 
 import org.apache.causeway.core.config.CausewayConfiguration;
+import org.apache.causeway.core.config.CausewayModuleCoreConfig;
 
 import lombok.val;
 
@@ -38,8 +44,25 @@ class ResourceReaderService_Test {
     @BeforeEach
     void setUp() {
         resourceReaderService = new ResourceReaderService();
+
+        var env = new MockEnvironment().withProperty("spring.profiles.active", "demo-jpa");
+
         resourceReaderService.markupVariableResolverService =
-                new MarkupVariableResolverService(CausewayConfiguration.builder().build(), new MockEnvironment().withProperty("spring.profiles.active", "demo-jpa"));
+                new MarkupVariableResolverService(causewayConfiguration(env), env);
+    }
+
+    private CausewayConfiguration causewayConfiguration(final MockEnvironment env) {
+        final var causewayRef = new AtomicReference<CausewayConfiguration.Causeway>();
+        final var testPropertyValues = TestPropertyValues.of(Map.of("spring.profiles.active", "demo-jpa"));
+        testPropertyValues.applyToSystemProperties(()->{
+            new ApplicationContextRunner()
+                .withUserConfiguration(CausewayModuleCoreConfig.class)
+                .run(ctx -> {
+                    var causeway = ctx.getBean(CausewayConfiguration.Causeway.class);
+                    causewayRef.set(causeway);
+                });
+        });
+        return new CausewayConfiguration(env, Optional.empty(), causewayRef.get());
     }
 
     @Test

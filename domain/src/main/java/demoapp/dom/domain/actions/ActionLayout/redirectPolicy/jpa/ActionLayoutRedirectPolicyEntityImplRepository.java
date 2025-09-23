@@ -45,7 +45,7 @@ extends ValueHolderRepository<String, ActionLayoutRedirectPolicyEntityImpl> impl
     protected ActionLayoutRedirectPolicyEntityImpl newDetachedEntity(final String value) {
         var entity = new ActionLayoutRedirectPolicyEntityImpl(value);
         blobSamples.stream()
-                .filter(x -> NamedWithMimeType.CommonMimeType.PDF.matches(x.getMimeType()))
+                .filter(x -> NamedWithMimeType.CommonMimeType.PDF.matches(x.mimeType()))
                 .findFirst()
                 .ifPresent(pdfBlob -> {
                     entity.setBlob(pdfBlob);

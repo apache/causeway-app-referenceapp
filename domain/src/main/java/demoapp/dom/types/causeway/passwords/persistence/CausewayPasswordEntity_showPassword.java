@@ -41,7 +41,7 @@ public class CausewayPasswordEntity_showPassword {
 
     @MemberSupport public CausewayPasswordEntity act() {
         messageService.informUser(String
-                .format("password: '%s'", entity.getReadWriteProperty().getPassword()));
+                .format("password: '%s'", entity.getReadWriteProperty().password()));
         return entity;
     }
 

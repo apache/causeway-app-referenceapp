@@ -19,6 +19,7 @@
 package demoapp.dom.progmodel.customvaluetypes.embeddedvalues.jpa;
 
 import jakarta.inject.Named;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
@@ -33,11 +34,12 @@ import org.apache.causeway.applib.annotation.ObjectSupport;
 import org.apache.causeway.applib.annotation.Property;
 import org.apache.causeway.persistence.jpa.applib.integration.CausewayEntityListener;
 
-import demoapp.dom.progmodel.customvaluetypes.embeddedvalues.ComplexNumber;
-import demoapp.dom.progmodel.customvaluetypes.embeddedvalues.NumberConstantEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import demoapp.dom.progmodel.customvaluetypes.embeddedvalues.ComplexNumber;
+import demoapp.dom.progmodel.customvaluetypes.embeddedvalues.NumberConstantEntity;
 
 @Profile("demo-jpa")
 //tag::class[]
@@ -71,7 +73,7 @@ public class NumberConstantJpa
     private Long id;
 
 //tag::class[]
-    @javax.jdo.annotations.Column(allowsNull = "false")
+    @Column(nullable = false)
     @Property
     @Getter @Setter
     private String name;

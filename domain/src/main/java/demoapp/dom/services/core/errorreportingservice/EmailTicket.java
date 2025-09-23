@@ -82,7 +82,7 @@ public class EmailTicket extends SimpleTicket {
 
         static String mailBodyOf(final ErrorDetails errorDetails) {
             return "Stacktrace:%0D%0A=================%0D%0A" +
-                    stream(errorDetails.getStackTraceDetailPerCause())
+                    stream(errorDetails.stackTraceDetailPerCause())
             .map(MailTo::causeToString)
             .collect(Collectors.joining("%0D%0A%0D%0A"))
             ;

@@ -10,7 +10,6 @@ import jakarta.validation.constraints.Digits;
 
 @Digits(integer = 12, fraction = 2)
 // @jakarta.persistence.Column(precision = 14, scale = 2) // JPA doesn't support meta-annotations
-@javax.jdo.annotations.Column(scale = 2)                // JDO doesn't require length to be specified
 @Inherited
 @Target({
         ElementType.METHOD, ElementType.FIELD,                      // <.>

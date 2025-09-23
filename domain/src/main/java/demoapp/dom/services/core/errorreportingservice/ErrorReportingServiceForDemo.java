@@ -40,7 +40,7 @@ public class ErrorReportingServiceForDemo implements ErrorReportingService {
     public Ticket reportError(final ErrorDetails errorDetails) {
 
         val reference = "#0";                               // <.>
-        val userMessage = errorDetails.getMainMessage();
+        val userMessage = errorDetails.mainMessage();
         val details = "Apologies!";
 
         val mailTo = EmailTicket.MailTo.builder()

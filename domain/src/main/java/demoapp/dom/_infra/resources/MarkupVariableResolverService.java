@@ -47,7 +47,7 @@ public class MarkupVariableResolverService {
         constants = computeConstants(configuration, environment);
     }
 
-    private static Map<String, String> computeConstants(CausewayConfiguration configuration, Environment environment) {
+    private static Map<String, String> computeConstants(final CausewayConfiguration configuration, final Environment environment) {
 
         val map = _Maps.<String,String>newLinkedHashMap();
         val orm = determineOrmProfileFrom(environment);
@@ -62,12 +62,12 @@ public class MarkupVariableResolverService {
         return Collections.unmodifiableMap(map);
     }
 
-    private static String determineCausewayVersion(CausewayConfiguration configuration) {
-        return Optional.ofNullable(configuration.getViewer().getCommon().getApplication().getVersion())
+    private static String determineCausewayVersion(final CausewayConfiguration configuration) {
+        return Optional.ofNullable(configuration.viewer().common().application().version())
                 .orElse("unknown-version");
     }
 
-    private static String determineOrmProfileFrom(Environment environment) {
+    private static String determineOrmProfileFrom(final Environment environment) {
         val activeProfiles = Arrays.asList(environment.getActiveProfiles());
         if(activeProfiles.contains("demo-jpa")) {
             return "jpa";
@@ -78,7 +78,7 @@ public class MarkupVariableResolverService {
         throw new IllegalStateException("Could not determine ORM");
     }
 
-    private static String titleCase(String str) {
+    private static String titleCase(final String str) {
         return str.substring(0,1).toUpperCase() + str.substring(1).toLowerCase(Locale.ROOT);
     }
 

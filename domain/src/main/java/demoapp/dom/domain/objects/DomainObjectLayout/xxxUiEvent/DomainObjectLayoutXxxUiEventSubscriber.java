@@ -24,6 +24,7 @@ import jakarta.inject.Named;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
+import org.apache.causeway.applib.annotation.ObjectSupport.ClassPathIconResource;
 import org.apache.causeway.applib.services.title.TitleService;
 
 import lombok.val;
@@ -54,7 +55,7 @@ public class DomainObjectLayoutXxxUiEventSubscriber {
     void onIconUiEvent(final DomainObjectLayoutXxxUiEventEntity.IconEvent iconUiEvent) {
         val source = iconUiEvent.getSource();
         if (hasNameInFirstHalfOfAlphabet(source)) {
-            iconUiEvent.setIconName("signature");
+            iconUiEvent.setIcon(new ClassPathIconResource("signature"));
         }
     }
 //end::iconUiEvent[]
@@ -81,7 +82,7 @@ public class DomainObjectLayoutXxxUiEventSubscriber {
 //end::layoutUiEvent[]
 
 //tag::class[]
-    private boolean hasNameInFirstHalfOfAlphabet(DomainObjectLayoutXxxUiEventEntity source) {
+    private boolean hasNameInFirstHalfOfAlphabet(final DomainObjectLayoutXxxUiEventEntity source) {
         return source.getName().toLowerCase().compareTo("m") < 0;
     }
 

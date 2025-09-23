@@ -17,18 +17,21 @@
 	<parent>
         <groupId>org.apache.causeway.app</groupId>
         <artifactId>causeway-app-starter-parent</artifactId>
-        <version>3.4.0-SNAPSHOT</version>
+        <version>4.0.0-SNAPSHOT</version>
     </parent>
 
 	<groupId>org.apache.causeway.examples.apps</groupId>
 	<artifactId>reference-app-parent</artifactId>
-	<version>3.4.0-SNAPSHOT</version> <!-- seems superfluous, but is required for the maven set plugin to work -->
+	<version>${revision}</version>
 
 	<name>Reference App - Parent</name>
 
 	<packaging>pom</packaging>
 
 	<properties>
+	   <revision>4.0.0-SNAPSHOT</revision> <!-- can be overidden like mvn
+        -Drevision=2.7.8 -->
+        <causeway.version>4.0.0-SNAPSHOT</causeway.version>
 		<sonar.skip>true</sonar.skip>
 	</properties>
 
@@ -132,7 +135,7 @@
 					<licenses>
 						<license
 								implementation="org.apache.rat.analysis.license.SimplePatternBasedLicense">
-							<licenseFamilyCategory>AL2  </licenseFamilyCategory>
+							<licenseFamilyCategory>AL2</licenseFamilyCategory>
 							<licenseFamilyName>Apache License 2.0</licenseFamilyName>
 							<notes />
 							<patterns>
@@ -158,7 +161,7 @@
 			<dependency>
 				<groupId>org.apache.causeway.extensions</groupId>
 				<artifactId>causeway-extensions</artifactId>
-				<version>${project.version}</version>
+				<version>${causeway.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -166,7 +169,7 @@
 			<dependency>
 				<groupId>org.apache.causeway.valuetypes</groupId>
 				<artifactId>causeway-valuetypes</artifactId>
-				<version>${project.version}</version>
+				<version>${causeway.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -195,12 +198,6 @@
 				<version>${project.version}</version>
 			</dependency>
 
-			<dependency>
-				<groupId>org.apache.causeway.examples.apps</groupId>
-				<artifactId>reference-app-wicket-jdo</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
 		</dependencies>
 	</dependencyManagement>
 
@@ -212,79 +209,12 @@
 		</dependency>
 	</dependencies>
 
-	<profiles>
-		<profile>
-			<id>module-examples-demo-testing</id>
-			<activation>
-				<property>
-					<name>module-examples-demo-testing</name>
-				</property>
-			</activation>
-			<modules>
-				<module>domain</module>
-				<module>web</module>
-				<module>testing</module>
-			</modules>
-		</profile>
-		<profile>
-			<id>module-examples-demo-wicket</id>
-			<activation>
-				<property>
-					<name>module-examples-demo-wicket</name>
-				</property>
-			</activation>
-			<modules>
-				<module>domain</module>
-				<module>web</module>
-				<module>wicket/common</module>
-				<module>wicket/jdo</module>
-				<module>wicket/jpa</module>
-			</modules>
-		</profile>
-		<profile>
-			<id>wicket-jpa</id>
-			<activation>
-				<property>
-					<name>wicket-jpa</name>
-				</property>
-			</activation>
-			<modules>
-				<module>domain</module>
-				<module>web</module>
-				<module>wicket/common</module>
-				<module>wicket/jpa</module>
-			</modules>
-		</profile>
-		<profile>
-			<id>wicket-jdo</id>
-			<activation>
-				<property>
-					<name>wicket-jdo</name>
-				</property>
-			</activation>
-			<modules>
-				<module>domain</module>
-				<module>web</module>
-				<module>wicket/common</module>
-				<module>wicket/jdo</module>
-			</modules>
-		</profile>
-
-		<profile>
-			<id>nightly</id>
-			<activation>
-				<property>
-					<name>!skip.nightly</name>
-				</property>
-			</activation>
-			<repositories>
-				<repository>
-					<id>nightly-builds</id>
-					<url>https://raw.githubusercontent.com/apache-causeway-committers/causeway-nightly/master/mvn-snapshots</url>
-				</repository>
-			</repositories>
-		</profile>
-
-	</profiles>
+    <modules>
+        <module>domain</module>
+        <module>web</module>
+        <module>wicket/common</module>
+        <module>wicket/jpa</module>
+        <module>testing</module>
+    </modules>
 
 </project>

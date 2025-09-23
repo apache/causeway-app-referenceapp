@@ -21,7 +21,7 @@ package demoapp.web;
 import java.util.Optional;
 
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
-import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
+import org.springframework.boot.web.server.servlet.ConfigurableServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -31,13 +31,13 @@ import org.apache.causeway.extensions.secman.encryption.spring.CausewayModuleExt
 import org.apache.causeway.extensions.secman.integration.CausewayModuleExtSecmanIntegration;
 import org.apache.causeway.extensions.secman.integration.authenticator.AuthenticatorSecmanAutoConfiguration;
 import org.apache.causeway.testing.h2console.ui.CausewayModuleTestingH2ConsoleUi;
-import org.apache.causeway.viewer.restfulobjects.jaxrsresteasy.CausewayModuleViewerRestfulObjectsJaxrsResteasy;
 import org.apache.causeway.viewer.restfulobjects.viewer.CausewayModuleViewerRestfulObjectsViewer;
+
+import lombok.val;
+import lombok.extern.log4j.Log4j2;
 
 import demoapp.dom._infra.fixtures.DemoFixtureScript;
 import demoapp.web.security.PrototypeActionsVisibilityAdvisor;
-import lombok.val;
-import lombok.extern.log4j.Log4j2;
 
 /**
  * Makes the integral parts of the 'demo' web application.
@@ -51,7 +51,6 @@ import lombok.extern.log4j.Log4j2;
 
     // REST
     CausewayModuleViewerRestfulObjectsViewer.class,
-    CausewayModuleViewerRestfulObjectsJaxrsResteasy.class,
 
     // CORS
     CausewayModuleExtCors.class,
