@@ -32,6 +32,7 @@
 	   <revision>4.0.0-SNAPSHOT</revision> <!-- can be overidden like mvn
         -Drevision=2.7.8 -->
         <causeway.version>4.0.0-SNAPSHOT</causeway.version>
+        <maven.compiler.release>21</maven.compiler.release>
 		<sonar.skip>true</sonar.skip>
 	</properties>
 
