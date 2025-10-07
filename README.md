@@ -15,14 +15,6 @@ The app is available as a Docker image.
   docker run -p 8080:8080 apache/causeway-app-referenceapp-jpa:latest
   ```
 
-
-* to run the JDO variant:
-
-  ```bash
-  docker pull apache/causeway-app-referenceapp-jdo:latest
-  docker run -p 8080:8080 apache/causeway-app-referenceapp-jdo:latest
-  ```
-
 ... then navigate to http://localhost:8080
 
 
@@ -30,19 +22,13 @@ The app is available as a Docker image.
 
 Prereqs:
 
-* mvnd 3.6.x
-* Java 11
+* mvnd 3.9+
+* Java 21
 
 Building:
 
 * To build the JPA variant:
 
   ```bash
-  mvnd -Dwicket-jdo install
-  ```
-* 
-* To build the JDO variant:
-
-  ```bash
-  mvnd -Dwicket-jdo install
+  mvnd -Dwicket-jpa install
   ```
