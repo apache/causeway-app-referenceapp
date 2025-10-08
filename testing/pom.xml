@@ -61,7 +61,7 @@
 		<dependency>
 			<groupId>org.apache.causeway.valuetypes</groupId>
 			<artifactId>causeway-valuetypes-asciidoc-ui</artifactId>
-			<version>${project.version}</version>
+			<version>${causeway.version}</version>
 			<type>pom</type>
 		</dependency>
 
