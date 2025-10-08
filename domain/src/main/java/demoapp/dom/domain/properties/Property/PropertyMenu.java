@@ -33,7 +33,6 @@ import org.apache.causeway.applib.value.Clob;
 
 import lombok.RequiredArgsConstructor;
 
-
 import demoapp.dom._infra.values.ValueHolderRepository;
 import demoapp.dom.domain.properties.Property.commandPublishing.PropertyCommandPublishingPage;
 import demoapp.dom.domain.properties.Property.domainEvent.PropertyDomainEventPage;

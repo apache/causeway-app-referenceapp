@@ -39,7 +39,6 @@ import static org.junit.jupiter.api.Assertions.fail;
 import demoapp.dom.domain.tests.conf.Configuration_usingJpa;
 import demoapp.dom.domain.tests.conf.MetaModelExportToConsole;
 
-
 @SpringBootTest(
         classes = {
                 Configuration_usingJpa.class,

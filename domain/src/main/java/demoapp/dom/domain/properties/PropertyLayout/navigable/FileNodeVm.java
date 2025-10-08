@@ -39,7 +39,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-
 @Named("demo.FileNodeVm")
 @DomainObject(nature=Nature.VIEW_MODEL)
 @DomainObjectLayout(cssClassFa="fa-sitemap")

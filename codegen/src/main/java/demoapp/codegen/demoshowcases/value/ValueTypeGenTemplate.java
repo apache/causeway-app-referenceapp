@@ -42,7 +42,6 @@ import lombok.Singular;
 import lombok.SneakyThrows;
 import lombok.Value;
 
-
 @RequiredArgsConstructor
 public class ValueTypeGenTemplate {
 

@@ -24,7 +24,6 @@ import org.springframework.stereotype.Service;
 import demoapp.dom._infra.values.ValueHolderRepository;
 import demoapp.dom.progmodel.customvaluetypes.embeddedvalues.ComplexNumber;
 
-
 @Profile("demo-jpa")
 @Service
 public class NumberConstantJpaRepository

@@ -24,8 +24,6 @@ import org.apache.causeway.applib.events.domain.AbstractDomainEvent;
 import org.apache.causeway.applib.services.message.MessageService;
 import org.apache.causeway.applib.services.registry.ServiceRegistry;
 
-
-
 //tag::class[]
 enum DomainObjectXxxDomainEventControlStrategy {
 

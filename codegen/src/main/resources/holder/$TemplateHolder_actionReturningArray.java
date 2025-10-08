@@ -28,7 +28,6 @@ import /*${showcase-fully-qualified-type}*/;
 
 import lombok.RequiredArgsConstructor;
 
-
 import demoapp.dom.types.Samples;
 
 //tag::class[]

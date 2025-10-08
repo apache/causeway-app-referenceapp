@@ -26,7 +26,6 @@ import org.springframework.stereotype.Service;
 
 import demoapp.dom.types.Samples;
 
-
 @Service
 public class NameSamples implements Samples<String> {
 

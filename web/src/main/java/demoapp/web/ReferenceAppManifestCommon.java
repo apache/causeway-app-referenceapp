@@ -33,7 +33,6 @@ import org.apache.causeway.extensions.secman.integration.authenticator.Authentic
 import org.apache.causeway.testing.h2console.ui.CausewayModuleTestingH2ConsoleUi;
 import org.apache.causeway.viewer.restfulobjects.viewer.CausewayModuleViewerRestfulObjectsViewer;
 
-
 import lombok.extern.log4j.Log4j2;
 
 import demoapp.dom._infra.fixtures.DemoFixtureScript;

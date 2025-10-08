@@ -32,8 +32,6 @@ import jakarta.inject.Named;
 
 import org.springframework.stereotype.Service;
 
-
-
 @Service
 @Named("demo.ResourceReaderService")
 public class ResourceReaderService {

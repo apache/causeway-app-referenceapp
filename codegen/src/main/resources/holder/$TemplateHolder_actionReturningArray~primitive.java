@@ -26,7 +26,6 @@ import org.apache.causeway.commons.functional.IndexedConsumer;
 
 import lombok.RequiredArgsConstructor;
 
-
 import demoapp.dom.types.Samples;
 
 //tag::class[]

@@ -31,7 +31,6 @@ import org.apache.causeway.commons.internal.resources._Resources;
 import demoapp.dom.types.Samples;
 import lombok.SneakyThrows;
 
-
 @Service
 public class JavaAwtBufferedImagesSamples implements Samples<BufferedImage> {
 

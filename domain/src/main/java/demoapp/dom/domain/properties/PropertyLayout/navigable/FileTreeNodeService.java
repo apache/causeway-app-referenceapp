@@ -33,7 +33,6 @@ import org.apache.causeway.applib.services.factory.FactoryService;
 
 import lombok.RequiredArgsConstructor;
 
-
 @SuppressWarnings("unchecked")
 //tag::sessionTree[]
 @Service

@@ -32,7 +32,6 @@ import org.apache.causeway.applib.services.clock.ClockService;
 
 import lombok.RequiredArgsConstructor;
 
-
 //tag::class[]
 @Service
 @RequiredArgsConstructor(onConstructor_ = {@Inject})

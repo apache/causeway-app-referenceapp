@@ -49,7 +49,6 @@ import demoapp.dom.domain.collections.CollectionLayout.tabledec.CollectionLayout
 import demoapp.dom.domain.collections.CollectionLayout.tabledec.child.CollectionLayoutTableDecoratorChildVm;
 import lombok.RequiredArgsConstructor;
 
-
 @Named("demo.CollectionLayoutMenu")
 @DomainService
 @Priority(PriorityPrecedence.EARLY)

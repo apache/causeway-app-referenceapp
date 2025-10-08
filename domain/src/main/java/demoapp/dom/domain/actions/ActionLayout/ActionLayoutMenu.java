@@ -42,7 +42,6 @@ import demoapp.dom.domain.actions.ActionLayout.redirectPolicy.ActionLayoutRedire
 import demoapp.dom.domain.actions.ActionLayout.sequence.ActionLayoutSequencePage;
 import lombok.RequiredArgsConstructor;
 
-
 @DomainService
 @Named("demo.ActionLayoutMenu")
 @jakarta.annotation.Priority(PriorityPrecedence.EARLY)

@@ -29,7 +29,6 @@ import org.apache.causeway.applib.value.NamedWithMimeType;
 
 import lombok.RequiredArgsConstructor;
 
-
 //tag::class[]
 @Action(
     semantics = SemanticsOf.IDEMPOTENT

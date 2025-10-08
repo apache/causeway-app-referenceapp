@@ -34,8 +34,6 @@ import org.apache.causeway.commons.internal.base._Refs;
 import org.apache.causeway.commons.internal.collections._Maps;
 import org.apache.causeway.core.config.CausewayConfiguration;
 
-
-
 @Service
 @Named("demo.MarkupVariableResolverService")
 public class MarkupVariableResolverService {

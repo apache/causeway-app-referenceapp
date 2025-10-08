@@ -27,7 +27,6 @@ import org.apache.causeway.commons.functional.IndexedConsumer;
 import demoapp.dom.types.Samples;
 import lombok.RequiredArgsConstructor;
 
-
 //tag::class[]
 @Action(semantics = SemanticsOf.SAFE)
 @RequiredArgsConstructor

@@ -35,7 +35,6 @@ import demoapp.dom.domain.collections.Collection.typeOf.CollectionTypeOfPage;
 import demoapp.dom.domain.collections.Collection.typeOf.child.CollectionTypeOfChildVm;
 import lombok.RequiredArgsConstructor;
 
-
 @Named("demo.CollectionMenu")
 @DomainService
 @Priority(PriorityPrecedence.EARLY)

@@ -33,7 +33,6 @@ import org.apache.causeway.applib.services.factory.FactoryService;
 
 import lombok.RequiredArgsConstructor;
 
-
 @Named("demo.BulkActionMenu")
 @DomainService
 @Priority(PriorityPrecedence.EARLY)
@@ -65,4 +64,3 @@ public class BulkActionMenu {
     }
 
 }
-

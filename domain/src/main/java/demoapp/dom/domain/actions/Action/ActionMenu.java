@@ -29,7 +29,6 @@ import org.apache.causeway.applib.annotation.SemanticsOf;
 
 import lombok.RequiredArgsConstructor;
 
-
 import demoapp.dom._infra.samples.NameSamples;
 import demoapp.dom.domain.actions.Action.choicesFrom.ActionChoicesFromPage;
 import demoapp.dom.domain.actions.Action.commandPublishing.ActionCommandPublishingPage;

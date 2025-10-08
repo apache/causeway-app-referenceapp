@@ -28,7 +28,6 @@ import org.apache.causeway.extensions.secman.applib.user.dom.ApplicationUser;
 import demoapp.dom.services.extensions.secman.apptenancy.persistence.TenantedEntity;
 import lombok.Getter;
 
-
 //tag::class[]
 @Service
 public class ApplicationTenancyEvaluatorForDemo

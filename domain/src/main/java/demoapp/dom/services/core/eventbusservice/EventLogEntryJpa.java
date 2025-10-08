@@ -39,7 +39,6 @@ import demoapp.dom.services.core.eventbusservice.EventBusServiceDemoPage.UiButto
 import lombok.Getter;
 import lombok.Setter;
 
-
 @Profile("demo-jpa")
 @Entity
 @Table(

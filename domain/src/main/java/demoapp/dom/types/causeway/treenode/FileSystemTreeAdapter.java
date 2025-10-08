@@ -23,8 +23,6 @@ import java.util.stream.Stream;
 
 import org.apache.causeway.applib.graph.tree.TreeAdapter;
 
-
-
 //tag::class[]
 public class FileSystemTreeAdapter implements TreeAdapter<FileNodeVm> {
 

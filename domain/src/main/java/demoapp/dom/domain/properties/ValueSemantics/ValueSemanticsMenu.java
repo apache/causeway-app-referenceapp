@@ -32,7 +32,6 @@ import org.apache.causeway.applib.annotation.SemanticsOf;
 
 import lombok.RequiredArgsConstructor;
 
-
 import demoapp.dom.domain.properties.ValueSemantics.dateRenderAdjustDays.ValueSemanticsDateRenderAdjustDaysPage;
 import demoapp.dom.domain.properties.ValueSemantics.percentage.ValueSemanticsProviderPercentagePage;
 

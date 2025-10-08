@@ -25,8 +25,6 @@ import org.springframework.stereotype.Service;
 
 import org.apache.causeway.applib.value.Markup;
 
-
-
 @Service
 @Named("demo.MarkupReaderService")
 public class MarkupReaderService {

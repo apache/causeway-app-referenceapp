@@ -22,7 +22,6 @@ import java.util.List;
 
 import demoapp.dom.services.core.eventbusservice.EventBusServiceDemoPage.UiButtonEvent;
 
-
 //tag::class[]
 public interface EventLogEntryRepository<T extends EventLogEntry> {
     // ...

@@ -33,7 +33,6 @@ import org.apache.causeway.viewer.wicket.ui.panels.PanelAbstract;
 
 import lombok.SneakyThrows;
 
-
 import demoapp.dom.featured.customui.GeoapifyClient;
 import demoapp.dom.featured.customui.WhereInTheWorldPage;
 

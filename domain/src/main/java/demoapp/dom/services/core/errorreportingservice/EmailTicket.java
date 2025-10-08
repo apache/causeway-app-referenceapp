@@ -32,7 +32,6 @@ import static org.apache.causeway.commons.internal.base._NullSafe.stream;
 
 import lombok.Builder;
 
-
 /**
  * Response from the {@link ErrorReportingService}, containing information to show to the end-user.
  *

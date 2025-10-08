@@ -31,7 +31,6 @@ import org.apache.causeway.applib.services.factory.FactoryService;
 import demoapp.dom.progmodel.actions.TvCharacterPopulator;
 import lombok.RequiredArgsConstructor;
 
-
 @Named("demo.ActionVetoMenu")
 @DomainService
 @Priority(PriorityPrecedence.EARLY)
@@ -50,4 +49,3 @@ public class ActionVetoMenu {
     }
 
 }
-

@@ -33,8 +33,6 @@ import org.apache.causeway.core.metamodel.context.MetaModelContext;
 import org.apache.causeway.core.metamodel.object.MmSpecUtils;
 import org.apache.causeway.testing.unittestsupport.applib.util.ApprovalUtils;
 
-
-
 @SpringBootTest(
         classes = {
                 ReferenceDomainJpa_forTesting.class

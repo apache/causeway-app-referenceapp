@@ -28,8 +28,6 @@ import org.apache.causeway.applib.services.publishing.spi.EntityChanges;
 import org.apache.causeway.applib.services.publishing.spi.EntityChangesSubscriber;
 import org.apache.causeway.schema.chg.v2.ChangesDto;
 
-
-
 //tag::class[]
 @Service
 public class EntityChangesSubscriberToCaptureChangesInMemory implements EntityChangesSubscriber {

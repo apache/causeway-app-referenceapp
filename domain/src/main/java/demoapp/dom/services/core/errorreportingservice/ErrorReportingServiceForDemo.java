@@ -28,8 +28,6 @@ import org.apache.causeway.applib.services.error.ErrorReportingService;
 import org.apache.causeway.applib.services.error.Ticket;
 import org.apache.causeway.applib.services.error.Ticket.StackTracePolicy;
 
-
-
 //tag::class[]
 @Service
 @Named("demo.ErrorReportingServiceDemoImplementation")

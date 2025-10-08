@@ -33,7 +33,6 @@ import lombok.AccessLevel;
 import org.jspecify.annotations.NonNull;
 import lombok.RequiredArgsConstructor;
 
-
 @RequiredArgsConstructor(access = AccessLevel.PROTECTED)
 public abstract class ValueHolderRepository<T, E extends ValueHolder<T>> {
 

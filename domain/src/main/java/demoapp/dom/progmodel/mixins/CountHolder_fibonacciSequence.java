@@ -26,7 +26,6 @@ import org.apache.causeway.applib.annotation.CollectionLayout;
 
 import lombok.RequiredArgsConstructor;
 
-
 //tag::class[]
 @Collection                                 // <.>
 @CollectionLayout(paged = 10)

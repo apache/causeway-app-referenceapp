@@ -31,6 +31,37 @@ additional
         <maven.compiler.release>21</maven.compiler.release>
         <sonar.skip>true</sonar.skip>
     </properties>
+    
+    <profiles>
+        <profile>
+            <id>ci-build</id>
+            <activation>
+                <!-- to activate use mvn commandline option: mvn ... -P ci-build -->
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <causeway.version>4.0.0-SNAPSHOT.20251008-1406-ec67d30b</causeway.version>
+            </properties>
+            <repositories>
+                <repository>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                        <checksumPolicy>fail</checksumPolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                        <checksumPolicy>fail</checksumPolicy>
+                    </snapshots>
+                    <id>causeway-nightly-snapshots</id>
+                    <name>Causeway Nightly Snapshots (maven)</name>
+                    <url>
+                        https://raw.githubusercontent.com/apache-causeway-committers/causeway-nightly/master/mvn-snapshots</url>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
 
     <build>
         <resources>

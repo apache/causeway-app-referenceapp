@@ -29,7 +29,6 @@ import org.apache.causeway.applib.annotation.SemanticsOf;
 
 import lombok.RequiredArgsConstructor;
 
-
 import demoapp.dom.domain.properties.PropertyLayout.cssClass.PropertyLayoutCssClassPage;
 import demoapp.dom.domain.properties.PropertyLayout.describedAs.PropertyLayoutDescribedAsPage;
 import demoapp.dom.domain.properties.PropertyLayout.hidden.PropertyLayoutHiddenPage;

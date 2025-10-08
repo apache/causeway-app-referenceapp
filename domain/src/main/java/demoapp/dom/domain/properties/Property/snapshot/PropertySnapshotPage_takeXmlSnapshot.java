@@ -29,7 +29,6 @@ import org.apache.causeway.applib.value.Clob;
 
 import lombok.RequiredArgsConstructor;
 
-
 //tag::class[]
 @Action(semantics = SemanticsOf.SAFE)
 @RequiredArgsConstructor

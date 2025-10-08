@@ -43,7 +43,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
 //tag::class[]
 @Named("demo.InteractionDtoVm")
 @DomainObject(

@@ -41,7 +41,6 @@ import org.apache.causeway.commons.internal.hash._Hashes.Algorithm;
 
 import lombok.RequiredArgsConstructor;
 
-
 /**
  * Encoding blobs for view models will exceed the length allowed for an HTTP header;
  * this service will instead substitute with a UUID.

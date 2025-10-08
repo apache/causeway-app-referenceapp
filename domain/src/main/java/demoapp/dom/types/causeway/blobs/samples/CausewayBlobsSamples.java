@@ -32,7 +32,6 @@ import demoapp.dom.types.Samples;
 import lombok.Getter;
 import lombok.SneakyThrows;
 
-
 @Service
 public class CausewayBlobsSamples implements Samples<Blob> {
 

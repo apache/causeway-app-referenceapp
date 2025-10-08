@@ -27,7 +27,6 @@ import org.springframework.stereotype.Service;
 import org.apache.causeway.applib.annotation.ObjectSupport.ClassPathIconResource;
 import org.apache.causeway.applib.services.title.TitleService;
 
-
 import lombok.extern.log4j.Log4j2;
 
 //tag::class[]

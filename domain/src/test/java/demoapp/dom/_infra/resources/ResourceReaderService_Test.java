@@ -35,8 +35,6 @@ import org.springframework.mock.env.MockEnvironment;
 import org.apache.causeway.core.config.CausewayConfiguration;
 import org.apache.causeway.core.config.CausewayModuleCoreConfig;
 
-
-
 class ResourceReaderService_Test {
 
     ResourceReaderService resourceReaderService;

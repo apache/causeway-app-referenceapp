@@ -41,7 +41,6 @@ import lombok.Data;
 import lombok.SneakyThrows;
 import lombok.Value;
 
-
 //tag::class[]
 @Service
 public class GeoapifyClient implements Serializable {

@@ -22,7 +22,6 @@ import java.util.function.BiFunction;
 
 import lombok.Value;
 
-
 public interface ComplexNumber {
 
     double getRe();
