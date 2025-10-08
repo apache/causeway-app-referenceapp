@@ -32,7 +32,7 @@ import org.apache.causeway.applib.graph.tree.TreePath;
 import org.apache.causeway.applib.services.factory.FactoryService;
 
 import lombok.RequiredArgsConstructor;
-import lombok.val;
+
 
 @SuppressWarnings("unchecked")
 //tag::sessionTree[]
@@ -45,8 +45,8 @@ public class FileTreeNodeService {
     final FactoryService factoryService;
 
     public TreeNode<FileNodeVm> sessionTree() {
-        val session = httpSessionProvider.get();
-        val cacheKey = TreeNode.class.getName();
+        var session = httpSessionProvider.get();
+        var cacheKey = TreeNode.class.getName();
         var tree = (TreeNode<FileNodeVm>) session.getAttribute(cacheKey);
         if(tree == null) {
             tree = newTree(factoryService);
@@ -58,10 +58,10 @@ public class FileTreeNodeService {
 //end::sessionTree[]
 
 //tag::newTree[]
-    private static TreeNode<FileNodeVm> newTree(FactoryService factoryService) {
+    private static TreeNode<FileNodeVm> newTree(final FactoryService factoryService) {
         TreeNode<FileNodeVm> tree;
-        val rootFile = FileSystems.getDefault().getRootDirectories().iterator().next().toFile();
-        val rootNode = new FileNodeVm(rootFile);
+        var rootFile = FileSystems.getDefault().getRootDirectories().iterator().next().toFile();
+        var rootNode = new FileNodeVm(rootFile);
         tree = TreeNode.root(rootNode, FileSystemTreeAdapter.class, factoryService);
         tree.expand(TreePath.of(0)); // expand the root node
         return tree;

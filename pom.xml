@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Licensed to the Apache Software Foundation (ASF) under one or more contributor
-	license agreements. See the NOTICE file distributed with this work for additional
+<!-- Licensed to the Apache Software Foundation (ASF) under one or more
+contributor
+	license agreements. See the NOTICE file distributed with this work for
+additional
 	information regarding copyright ownership. The ASF licenses this file to
 	you under the Apache License, Version 2.0 (the "License"); you may not use
 	this file except in compliance with the License. You may obtain a copy of
@@ -10,205 +12,221 @@
 	OF ANY KIND, either express or implied. See the License for the specific
 	language governing permissions and limitations under the License. -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-        <groupId>org.apache.causeway.app</groupId>
-        <artifactId>causeway-app-starter-parent</artifactId>
-        <version>4.0.0-SNAPSHOT</version>
-    </parent>
+    <groupId>org.apache.causeway.examples.apps</groupId>
+    <artifactId>reference-app-parent</artifactId>
+    <version>${revision}</version>
 
-	<groupId>org.apache.causeway.examples.apps</groupId>
-	<artifactId>reference-app-parent</artifactId>
-	<version>${revision}</version>
+    <name>Reference App - Parent</name>
 
-	<name>Reference App - Parent</name>
+    <packaging>pom</packaging>
 
-	<packaging>pom</packaging>
-
-	<properties>
-	   <revision>4.0.0-SNAPSHOT</revision> <!-- can be overidden like mvn
+    <properties>
+        <revision>4.0.0-SNAPSHOT</revision> <!-- can be overidden like mvn
         -Drevision=2.7.8 -->
         <causeway.version>4.0.0-SNAPSHOT</causeway.version>
         <maven.compiler.release>21</maven.compiler.release>
-		<sonar.skip>true</sonar.skip>
-	</properties>
+        <sonar.skip>true</sonar.skip>
+    </properties>
 
-	<build>
-		<resources>
-			<resource>
-				<filtering>false</filtering>
-				<directory>src/main/resources</directory>
-			</resource>
-			<resource>
-				<filtering>false</filtering>
-				<directory>src/main/java</directory>
-				<includes>
-					<include>**</include>
-				</includes>
-				<excludes>
-					<exclude>**/*.java</exclude>
-				</excludes>
-			</resource>
-		</resources>
+    <build>
+        <resources>
+            <resource>
+                <filtering>false</filtering>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <filtering>false</filtering>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**</include>
+                </includes>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+        </resources>
 
-		<plugins>
+        <plugins>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<inherited>true</inherited>
-				<configuration>
-					<delimiters>
-						<delimiter>${*}</delimiter>
-						<delimiter>@</delimiter>
-						<delimiter>#</delimiter>
-					</delimiters>
-				</configuration>
-			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <inherited>true</inherited>
+                <configuration>
+                    <delimiters>
+                        <delimiter>${*}</delimiter>
+                        <delimiter>@</delimiter>
+                        <delimiter>#</delimiter>
+                    </delimiters>
+                </configuration>
+            </plugin>
 
-			<plugin>
-				<groupId>org.apache.rat</groupId>
-				<artifactId>apache-rat-plugin</artifactId>
-				<configuration>
-					<addDefaultLicenseMatchers>true</addDefaultLicenseMatchers>
-					<excludeSubProjects>true</excludeSubProjects>
-					<excludes>
-						<exclude>**/target/**</exclude>
-						<exclude>**/target-ide/**</exclude>
+            <plugin>
+                <groupId>org.apache.rat</groupId>
+                <artifactId>apache-rat-plugin</artifactId>
+                <configuration>
+                    <addDefaultLicenseMatchers>true</addDefaultLicenseMatchers>
+                    <excludeSubProjects>true</excludeSubProjects>
+                    <excludes>
+                        <exclude>**/target/**</exclude>
+                        <exclude>**/target-ide/**</exclude>
 
-						<exclude>**/node_modules/**</exclude>
-						<exclude>**/node/npm</exclude>
-						<exclude>**/node/npm.cmd</exclude>
+                        <exclude>**/node_modules/**</exclude>
+                        <exclude>**/node/npm</exclude>
+                        <exclude>**/node/npm.cmd</exclude>
 
-						<exclude>**/*.project</exclude>
-						<exclude>**/.classpath</exclude>
-						<exclude>**/.settings/**</exclude>
-						<exclude>**/*.launch</exclude>
+                        <exclude>**/*.project</exclude>
+                        <exclude>**/.classpath</exclude>
+                        <exclude>**/.settings/**</exclude>
+                        <exclude>**/*.launch</exclude>
 
-						<exclude>**/*.iml</exclude>
-						<exclude>**/webpack.generated.js</exclude>
+                        <exclude>**/*.iml</exclude>
+                        <exclude>**/webpack.generated.js</exclude>
 
-						<exclude>**/CREDITS.TXT</exclude>
-						<exclude>**/domain/src/main/java/demoapp/dom/types/causeway/clobs/samples/**</exclude>
-						<exclude>**/domain/src/main/java/demoapp/dom/types/causeway/markups/samples/**</exclude>
-						<exclude>**/domain/src/main/java/demoapp/dom/types/causewayext/asciidocs/samples/**</exclude>
-						<exclude>**/domain/src/main/java/demoapp/dom/types/causewayext/markdowns/samples/**</exclude>
-						<exclude>**/domain/src/main/resources/banner.txt</exclude>
-						<exclude>**/domain/src/main/resources/static/**</exclude>
-						<exclude>**/domain/src/test/resources/demoapp/dom/_infra/resources/</exclude>
-						<exclude>**/wicket/src/test/e2e/cypress-scaffolding/integration/examples/*.spec.js</exclude>
-						<exclude>**/wicket/src/test/e2e/cypress-scaffolding/integration/typescript/basic.ts</exclude>
+                        <exclude>**/CREDITS.TXT</exclude>
+                        <exclude>
+                            **/domain/src/main/java/demoapp/dom/types/causeway/clobs/samples/**</exclude>
+                        <exclude>
+                            **/domain/src/main/java/demoapp/dom/types/causeway/markups/samples/**</exclude>
+                        <exclude>
+                            **/domain/src/main/java/demoapp/dom/types/causewayext/asciidocs/samples/**</exclude>
+                        <exclude>
+                            **/domain/src/main/java/demoapp/dom/types/causewayext/markdowns/samples/**</exclude>
+                        <exclude>**/domain/src/main/resources/banner.txt</exclude>
+                        <exclude>**/domain/src/main/resources/static/**</exclude>
+                        <exclude>
+                            **/domain/src/test/resources/demoapp/dom/_infra/resources/</exclude>
+                        <exclude>
+                            **/wicket/src/test/e2e/cypress-scaffolding/integration/examples/*.spec.js</exclude>
+                        <exclude>
+                            **/wicket/src/test/e2e/cypress-scaffolding/integration/typescript/basic.ts</exclude>
 
-						<exclude>**/*.gitkeep</exclude>
-						<exclude>**/*.pdn</exclude>
-						<exclude>**/*.svg</exclude>
-						<exclude>**/*.rtf</exclude>
-						<exclude>**/*.json</exclude>
-						<exclude>**/*.min.js</exclude>
+                        <exclude>**/*.gitkeep</exclude>
+                        <exclude>**/*.pdn</exclude>
+                        <exclude>**/*.svg</exclude>
+                        <exclude>**/*.rtf</exclude>
+                        <exclude>**/*.json</exclude>
+                        <exclude>**/*.min.js</exclude>
 
-						<exclude>**/module-nav.adoc</exclude>
-						<exclude>**/component-nav.adoc</exclude>
+                        <exclude>**/module-nav.adoc</exclude>
+                        <exclude>**/component-nav.adoc</exclude>
 
-						<exclude>**/MANIFEST.MF</exclude>
-						<exclude>**/*.ucd</exclude>
-						<exclude>**/*.ucls</exclude>
+                        <exclude>**/MANIFEST.MF</exclude>
+                        <exclude>**/*.ucd</exclude>
+                        <exclude>**/*.ucls</exclude>
 
-						<exclude>**/datanucleus.log</exclude>
-						<exclude>**/gradle/wrapper/gradle-wrapper.properties</exclude>
-						<exclude>**/gradlew</exclude>
-						<exclude>**/gradlew.bat</exclude>
+                        <exclude>**/datanucleus.log</exclude>
+                        <exclude>**/gradle/wrapper/gradle-wrapper.properties</exclude>
+                        <exclude>**/gradlew</exclude>
+                        <exclude>**/gradlew.bat</exclude>
 
-						<exclude>**/intellij/launch/*.xml</exclude>
+                        <exclude>**/intellij/launch/*.xml</exclude>
 
-						<exclude>**/META-INF/services/**</exclude>
+                        <exclude>**/META-INF/services/**</exclude>
 
-						<exclude>**/samples/**</exclude>
-						<exclude>**/src/main/resources/banner.txt</exclude>
-						<exclude>**/src/main/resources/static/**</exclude>
-						<exclude>**/src/test/resources/demoapp/dom/_infra/resources/**</exclude>
-						<exclude>**/src/test/e2e/cypress-scaffolding/integration/**</exclude>
+                        <exclude>**/samples/**</exclude>
+                        <exclude>**/src/main/resources/banner.txt</exclude>
+                        <exclude>**/src/main/resources/static/**</exclude>
+                        <exclude>
+                            **/src/test/resources/demoapp/dom/_infra/resources/**</exclude>
+                        <exclude>
+                            **/src/test/e2e/cypress-scaffolding/integration/**</exclude>
 
-						<exclude>CREDITS.TXT</exclude>
-					</excludes>
-					<licenses>
-						<license
-								implementation="org.apache.rat.analysis.license.SimplePatternBasedLicense">
-							<licenseFamilyCategory>AL2</licenseFamilyCategory>
-							<licenseFamilyName>Apache License 2.0</licenseFamilyName>
-							<notes />
-							<patterns>
-								<pattern>Licensed to the Apache Software Foundation (ASF) under
-									one</pattern>
-							</patterns>
-						</license>
-					</licenses>
-					<licenseFamilies>
-						<licenseFamily
-								implementation="org.apache.rat.license.SimpleLicenseFamily">
-							<familyName>Apache License 2.0</familyName>
-						</licenseFamily>
-					</licenseFamilies>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+                        <exclude>CREDITS.TXT</exclude>
+                    </excludes>
+                    <licenses>
+                        <license
+                            implementation="org.apache.rat.analysis.license.SimplePatternBasedLicense">
+                            <licenseFamilyCategory>AL2</licenseFamilyCategory>
+                            <licenseFamilyName>Apache License 2.0</licenseFamilyName>
+                            <notes />
+                            <patterns>
+                                <pattern>Licensed to the Apache Software
+                                    Foundation (ASF) under
+                                    one</pattern>
+                            </patterns>
+                        </license>
+                    </licenses>
+                    <licenseFamilies>
+                        <licenseFamily
+                            implementation="org.apache.rat.license.SimpleLicenseFamily">
+                            <familyName>Apache License 2.0</familyName>
+                        </licenseFamily>
+                    </licenseFamilies>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
-	<dependencyManagement>
-		<dependencies>
+    <dependencyManagement>
+        <dependencies>
 
-			<dependency>
-				<groupId>org.apache.causeway.extensions</groupId>
-				<artifactId>causeway-extensions</artifactId>
-				<version>${causeway.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
+            <!-- SUB MODULES -->
 
-			<dependency>
-				<groupId>org.apache.causeway.valuetypes</groupId>
-				<artifactId>causeway-valuetypes</artifactId>
-				<version>${causeway.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
+            <dependency>
+                <groupId>org.apache.causeway.examples.apps</groupId>
+                <artifactId>reference-app-domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>org.apache.causeway.examples.apps</groupId>
-				<artifactId>reference-app-domain</artifactId>
-				<version>${project.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>org.apache.causeway.examples.apps</groupId>
+                <artifactId>reference-app-web</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>org.apache.causeway.examples.apps</groupId>
-				<artifactId>reference-app-web</artifactId>
-				<version>${project.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>org.apache.causeway.examples.apps</groupId>
+                <artifactId>reference-app-wicket-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>org.apache.causeway.examples.apps</groupId>
-				<artifactId>reference-app-wicket-common</artifactId>
-				<version>${project.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>org.apache.causeway.examples.apps</groupId>
+                <artifactId>reference-app-wicket-jpa</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>org.apache.causeway.examples.apps</groupId>
-				<artifactId>reference-app-wicket-jpa</artifactId>
-				<version>${project.version}</version>
-			</dependency>
+            <!-- APACHE CAUSEWAY -->
 
-		</dependencies>
-	</dependencyManagement>
+            <dependency>
+                <groupId>org.apache.causeway</groupId>
+                <artifactId>causeway-bom</artifactId>
+                <version>${causeway.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<scope>provided</scope>
-		</dependency>
-	</dependencies>
+            <dependency>
+                <groupId>org.apache.causeway.extensions</groupId>
+                <artifactId>causeway-extensions</artifactId>
+                <version>${causeway.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.causeway.valuetypes</groupId>
+                <artifactId>causeway-valuetypes</artifactId>
+                <version>${causeway.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
     <modules>
         <module>domain</module>

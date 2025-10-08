@@ -33,7 +33,7 @@ import org.apache.causeway.applib.annotation.SemanticsOf;
 import org.apache.causeway.applib.services.factory.FactoryService;
 
 import lombok.RequiredArgsConstructor;
-import lombok.val;
+
 
 import demoapp.dom.featured.customui.GeoapifyClient;
 import demoapp.dom.featured.customui.WhereInTheWorldPage;
@@ -55,7 +55,7 @@ public class FeaturedMenu {
             describedAs="Opens the Tooltip-Demo page."
     )
     public TooltipPage toolTips(){
-        val demo = factoryService.viewModel(new TooltipPage());
+        var demo = factoryService.viewModel(new TooltipPage());
 
         demo.getCollection().add(DemoItem.of("first"));
         demo.getCollection().add(DemoItem.of("second"));

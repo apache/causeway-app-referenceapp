@@ -30,7 +30,7 @@ import org.apache.causeway.commons.internal.resources._Resources;
 
 import demoapp.dom.types.Samples;
 import lombok.SneakyThrows;
-import lombok.val;
+
 
 @Service
 public class JavaAwtBufferedImagesSamples implements Samples<BufferedImage> {
@@ -44,8 +44,8 @@ public class JavaAwtBufferedImagesSamples implements Samples<BufferedImage> {
     }
 
     @SneakyThrows
-    private BufferedImage loadImage(String name) {
-        val bytes = _Bytes.of(_Resources.load(JavaAwtBufferedImagesSamples.class, name ));
+    private BufferedImage loadImage(final String name) {
+        var bytes = _Bytes.of(_Resources.load(JavaAwtBufferedImagesSamples.class, name ));
         return javaAwtBufferedImageService.bytesToJavaAwtBufferedImage(bytes);
     }
 

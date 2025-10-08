@@ -108,7 +108,6 @@
 			</build>
 		</profile>
 
-
 		<profile>
 			<id>deploy-to-docker-io</id>
 			<activation>

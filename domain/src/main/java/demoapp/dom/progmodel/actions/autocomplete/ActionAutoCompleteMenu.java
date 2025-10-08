@@ -30,7 +30,7 @@ import org.apache.causeway.applib.services.factory.FactoryService;
 
 import demoapp.dom.progmodel.actions.TvCharacterPopulator;
 import lombok.RequiredArgsConstructor;
-import lombok.val;
+
 
 @Named("demo.ActionAutoCompleteMenu")
 @DomainService
@@ -44,7 +44,7 @@ public class ActionAutoCompleteMenu {
     @Action
     @ActionLayout(cssClassFa="fa-wand-magic-sparkles")
     public ActionAutoCompletePage autoComplete(){
-        val page = factoryService.viewModel(new ActionAutoCompletePage());
+        var page = factoryService.viewModel(new ActionAutoCompletePage());
         tvCharacterPopulator.populate(page.getTvCharacters());
         return page;
     }

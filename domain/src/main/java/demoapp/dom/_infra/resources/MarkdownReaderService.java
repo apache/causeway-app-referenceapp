@@ -25,29 +25,27 @@ import org.springframework.stereotype.Service;
 
 import org.apache.causeway.valuetypes.markdown.applib.value.Markdown;
 
-import lombok.val;
-
 @Service
 @Named("demo.MarkdownReaderService")
 public class MarkdownReaderService {
 
-    public Markdown readFor(Object anObject) {
+    public Markdown readFor(final Object anObject) {
         return readFor(anObject.getClass());
     }
 
-    public Markdown readFor(Object anObject, final String member) {
+    public Markdown readFor(final Object anObject, final String member) {
         return readFor(anObject.getClass(), member);
     }
 
-    public Markdown readFor(Class<?> aClass) {
-        val markdownResourceName = String.format("%s.md", aClass.getSimpleName());
-        val markdown = resourceReaderService.readResource(aClass, markdownResourceName);
+    public Markdown readFor(final Class<?> aClass) {
+        var markdownResourceName = String.format("%s.md", aClass.getSimpleName());
+        var markdown = resourceReaderService.readResource(aClass, markdownResourceName);
         return Markdown.valueOf(markdown);
     }
 
-    public Markdown readFor(Class<?> aClass, final String member) {
-        val markdownResourceName = String.format("%s-%s.md", aClass.getSimpleName(), member);
-        val markdown = resourceReaderService.readResource(aClass, markdownResourceName);
+    public Markdown readFor(final Class<?> aClass, final String member) {
+        var markdownResourceName = String.format("%s-%s.md", aClass.getSimpleName(), member);
+        var markdown = resourceReaderService.readResource(aClass, markdownResourceName);
         return Markdown.valueOf(markdown);
     }
 

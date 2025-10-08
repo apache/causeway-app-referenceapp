@@ -34,7 +34,7 @@ import demoapp.dom.domain.collections.Collection.domainEvent.CollectionDomainEve
 import demoapp.dom.domain.collections.Collection.typeOf.CollectionTypeOfPage;
 import demoapp.dom.domain.collections.Collection.typeOf.child.CollectionTypeOfChildVm;
 import lombok.RequiredArgsConstructor;
-import lombok.val;
+
 
 @Named("demo.CollectionMenu")
 @DomainService
@@ -51,7 +51,7 @@ class CollectionMenu {
             describedAs = "Class of the domain event emitted when interacting with the collection"
     )
     public CollectionDomainEventPage domainEvent(){
-        val page = new CollectionDomainEventPage();
+        var page = new CollectionDomainEventPage();
         samples.stream()
                 .forEach(page::addChild);
         samples.stream()
@@ -65,7 +65,7 @@ class CollectionMenu {
             describedAs = "Element type of collections"
     )
     public CollectionTypeOfPage typeOf(){
-        val page = new CollectionTypeOfPage();
+        var page = new CollectionTypeOfPage();
         samples.stream()
                 .map(CollectionTypeOfChildVm::new)
                 .forEach(e -> page.getChildren().add(e));

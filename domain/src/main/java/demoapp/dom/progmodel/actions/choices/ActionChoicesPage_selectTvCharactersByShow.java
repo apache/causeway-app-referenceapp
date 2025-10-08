@@ -31,7 +31,7 @@ import demoapp.dom.progmodel.actions.TvCharacter;
 import demoapp.dom.progmodel.actions.TvShow;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
-import lombok.val;
+
 import lombok.experimental.Accessors;
 
 //tag::class[]
@@ -61,7 +61,7 @@ public class ActionChoicesPage_selectTvCharactersByShow {
     @MemberSupport public List<TvCharacter> choicesTvCharacters(
             final Parameters params                                 // <2>
     ) {
-        val tvShowSelected = params.tvShow();                       // <.>
+        var tvShowSelected = params.tvShow();                       // <.>
         return page.getTvCharacters()
                 .stream()
                 .filter(tvCharacter -> tvShowSelected == tvCharacter.getTvShow())

@@ -27,7 +27,6 @@ import org.apache.causeway.applib.annotation.SemanticsOf;
 import demoapp.dom._infra.values.ValueHolderRepository;
 import demoapp.dom.types.Samples;
 import lombok.RequiredArgsConstructor;
-import lombok.val;
 
 //tag::class[]
 @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
@@ -37,7 +36,7 @@ public class DomainObjectXxxLifecycleEventPage_createEntity {
     private final DomainObjectXxxLifecycleEventPage page;
 
     @MemberSupport public DomainObjectXxxLifecycleEventPage act(final String text) {
-        val entity = objectRepository.create(text);
+        var entity = objectRepository.create(text);
         page.setEntity(entity);
         return page;
     }

@@ -25,7 +25,7 @@ import java.util.stream.Stream;
 import org.springframework.stereotype.Service;
 
 import demoapp.dom.types.Samples;
-import lombok.val;
+
 
 @Service
 public class NameSamples implements Samples<String> {
@@ -40,7 +40,7 @@ public class NameSamples implements Samples<String> {
     }
 
     public String random() {
-        val names = new ArrayList<String>();
+        var names = new ArrayList<String>();
         stream().forEach(names::add);
         Collections.shuffle(names);
         return names.stream().findFirst().orElse(null);

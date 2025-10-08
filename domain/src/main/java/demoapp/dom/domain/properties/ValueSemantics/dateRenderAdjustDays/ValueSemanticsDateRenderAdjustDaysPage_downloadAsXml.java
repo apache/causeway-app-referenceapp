@@ -28,7 +28,7 @@ import org.apache.causeway.applib.value.Clob;
 import org.apache.causeway.applib.value.NamedWithMimeType;
 
 import lombok.RequiredArgsConstructor;
-import lombok.val;
+
 
 //tag::class[]
 @Action(
@@ -43,7 +43,7 @@ public class ValueSemanticsDateRenderAdjustDaysPage_downloadAsXml {
 
 //tag::class[]
     @MemberSupport public Clob act(final String fileName) {
-        val xml = jaxbService.toXml(page);
+        var xml = jaxbService.toXml(page);
         return Clob.of(fileName, NamedWithMimeType.CommonMimeType.XML, xml);
     }
     // ...

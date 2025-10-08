@@ -48,7 +48,7 @@ import demoapp.dom.domain.collections.CollectionLayout.sortedBy.child.Collection
 import demoapp.dom.domain.collections.CollectionLayout.tabledec.CollectionLayoutTableDecoratorPage;
 import demoapp.dom.domain.collections.CollectionLayout.tabledec.child.CollectionLayoutTableDecoratorChildVm;
 import lombok.RequiredArgsConstructor;
-import lombok.val;
+
 
 @Named("demo.CollectionLayoutMenu")
 @DomainService
@@ -65,7 +65,7 @@ public class CollectionLayoutMenu {
             describedAs = "CSS class to wrap the UI component representing this collection"
     )
     public CollectionLayoutCssClassPage cssClass(){
-        val page = new CollectionLayoutCssClassPage();
+        var page = new CollectionLayoutCssClassPage();
         samples.stream()
                 .map(CollectionLayoutCssClassChildVm::new
                 )
@@ -83,7 +83,7 @@ public class CollectionLayoutMenu {
             describedAs = "View collection as a table, or collapsed, or some other representation if available"
     )
     public CollectionLayoutDefaultViewPage defaultView(){
-        val page = new CollectionLayoutDefaultViewPage();
+        var page = new CollectionLayoutDefaultViewPage();
         samples.stream()
                 .map(CollectionLayoutDefaultViewChildVm::new)
                 .forEach(e -> page.getChildren().add(e));
@@ -102,7 +102,7 @@ public class CollectionLayoutMenu {
             describedAs = "Description of the collection, shown as a tooltip"
     )
     public CollectionLayoutDescribedAsPage describedAs(){
-        val page = new CollectionLayoutDescribedAsPage();
+        var page = new CollectionLayoutDescribedAsPage();
         samples.stream()
                 .map(CollectionLayoutDescribedAsChildVm::new)
                 .forEach(e -> page.getChildren().add(e));
@@ -118,7 +118,7 @@ public class CollectionLayoutMenu {
             describedAs = "Visibility of the collection in different contexts"
     )
     public CollectionLayoutHiddenPage hidden(){
-        val page = new CollectionLayoutHiddenPage();
+        var page = new CollectionLayoutHiddenPage();
         samples.stream()
                 .map(CollectionLayoutHiddenChildVm::new)
                 .forEach(e -> page.getChildren().add(e));
@@ -131,7 +131,7 @@ public class CollectionLayoutMenu {
             describedAs = "Custom text for the collection's label"
     )
     public CollectionLayoutNamedPage named(){
-        val page = new CollectionLayoutNamedPage();
+        var page = new CollectionLayoutNamedPage();
         samples.stream()
                 .map(CollectionLayoutNamedChildVm::new)
                 .forEach(e -> page.getChildren().add(e));
@@ -144,7 +144,7 @@ public class CollectionLayoutMenu {
             describedAs = "Number of domain objects per page in this collection"
     )
     public CollectionLayoutPagedPage paged(){
-        val page = new CollectionLayoutPagedPage();
+        var page = new CollectionLayoutPagedPage();
         samples.stream()
                 .map(CollectionLayoutPagedChildVm::new)
                 .forEach(e -> page.getChildren().add(e));
@@ -160,7 +160,7 @@ public class CollectionLayoutMenu {
             describedAs = "Order of this member relative to other members in the same (layout) group."
     )
     public CollectionLayoutSequencePage sequence(){
-        val page = new CollectionLayoutSequencePage();
+        var page = new CollectionLayoutSequencePage();
         samples.stream()
                 .map(CollectionLayoutSequenceChildVm::new)
                 .forEach(e -> page.getChildren().add(e));
@@ -173,7 +173,7 @@ public class CollectionLayoutMenu {
             describedAs = "Sort domain objects in this collection, overriding their default comparator"
     )
     public CollectionLayoutSortedByPage sortedBy(){
-        val page = new CollectionLayoutSortedByPage();
+        var page = new CollectionLayoutSortedByPage();
         samples.stream()
                 .map(CollectionLayoutSortedByChildVm::new)
                 .forEach(e -> page.getChildren().add(e));
@@ -187,7 +187,7 @@ public class CollectionLayoutMenu {
             describedAs = "Allows to specify a custom client side table renderer."
     )
     public CollectionLayoutTableDecoratorPage tableDecorator(){
-        val page = new CollectionLayoutTableDecoratorPage();
+        var page = new CollectionLayoutTableDecoratorPage();
         samples.stream()
                 .map(CollectionLayoutTableDecoratorChildVm::new)
                 .forEach(e -> page.getChildren().add(e));

@@ -28,7 +28,7 @@ import org.apache.causeway.applib.annotation.PriorityPrecedence;
 import org.apache.causeway.applib.annotation.SemanticsOf;
 
 import lombok.RequiredArgsConstructor;
-import lombok.val;
+
 
 import demoapp.dom._infra.samples.NameSamples;
 import demoapp.dom.domain.actions.Action.choicesFrom.ActionChoicesFromPage;
@@ -108,7 +108,7 @@ public class ActionMenu {
             describedAs = "Semantic relationship between actions and other properties or collections"
     )
     public ActionTypeOfPage typeOf(){
-        val page = new ActionTypeOfPage();
+        var page = new ActionTypeOfPage();
         samples.stream()
                 .map(ActionTypeOfChildVm::new)
                 .forEach(e -> page.getChildren().add(e));

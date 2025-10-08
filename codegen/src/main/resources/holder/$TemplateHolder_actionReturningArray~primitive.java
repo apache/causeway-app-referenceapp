@@ -25,7 +25,7 @@ import org.apache.causeway.applib.annotation.SemanticsOf;
 import org.apache.causeway.commons.functional.IndexedConsumer;
 
 import lombok.RequiredArgsConstructor;
-import lombok.val;
+
 
 import demoapp.dom.types.Samples;
 

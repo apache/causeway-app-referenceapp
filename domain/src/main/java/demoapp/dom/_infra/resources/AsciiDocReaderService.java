@@ -28,7 +28,6 @@ import org.apache.causeway.core.config.CausewayConfiguration;
 import org.apache.causeway.valuetypes.asciidoc.applib.value.AsciiDoc;
 
 import lombok.RequiredArgsConstructor;
-import lombok.val;
 
 @Service
 @Named("demo.AsciiDocReaderService")
@@ -47,14 +46,14 @@ public class AsciiDocReaderService {
     }
 
     public AsciiDoc readFor(final Class<?> aClass) {
-        val adocResourceName = String.format("%s.adoc", aClass.getSimpleName());
-        val adocResource = readResource(aClass, adocResourceName);
+        var adocResourceName = String.format("%s.adoc", aClass.getSimpleName());
+        var adocResource = readResource(aClass, adocResourceName);
         return toAsciiDoc(adocResource, aClass);
     }
 
     public AsciiDoc readFor(final Class<?> aClass, final String member) {
-        val adocResourceName = String.format("%s-%s.%s", aClass.getSimpleName(), member, "adoc");
-        val adocResource = readResource(aClass, adocResourceName);
+        var adocResourceName = String.format("%s-%s.%s", aClass.getSimpleName(), member, "adoc");
+        var adocResource = readResource(aClass, adocResourceName);
         return toAsciiDoc(adocResource, aClass);
     }
 

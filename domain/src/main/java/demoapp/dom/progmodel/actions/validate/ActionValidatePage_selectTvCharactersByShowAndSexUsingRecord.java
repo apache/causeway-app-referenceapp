@@ -32,7 +32,7 @@ import demoapp.dom.progmodel.actions.TvCharacter;
 import demoapp.dom.progmodel.actions.TvShow;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
-import lombok.val;
+
 import lombok.experimental.Accessors;
 
 //tag::class[]
@@ -83,8 +83,8 @@ public class ActionValidatePage_selectTvCharactersByShowAndSexUsingRecord {
         if (tvCharacters.isEmpty()) {
             return "Must specify at least one TV character";
         }
-        val tvShowSelected = params.tvShow();                       // <.>
-        val sexSelected = params.sex;                               // <3>
+        var tvShowSelected = params.tvShow();                       // <.>
+        var sexSelected = params.sex;                               // <3>
         List<TvCharacter> collect = choicesTvCharacters()
                 .stream()
                 .filter(tvCharacter -> tvShowSelected == null || tvShowSelected == tvCharacter.getTvShow())

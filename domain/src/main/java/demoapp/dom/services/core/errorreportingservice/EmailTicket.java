@@ -31,7 +31,7 @@ import org.apache.causeway.commons.internal.base._Strings;
 import static org.apache.causeway.commons.internal.base._NullSafe.stream;
 
 import lombok.Builder;
-import lombok.val;
+
 
 /**
  * Response from the {@link ErrorReportingService}, containing information to show to the end-user.
@@ -67,7 +67,7 @@ public class EmailTicket extends SimpleTicket {
 
 //tag::mailTo[]
         public String toHtmlLink() {
-            val messageProperties = Map.<String, Object>of(
+            var messageProperties = Map.<String, Object>of(
                 "receiver", receiver,
                 "subject",  htmlEscape(subject),
                 "body",     htmlEscape(
@@ -118,7 +118,7 @@ public class EmailTicket extends SimpleTicket {
 //tag::markup[]
     @Override
     public String getMarkup() {
-        val messageProperties = Map.<String, Object>of(
+        var messageProperties = Map.<String, Object>of(
             "title", ifPresentMap(getDetails(), details-> String.format("<h3>%s</h3>", htmlEscape(details))),
             "img",   ifPresentMap(getKittenUrl(), kittenUrl-> String.format("<img src=\"%s\"></img>", kittenUrl)),
             "para",  String.format("<p><h4>Please report this error: <span>%s</span></h4></p>", mailTo.toHtmlLink()));

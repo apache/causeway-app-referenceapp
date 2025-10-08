@@ -30,7 +30,7 @@ import org.apache.causeway.applib.services.factory.FactoryService;
 
 import demoapp.dom.progmodel.actions.TvCharacterPopulator;
 import lombok.RequiredArgsConstructor;
-import lombok.val;
+
 
 @Named("demo.ActionValidateMenu")
 @DomainService
@@ -44,7 +44,7 @@ public class ActionValidateMenu {
     @Action
     @ActionLayout(cssClassFa="fa-circle-question")
     public ActionValidatePage validate(){
-        val page = factoryService.viewModel(new ActionValidatePage());
+        var page = factoryService.viewModel(new ActionValidatePage());
         tvCharacterPopulator.populate(page.getTvCharacters());
         return page;
     }

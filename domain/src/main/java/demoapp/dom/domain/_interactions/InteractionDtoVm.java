@@ -42,7 +42,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.val;
+
 
 //tag::class[]
 @Named("demo.InteractionDtoVm")
@@ -57,11 +57,11 @@ public class InteractionDtoVm implements ViewModel, HasAsciiDocDescription {
     @ObjectSupport public String title() {
         // nb: not thread-safe
         // formats defined in https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
-        val format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        val exec = getInteractionDto().getExecution();
-        val instant = exec.getMetrics().getTimings().getStartedAt().toGregorianCalendar().toInstant();
+        var format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        var exec = getInteractionDto().getExecution();
+        var instant = exec.getMetrics().getTimings().getStartedAt().toGregorianCalendar().toInstant();
 
-        val buf = new TitleBuffer();
+        var buf = new TitleBuffer();
         buf.append(format.format(Date.from(instant)));
         buf.append(" ").append(exec.getLogicalMemberIdentifier());
         return buf.toString();

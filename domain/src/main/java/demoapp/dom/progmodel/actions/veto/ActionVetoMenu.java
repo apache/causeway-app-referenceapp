@@ -30,7 +30,7 @@ import org.apache.causeway.applib.services.factory.FactoryService;
 
 import demoapp.dom.progmodel.actions.TvCharacterPopulator;
 import lombok.RequiredArgsConstructor;
-import lombok.val;
+
 
 @Named("demo.ActionVetoMenu")
 @DomainService
@@ -44,7 +44,7 @@ public class ActionVetoMenu {
     @Action
     @ActionLayout(cssClassFa="fa-ban")
     public ActionVetoPage veto(){
-        val page = factoryService.viewModel(new ActionVetoPage());
+        var page = factoryService.viewModel(new ActionVetoPage());
         tvCharacterPopulator.populate(page.getTvCharacters());
         return page;
     }

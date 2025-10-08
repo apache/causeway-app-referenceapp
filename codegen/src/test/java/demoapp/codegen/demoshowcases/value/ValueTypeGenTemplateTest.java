@@ -41,7 +41,7 @@ import org.apache.causeway.commons.io.TextUtils;
 
 import org.jspecify.annotations.NonNull;
 import lombok.SneakyThrows;
-import lombok.val;
+
 import lombok.extern.log4j.Log4j2;
 
 import demoapp.codegen.demoshowcases.value.ValueShowCase;

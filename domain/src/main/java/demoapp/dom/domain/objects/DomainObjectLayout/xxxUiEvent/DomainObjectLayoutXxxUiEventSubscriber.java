@@ -27,7 +27,7 @@ import org.springframework.stereotype.Service;
 import org.apache.causeway.applib.annotation.ObjectSupport.ClassPathIconResource;
 import org.apache.causeway.applib.services.title.TitleService;
 
-import lombok.val;
+
 import lombok.extern.log4j.Log4j2;
 
 //tag::class[]
@@ -42,7 +42,7 @@ public class DomainObjectLayoutXxxUiEventSubscriber {
 //tag::titleUiEvent[]
     @EventListener
     void onTitleUiEvent(final DomainObjectLayoutXxxUiEventEntity.TitleEvent titleUiEvent) {
-        val source = titleUiEvent.getSource();
+        var source = titleUiEvent.getSource();
         titleUiEvent.setTitle(
                 hasNameInFirstHalfOfAlphabet(source)
                         ? source.getName().toUpperCase()
@@ -53,7 +53,7 @@ public class DomainObjectLayoutXxxUiEventSubscriber {
 //tag::iconUiEvent[]
     @EventListener
     void onIconUiEvent(final DomainObjectLayoutXxxUiEventEntity.IconEvent iconUiEvent) {
-        val source = iconUiEvent.getSource();
+        var source = iconUiEvent.getSource();
         if (hasNameInFirstHalfOfAlphabet(source)) {
             iconUiEvent.setIcon(new ClassPathIconResource("signature"));
         }
@@ -63,7 +63,7 @@ public class DomainObjectLayoutXxxUiEventSubscriber {
 //tag::cssClassUiEvent[]
     @EventListener
     void onCssClassUiEvent(final DomainObjectLayoutXxxUiEventEntity.CssClassEvent cssClassUiEvent) {
-        val source = cssClassUiEvent.getSource();
+        var source = cssClassUiEvent.getSource();
         cssClassUiEvent.setCssClass(hasNameInFirstHalfOfAlphabet(source)
                 ? "custom1"
                 : "custom2");
@@ -73,7 +73,7 @@ public class DomainObjectLayoutXxxUiEventSubscriber {
 //tag::layoutUiEvent[]
     @EventListener
     void onLayoutUiEvent(final DomainObjectLayoutXxxUiEventEntity.LayoutEvent layoutUiEvent) {
-        val source = layoutUiEvent.getSource();
+        var source = layoutUiEvent.getSource();
         layoutUiEvent.setLayout(
                 hasNameInFirstHalfOfAlphabet(source)
                     ? "alternative1"

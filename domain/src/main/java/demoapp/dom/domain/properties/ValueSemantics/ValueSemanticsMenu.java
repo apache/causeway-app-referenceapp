@@ -31,7 +31,7 @@ import org.apache.causeway.applib.annotation.PriorityPrecedence;
 import org.apache.causeway.applib.annotation.SemanticsOf;
 
 import lombok.RequiredArgsConstructor;
-import lombok.val;
+
 
 import demoapp.dom.domain.properties.ValueSemantics.dateRenderAdjustDays.ValueSemanticsDateRenderAdjustDaysPage;
 import demoapp.dom.domain.properties.ValueSemantics.percentage.ValueSemanticsProviderPercentagePage;
@@ -47,7 +47,7 @@ public class ValueSemanticsMenu {
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(cssClassFa="fa-step-forward", describedAs = "Inclusive and exclusive date ranges")
     public ValueSemanticsDateRenderAdjustDaysPage dateRenderAdjustDays(){
-        val page = new ValueSemanticsDateRenderAdjustDaysPage();
+        var page = new ValueSemanticsDateRenderAdjustDaysPage();
         page.setStartDate(LocalDate.of(2012,1,1));
         page.setEndDate(page.getStartDate().plusDays(7));               // <.>
         return page;
@@ -58,7 +58,7 @@ public class ValueSemanticsMenu {
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(cssClassFa="fa-percent", describedAs = "Use a custom ValueSemanticsProvider with meta-annotation to customise the display")
     public ValueSemanticsProviderPercentagePage percentage(){
-        val page = new ValueSemanticsProviderPercentagePage();
+        var page = new ValueSemanticsProviderPercentagePage();
         page.setPercentage(new BigDecimal(".95"));
         return page;
     }

@@ -28,7 +28,7 @@ import org.apache.causeway.applib.services.error.ErrorReportingService;
 import org.apache.causeway.applib.services.error.Ticket;
 import org.apache.causeway.applib.services.error.Ticket.StackTracePolicy;
 
-import lombok.val;
+
 
 //tag::class[]
 @Service
@@ -39,11 +39,11 @@ public class ErrorReportingServiceForDemo implements ErrorReportingService {
     @Override
     public Ticket reportError(final ErrorDetails errorDetails) {
 
-        val reference = "#0";                               // <.>
-        val userMessage = errorDetails.mainMessage();
-        val details = "Apologies!";
+        var reference = "#0";                               // <.>
+        var userMessage = errorDetails.mainMessage();
+        var details = "Apologies!";
 
-        val mailTo = EmailTicket.MailTo.builder()
+        var mailTo = EmailTicket.MailTo.builder()
                 .receiver("support@hello.world")
                 .subject("[Demo-App] Unexpected Error (" + reference + ")")
                 .body(EmailTicket.MailTo.mailBodyOf(errorDetails))

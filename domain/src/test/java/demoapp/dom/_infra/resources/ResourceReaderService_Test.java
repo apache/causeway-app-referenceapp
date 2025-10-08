@@ -35,7 +35,7 @@ import org.springframework.mock.env.MockEnvironment;
 import org.apache.causeway.core.config.CausewayConfiguration;
 import org.apache.causeway.core.config.CausewayModuleCoreConfig;
 
-import lombok.val;
+
 
 class ResourceReaderService_Test {
 
@@ -69,7 +69,7 @@ class ResourceReaderService_Test {
     void read_with_tags() {
 
         // given
-        val attributes = new HashMap<String, Object>();
+        var attributes = new HashMap<String, Object>();
         attributes.put("tags", "class");
 
         // when
@@ -84,7 +84,7 @@ class ResourceReaderService_Test {
     void read_missing_tags() {
 
         // given
-        val attributes = new HashMap<String, Object>();
+        var attributes = new HashMap<String, Object>();
         attributes.put("tags", "other");
 
         // when
@@ -99,7 +99,7 @@ class ResourceReaderService_Test {
     void read_subdir_with_tags() {
 
         // given
-        val attributes = new HashMap<String, Object>();
+        var attributes = new HashMap<String, Object>();
         attributes.put("tags", "class");
 
         // when

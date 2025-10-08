@@ -30,9 +30,8 @@ import org.asciidoctor.SafeMode;
 import org.asciidoctor.ast.Document;
 import org.asciidoctor.extension.IncludeProcessor;
 import org.asciidoctor.extension.PreprocessorReader;
-import org.springframework.stereotype.Service;
 
-import lombok.val;
+import org.springframework.stereotype.Service;
 
 @Service
 @Named("demo.AsciiDocConverterService")
@@ -71,13 +70,13 @@ public class AsciiDocConverterService {
 
             @Override
             public void process(final Document document, final PreprocessorReader reader, final String target, final Map<String, Object> attributes) {
-                val contextClass = context.get();
-                val content = resourceReaderService.readResource(contextClass, target, attributes);
+                var contextClass = context.get();
+                var content = resourceReaderService.readResource(contextClass, target, attributes);
                 reader.pushInclude(content, target, target, 1, attributes);
             }
         }
 
-        val asciidoctor = Asciidoctor.Factory.create();
+        var asciidoctor = Asciidoctor.Factory.create();
         asciidoctor.javaExtensionRegistry().includeProcessor(new LocalIncludeProcessor());
         return asciidoctor;
     }

@@ -32,7 +32,7 @@ import demoapp.dom.types.Samples;
 import lombok.AccessLevel;
 import org.jspecify.annotations.NonNull;
 import lombok.RequiredArgsConstructor;
-import lombok.val;
+
 
 @RequiredArgsConstructor(access = AccessLevel.PROTECTED)
 public abstract class ValueHolderRepository<T, E extends ValueHolder<T>> {
@@ -75,7 +75,7 @@ public abstract class ValueHolderRepository<T, E extends ValueHolder<T>> {
 
     public E create(final T value) {
         // emits 'created' life-cycle event
-        val detachedEntity = repositoryService.detachedEntity(newDetachedEntity(value));
+        var detachedEntity = repositoryService.detachedEntity(newDetachedEntity(value));
         // persist
         return repositoryService.persistAndFlush(detachedEntity);
     }

@@ -33,7 +33,7 @@ import org.apache.causeway.core.metamodel.context.MetaModelContext;
 import org.apache.causeway.core.metamodel.object.MmSpecUtils;
 import org.apache.causeway.testing.unittestsupport.applib.util.ApprovalUtils;
 
-import lombok.val;
+
 
 @SpringBootTest(
         classes = {
@@ -59,7 +59,7 @@ class SpinUpReferenceJpaTest {
     @UseReporter(DiffReporter.class)
     void verify() {
 
-        val specificationsBySortAsYaml =
+        var specificationsBySortAsYaml =
                 MmSpecUtils.specificationsBySortAsYaml(mmc.getSpecificationLoader());
 
         //debug

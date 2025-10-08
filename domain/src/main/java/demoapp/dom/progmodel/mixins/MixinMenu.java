@@ -25,7 +25,7 @@ import org.apache.causeway.applib.annotation.ActionLayout;
 import org.apache.causeway.applib.annotation.DomainService;
 import org.apache.causeway.applib.annotation.PriorityPrecedence;
 
-import lombok.val;
+
 
 @Named("demo.MixinMenu")
 @DomainService
@@ -38,7 +38,7 @@ public class MixinMenu {
             describedAs="Contribute behaviour to domain objects"
     )
     public MixinPage mixins(){
-        val vm = new MixinPage();
+        var vm = new MixinPage();
         vm.setCount(10);
         return vm;
     }

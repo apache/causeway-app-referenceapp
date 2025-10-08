@@ -33,7 +33,7 @@ import org.apache.causeway.extensions.secman.integration.authenticator.Authentic
 import org.apache.causeway.testing.h2console.ui.CausewayModuleTestingH2ConsoleUi;
 import org.apache.causeway.viewer.restfulobjects.viewer.CausewayModuleViewerRestfulObjectsViewer;
 
-import lombok.val;
+
 import lombok.extern.log4j.Log4j2;
 
 import demoapp.dom._infra.fixtures.DemoFixtureScript;
@@ -78,7 +78,7 @@ public class ReferenceAppManifestCommon {
     @Bean
     public WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> webServerFactoryCustomizer() {
         return factory -> {
-            val contextPath = Optional
+            var contextPath = Optional
                     .ofNullable(System.getProperty("ContextPath"))
                     .orElse(System.getenv("ContextPath")); // fallback
             if(contextPath!=null) {

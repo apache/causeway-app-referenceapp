@@ -32,7 +32,7 @@ import jakarta.inject.Named;
 
 import org.springframework.stereotype.Service;
 
-import lombok.val;
+
 
 @Service
 @Named("demo.ResourceReaderService")
@@ -76,9 +76,9 @@ public class ResourceReaderService {
      * @throws IOException
      */
     private String read(final InputStream input, final Map<String, Object> attributes) throws IOException {
-        val in = new InputStreamReader(input);
-        val tagHandler = new TagHandler(attributes);
-        try (val bufferReader = new BufferedReader(in)) {
+        var in = new InputStreamReader(input);
+        var tagHandler = new TagHandler(attributes);
+        try (var bufferReader = new BufferedReader(in)) {
             return bufferReader.lines()
                     .map(tagHandler::handle)
                     .filter(Objects::nonNull)

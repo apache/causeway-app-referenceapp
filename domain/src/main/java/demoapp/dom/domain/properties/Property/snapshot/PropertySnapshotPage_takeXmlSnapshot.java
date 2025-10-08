@@ -28,7 +28,7 @@ import org.apache.causeway.applib.services.xmlsnapshot.XmlSnapshotService;
 import org.apache.causeway.applib.value.Clob;
 
 import lombok.RequiredArgsConstructor;
-import lombok.val;
+
 
 //tag::class[]
 @Action(semantics = SemanticsOf.SAFE)
@@ -41,10 +41,10 @@ public class PropertySnapshotPage_takeXmlSnapshot {
 
 //tag::class[]
     @MemberSupport public Clob act(final String fileName) {
-        val builder = xmlSnapshotService.builderFor(page);
+        var builder = xmlSnapshotService.builderFor(page);
         builder.includePath("friends");                                 // <.>
-        val snapshot = builder.build();
-        val doc = snapshot.getXmlDocument();
+        var snapshot = builder.build();
+        var doc = snapshot.getXmlDocument();
         return asClob(fileName, xmlService.asString(doc));
     }
 //end::class[]

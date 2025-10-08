@@ -28,7 +28,7 @@ import org.apache.causeway.applib.annotation.PriorityPrecedence;
 import org.apache.causeway.applib.annotation.SemanticsOf;
 
 import lombok.RequiredArgsConstructor;
-import lombok.val;
+
 
 import demoapp.dom.domain.properties.PropertyLayout.cssClass.PropertyLayoutCssClassPage;
 import demoapp.dom.domain.properties.PropertyLayout.describedAs.PropertyLayoutDescribedAsPage;
@@ -62,7 +62,7 @@ public class PropertyLayoutMenu {
             describedAs = "Description of the property, shown as a tooltip"
     )
     public PropertyLayoutDescribedAsPage describedAs(){
-        val page = new PropertyLayoutDescribedAsPage();
+        var page = new PropertyLayoutDescribedAsPage();
         page.setName("Joey");
         page.setNotes("Favorite Friend");
         page.setAddress("Apartment over the coffee shop\nNew York\nNew York");
@@ -93,7 +93,7 @@ public class PropertyLayoutMenu {
             describedAs = "Textboxes"
     )
     public PropertyLayoutMultiLinePage multiLine(){
-        val vm = new PropertyLayoutMultiLinePage();
+        var vm = new PropertyLayoutMultiLinePage();
         vm.setPropertyUsingAnnotation(
                 "A multiline string\n" +
                 "spanning\n" +
@@ -134,7 +134,7 @@ public class PropertyLayoutMenu {
             describedAs = "Performance hint for properties holding unchanging large objects"
     )
     public PropertyLayoutRepaintingPage repainting(){
-        val page = new PropertyLayoutRepaintingPage();
+        var page = new PropertyLayoutRepaintingPage();
         return page;
     }
 
@@ -144,7 +144,7 @@ public class PropertyLayoutMenu {
             describedAs = "Length of text fields"
     )
     public PropertyLayoutTypicalLengthPage typicalLength(){
-        val page = new PropertyLayoutTypicalLengthPage();
+        var page = new PropertyLayoutTypicalLengthPage();
         page.setName("abcdefghij");
         page.setNotes("abcdefghij");
         return page;

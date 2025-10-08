@@ -23,29 +23,29 @@ import java.util.stream.Stream;
 
 import org.apache.causeway.applib.graph.tree.TreeAdapter;
 
-import lombok.val;
+
 
 //tag::class[]
 public class FileSystemTreeAdapter implements TreeAdapter<FileNodeVm> {
 
     @Override
-    public int childCountOf(FileNodeVm value) {
+    public int childCountOf(final FileNodeVm value) {
         return (int) streamChildFiles(value).count();
     }
 
     @Override
-    public Stream<FileNodeVm> childrenOf(FileNodeVm value) {
+    public Stream<FileNodeVm> childrenOf(final FileNodeVm value) {
         return streamChildFiles(value)
                 .map(FileNodeVm::new);
     }
 
-    private static Stream<File> streamChildFiles(FileNodeVm fileNode){
+    private static Stream<File> streamChildFiles(final FileNodeVm fileNode){
         String path = fileNode.getPath();
         if (path == null) {
             return Stream.empty();
         }
-        val file = new File(path);
-        val childFiles = file.listFiles();
+        var file = new File(path);
+        var childFiles = file.listFiles();
         return childFiles != null
                 ? Stream.of(childFiles)
                         .filter(f -> !f.isHidden())

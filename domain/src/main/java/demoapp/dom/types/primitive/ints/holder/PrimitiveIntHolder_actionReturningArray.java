@@ -26,7 +26,7 @@ import org.apache.causeway.commons.functional.IndexedConsumer;
 
 import demoapp.dom.types.Samples;
 import lombok.RequiredArgsConstructor;
-import lombok.val;
+
 
 //tag::class[]
 @Action(semantics = SemanticsOf.SAFE)
@@ -36,7 +36,7 @@ public class PrimitiveIntHolder_actionReturningArray {
     private final PrimitiveIntHolder holder;
 
     public int[] act() {
-        val array = new int[(int)samples.stream().count()];
+        var array = new int[(int)samples.stream().count()];
         samples.stream()
             .forEach(IndexedConsumer.zeroBased((index, value)->array[index] = value));
         return array;

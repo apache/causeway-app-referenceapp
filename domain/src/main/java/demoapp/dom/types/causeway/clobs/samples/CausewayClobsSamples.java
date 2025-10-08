@@ -30,7 +30,7 @@ import org.apache.causeway.commons.internal.resources._Resources;
 
 import demoapp.dom.types.Samples;
 import lombok.SneakyThrows;
-import lombok.val;
+
 
 @Service
 public class CausewayClobsSamples implements Samples<Clob> {
@@ -43,12 +43,12 @@ public class CausewayClobsSamples implements Samples<Clob> {
     }
 
     @SneakyThrows
-    private Clob loadClob(String name) {
-        val text = _Strings.read(_Resources.load(CausewayClobsSamples.class, name), StandardCharsets.UTF_8);
+    private Clob loadClob(final String name) {
+        var text = _Strings.read(_Resources.load(CausewayClobsSamples.class, name), StandardCharsets.UTF_8);
         return Clob.of(name, mimeTypeFor(name), text);
     }
 
-    private static NamedWithMimeType.CommonMimeType mimeTypeFor(String name) {
+    private static NamedWithMimeType.CommonMimeType mimeTypeFor(final String name) {
         if (name.endsWith(".txt")) return NamedWithMimeType.CommonMimeType.TXT;
         if (name.endsWith(".rtf")) return NamedWithMimeType.CommonMimeType.RTF;
         if (name.endsWith(".xml")) return NamedWithMimeType.CommonMimeType.XML;

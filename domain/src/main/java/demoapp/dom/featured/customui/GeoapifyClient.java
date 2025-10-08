@@ -40,7 +40,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.SneakyThrows;
 import lombok.Value;
-import lombok.val;
+
 
 //tag::class[]
 @Service
@@ -70,12 +70,12 @@ public class GeoapifyClient implements Serializable {
         //...
 //end::class[]
 
-        val url = new URL(String.format(
+        var url = new URL(String.format(
                 "https://api.geoapify.com/v1/geocode/search?text=%s&apiKey=%s"
                 , URLEncoder.encode(address, StandardCharsets.UTF_8)
                 , apiKey));
 
-        val response = objectMapper.readValue(url, Response.class);
+        var response = objectMapper.readValue(url, Response.class);
 
         return new GeocodeResponse(
                 response.getFeatures().get(0).getProperties().getLat(),
@@ -108,7 +108,7 @@ public class GeoapifyClient implements Serializable {
 //end::class[]
 
     public byte[] toJpeg(final JpegRequest request) throws IOException {
-        val urlStr = String.format(
+        var urlStr = String.format(
                 "https://maps.geoapify.com/v1/staticmap?style=osm-carto&width=%s&height=%s&center=lonlat:%s,%s&zoom=%d&apiKey=%s"
                 , request.getWidth()
                 , request.getHeight()
@@ -116,8 +116,8 @@ public class GeoapifyClient implements Serializable {
                 , request.getLatitude()
                 , request.getZoom()
                 , apiKey);
-        val con = (HttpURLConnection) new URL(urlStr).openConnection();
-        val is = con.getInputStream();
+        var con = (HttpURLConnection) new URL(urlStr).openConnection();
+        var is = con.getInputStream();
         return _Bytes.of(is);
     }
 

@@ -23,7 +23,7 @@ import org.springframework.stereotype.Service;
 
 import demoapp.dom._infra.values.ValueHolderRepository;
 import demoapp.dom.progmodel.customvaluetypes.embeddedvalues.ComplexNumber;
-import lombok.val;
+
 
 @Profile("demo-jpa")
 @Service
@@ -35,8 +35,8 @@ extends ValueHolderRepository<ComplexNumber, NumberConstantJpa> {
     }
 
     @Override
-    protected NumberConstantJpa newDetachedEntity(ComplexNumber value) {
-        val numConst = repositoryService.detachedEntity(new NumberConstantJpa());
+    protected NumberConstantJpa newDetachedEntity(final ComplexNumber value) {
+        var numConst = repositoryService.detachedEntity(new NumberConstantJpa());
         numConst.setName(((ComplexNumber.SimpleNamedComplexNumber)value).getName());
         numConst.setNumber(ComplexNumberJpa.of(value.getRe(), value.getIm()));
         return numConst;

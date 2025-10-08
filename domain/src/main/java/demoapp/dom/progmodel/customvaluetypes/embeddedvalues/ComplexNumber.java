@@ -21,7 +21,7 @@ package demoapp.dom.progmodel.customvaluetypes.embeddedvalues;
 import java.util.function.BiFunction;
 
 import lombok.Value;
-import lombok.val;
+
 
 public interface ComplexNumber {
 
@@ -50,8 +50,8 @@ public interface ComplexNumber {
         }
         // this is a naive implementation, just for demo
         final String[] parts = complexNumberString.split("\\+|i");
-        val real = Double.parseDouble(parts[0]);
-        val imaginary = Double.parseDouble(parts[1]);
+        var real = Double.parseDouble(parts[0]);
+        var imaginary = Double.parseDouble(parts[1]);
         return factory.apply(real, imaginary);
     }
 

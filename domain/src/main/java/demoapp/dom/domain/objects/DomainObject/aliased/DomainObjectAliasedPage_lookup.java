@@ -13,7 +13,6 @@ import org.apache.causeway.applib.services.bookmark.Bookmark;
 import org.apache.causeway.applib.services.bookmark.BookmarkService;
 
 import lombok.RequiredArgsConstructor;
-import lombok.val;
 
 //tag::class[]
 @Action(semantics = SemanticsOf.SAFE)
@@ -31,8 +30,8 @@ public class DomainObjectAliasedPage_lookup {
         ).orElseThrow(() -> new RecoverableException("No customer exists for that bookmark"));
     }
     public List<String> choices0Act() {
-        val bookmarks = new ArrayList<String>();
-        val aliases = repository.all();
+        var bookmarks = new ArrayList<String>();
+        var aliases = repository.all();
         aliases.stream().forEach(obj -> {
             bookmarks.add(obj.getBookmark());           // <.>
             bookmarks.add(obj.getPreviousBookmark());   // <.>

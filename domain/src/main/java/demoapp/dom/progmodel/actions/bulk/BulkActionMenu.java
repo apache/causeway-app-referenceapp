@@ -32,7 +32,7 @@ import org.apache.causeway.applib.annotation.PriorityPrecedence;
 import org.apache.causeway.applib.services.factory.FactoryService;
 
 import lombok.RequiredArgsConstructor;
-import lombok.val;
+
 
 @Named("demo.BulkActionMenu")
 @DomainService
@@ -52,7 +52,7 @@ public class BulkActionMenu {
             describedAs = "Bulk actions"
     )
     public BulkActionPage bulkActions() {
-        val page = factoryService.viewModel(new BulkActionPage());
+        var page = factoryService.viewModel(new BulkActionPage());
         repository.all()
                 .stream()
                 .filter(x -> FRIENDS_NAMES.contains(x.getName()))

@@ -25,7 +25,7 @@ import org.apache.causeway.applib.annotation.Collection;
 import org.apache.causeway.applib.annotation.CollectionLayout;
 
 import lombok.RequiredArgsConstructor;
-import lombok.val;
+
 
 //tag::class[]
 @Collection                                 // <.>
@@ -36,7 +36,7 @@ public class CountHolder_fibonacciSequence {
     private final CountHolder holder;       // <.>
 
     public List<FibonacciNumberVm> coll() {
-        val collection = new ArrayList<FibonacciNumberVm>();
+        var collection = new ArrayList<FibonacciNumberVm>();
 
         final int count = holder.getCount();
         for (int i = 0; i < count; i++) {
@@ -46,7 +46,7 @@ public class CountHolder_fibonacciSequence {
 
         return collection;
     }
-    private static int fibonacciFor(int n) {
+    private static int fibonacciFor(final int n) {
         // ...
 //end::class[]
         if(n <= 1) {

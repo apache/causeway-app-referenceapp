@@ -5,7 +5,6 @@ import org.apache.causeway.applib.annotation.MemberSupport;
 import org.apache.causeway.applib.annotation.Property;
 
 import lombok.RequiredArgsConstructor;
-import lombok.val;
 
 //tag::class[]
 @DomainObject(mixinMethod = "property")                         // <.>
@@ -17,7 +16,7 @@ public class DomainObjectMixinMethodEntity_initialCharacter {
 
     @MemberSupport
     public Character property() {                               // <.>
-        val charArray = mixee.getName().toCharArray();
+        var charArray = mixee.getName().toCharArray();
         return charArray.length == 0 ? null : charArray[0];
     }
 }

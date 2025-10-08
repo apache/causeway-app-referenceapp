@@ -24,14 +24,14 @@ import org.apache.causeway.applib.events.domain.AbstractDomainEvent;
 import org.apache.causeway.applib.services.message.MessageService;
 import org.apache.causeway.applib.services.registry.ServiceRegistry;
 
-import lombok.val;
+
 
 //tag::class[]
 enum DomainObjectXxxDomainEventControlStrategy {
 
     DO_NOTHING{
         @Override
-        void on(DomainObjectXxxDomainEventPage.DomainObjectXxxDomainEventMarker ev, ServiceRegistry serviceRegistry) {
+        void on(final DomainObjectXxxDomainEventPage.DomainObjectXxxDomainEventMarker ev, final ServiceRegistry serviceRegistry) {
         }
     },
     // ...
@@ -40,9 +40,9 @@ enum DomainObjectXxxDomainEventControlStrategy {
 //tag::hide[]
     HIDE {
         @Override
-        void on(DomainObjectXxxDomainEventPage.DomainObjectXxxDomainEventMarker ev, ServiceRegistry serviceRegistry) {
+        void on(final DomainObjectXxxDomainEventPage.DomainObjectXxxDomainEventMarker ev, final ServiceRegistry serviceRegistry) {
             if (ev instanceof AbstractDomainEvent) {
-                val domainEvent = (AbstractDomainEvent<?>) ev;
+                var domainEvent = (AbstractDomainEvent<?>) ev;
                 switch (domainEvent.getEventPhase()) {
                     case HIDE:
                         domainEvent.hide();
@@ -55,9 +55,9 @@ enum DomainObjectXxxDomainEventControlStrategy {
 //tag::disable[]
     DISABLE {
         @Override
-        void on(DomainObjectXxxDomainEventPage.DomainObjectXxxDomainEventMarker ev, ServiceRegistry serviceRegistry) {
+        void on(final DomainObjectXxxDomainEventPage.DomainObjectXxxDomainEventMarker ev, final ServiceRegistry serviceRegistry) {
             if (ev instanceof AbstractDomainEvent) {
-                val domainEvent = (AbstractDomainEvent<?>) ev;
+                var domainEvent = (AbstractDomainEvent<?>) ev;
                 switch (domainEvent.getEventPhase()) {
                     case DISABLE:
                         domainEvent.disable("ControlStrategy set to DISABLE");
@@ -70,9 +70,9 @@ enum DomainObjectXxxDomainEventControlStrategy {
 //tag::validate[]
     VALIDATE_MUST_BE_UPPER_CASE{
         @Override
-        void on(DomainObjectXxxDomainEventPage.DomainObjectXxxDomainEventMarker ev, ServiceRegistry serviceRegistry) {
+        void on(final DomainObjectXxxDomainEventPage.DomainObjectXxxDomainEventMarker ev, final ServiceRegistry serviceRegistry) {
             if (ev instanceof DomainObjectXxxDomainEventPage.ActionEvent) {
-                val actionEvent = (DomainObjectXxxDomainEventPage.ActionEvent) ev;
+                var actionEvent = (DomainObjectXxxDomainEventPage.ActionEvent) ev;
                 switch (actionEvent.getEventPhase()) {
                     case VALIDATE:
                         String argument = (String) actionEvent.getArguments().get(0);
@@ -83,7 +83,7 @@ enum DomainObjectXxxDomainEventControlStrategy {
                 }
             }
             if (ev instanceof DomainObjectXxxDomainEventPage.PropertyEvent) {
-                val propertyEvent = (DomainObjectXxxDomainEventPage.PropertyEvent) ev;
+                var propertyEvent = (DomainObjectXxxDomainEventPage.PropertyEvent) ev;
                 switch (propertyEvent.getEventPhase()) {
                     case VALIDATE:
                         Object newValue = propertyEvent.getNewValue();
@@ -99,9 +99,9 @@ enum DomainObjectXxxDomainEventControlStrategy {
 //tag::executing[]
     EXECUTING_FORCE_UPPER_CASE{
         @Override
-        void on(DomainObjectXxxDomainEventPage.DomainObjectXxxDomainEventMarker ev, ServiceRegistry serviceRegistry) {
+        void on(final DomainObjectXxxDomainEventPage.DomainObjectXxxDomainEventMarker ev, final ServiceRegistry serviceRegistry) {
             if (ev instanceof DomainObjectXxxDomainEventPage.ActionEvent) {
-                val actionEvent = (DomainObjectXxxDomainEventPage.ActionEvent) ev;
+                var actionEvent = (DomainObjectXxxDomainEventPage.ActionEvent) ev;
                 switch (actionEvent.getEventPhase()) {
                     case EXECUTING:
                         List<Object> arguments = actionEvent.getArguments();
@@ -111,7 +111,7 @@ enum DomainObjectXxxDomainEventControlStrategy {
                 }
             }
             if (ev instanceof DomainObjectXxxDomainEventPage.PropertyEvent) {
-                val propertyEvent = (DomainObjectXxxDomainEventPage.PropertyEvent) ev;
+                var propertyEvent = (DomainObjectXxxDomainEventPage.PropertyEvent) ev;
                 switch (propertyEvent.getEventPhase()) {
                     case EXECUTING:
                         String newValue = propertyEvent.getNewValue().toString().toUpperCase();
@@ -125,9 +125,9 @@ enum DomainObjectXxxDomainEventControlStrategy {
 //tag::executed[]
     EXECUTED_ANNOUNCE{
         @Override
-        void on(DomainObjectXxxDomainEventPage.DomainObjectXxxDomainEventMarker ev, ServiceRegistry serviceRegistry) {
+        void on(final DomainObjectXxxDomainEventPage.DomainObjectXxxDomainEventMarker ev, final ServiceRegistry serviceRegistry) {
             if (ev instanceof DomainObjectXxxDomainEventPage.ActionEvent) {
-                val actionEvent = (DomainObjectXxxDomainEventPage.ActionEvent) ev;
+                var actionEvent = (DomainObjectXxxDomainEventPage.ActionEvent) ev;
                 switch (actionEvent.getEventPhase()) {
                     case EXECUTED:
                         serviceRegistry
@@ -139,7 +139,7 @@ enum DomainObjectXxxDomainEventControlStrategy {
                 }
             }
             if (ev instanceof DomainObjectXxxDomainEventPage.PropertyEvent) {
-                val propertyEvent = (DomainObjectXxxDomainEventPage.PropertyEvent) ev;
+                var propertyEvent = (DomainObjectXxxDomainEventPage.PropertyEvent) ev;
                 switch (propertyEvent.getEventPhase()) {
                     case EXECUTED:
                         serviceRegistry

@@ -28,7 +28,7 @@ import org.apache.causeway.applib.services.publishing.spi.EntityChanges;
 import org.apache.causeway.applib.services.publishing.spi.EntityChangesSubscriber;
 import org.apache.causeway.schema.chg.v2.ChangesDto;
 
-import lombok.val;
+
 
 //tag::class[]
 @Service
@@ -38,9 +38,9 @@ public class EntityChangesSubscriberToCaptureChangesInMemory implements EntityCh
 
     @Override
     public void onChanging(
-            EntityChanges changingEntities       // <.>
+            final EntityChanges changingEntities       // <.>
     ) {
-        val dto = changingEntities.getDto();
+        var dto = changingEntities.getDto();
         this.changedEntities.add(dto);
     }
     // ...

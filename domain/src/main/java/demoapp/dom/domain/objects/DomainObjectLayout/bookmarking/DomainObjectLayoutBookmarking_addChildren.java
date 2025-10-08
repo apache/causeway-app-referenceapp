@@ -27,7 +27,6 @@ import org.apache.causeway.applib.annotation.MemberSupport;
 
 import demoapp.dom.types.Samples;
 import lombok.RequiredArgsConstructor;
-import lombok.val;
 
 @Action
 @RequiredArgsConstructor
@@ -36,8 +35,8 @@ public class DomainObjectLayoutBookmarking_addChildren {
     private final DomainObjectLayoutBookmarkingEntity parent;
 
     @MemberSupport
-    public DomainObjectLayoutBookmarkingEntity act(int number) {
-        val strings = samples.stream().collect(Collectors.toList());
+    public DomainObjectLayoutBookmarkingEntity act(final int number) {
+        var strings = samples.stream().collect(Collectors.toList());
         for (int i = 0; i < number; i++) {
             parent.addChild(parent.getName() + " - " + strings.get(i));
         }

@@ -41,7 +41,7 @@ import demoapp.dom.domain.actions.ActionLayout.promptStyle.ActionLayoutPromptSty
 import demoapp.dom.domain.actions.ActionLayout.redirectPolicy.ActionLayoutRedirectPolicyPage;
 import demoapp.dom.domain.actions.ActionLayout.sequence.ActionLayoutSequencePage;
 import lombok.RequiredArgsConstructor;
-import lombok.val;
+
 
 @DomainService
 @Named("demo.ActionLayoutMenu")
@@ -61,7 +61,7 @@ public class ActionLayoutMenu {
             describedAs = "Associate an action with a property or collection, specifying its id"
     )
     public ActionLayoutAssociateWithPage associateWith(){
-        val page = new ActionLayoutAssociateWithPage();
+        var page = new ActionLayoutAssociateWithPage();
         samples.stream()
                 .map(ActionLayoutAssociateWithChildVm::new)
                 .forEach(e -> page.getChildren().add(e));

@@ -38,7 +38,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import lombok.val;
+
 
 @Named("demo.FileNodeVm")
 @DomainObject(nature=Nature.VIEW_MODEL)
@@ -62,7 +62,7 @@ public class FileNodeVm implements HasAsciiDocDescription {
         if(this.path == null) {
             return "(root)";
         }
-        val file = asFile();
+        var file = asFile();
         return file.getName().length()!=0 ? file.getName() : file.toString();
     }
 //end::title[]
@@ -80,7 +80,7 @@ public class FileNodeVm implements HasAsciiDocDescription {
             hidden=Where.EVERYWHERE                 // <.>
     )
     public FileNodeVm getParent() {
-        val parentFile = asFile().getParentFile();
+        var parentFile = asFile().getParentFile();
         return parentFile != null
                 ? new FileNodeVm(parentFile)
                 : null;

@@ -39,7 +39,6 @@ import demoapp.dom.domain.objects.DomainObject.nature.DomainObjectNaturePage;
 import demoapp.dom.domain.objects.DomainObject.xxxDomainEvent.DomainObjectXxxDomainEventPage;
 import demoapp.dom.domain.objects.DomainObject.xxxLifecycleEvent.DomainObjectXxxLifecycleEventPage;
 import lombok.RequiredArgsConstructor;
-import lombok.val;
 
 @Named("demo.DomainObjectMenu")
 @DomainService
@@ -125,7 +124,7 @@ public class DomainObjectMenu {
             describedAs = "Default class of the domain event emitted when interacting with the domain object's actions, properties or collections"
     )
     public DomainObjectXxxDomainEventPage domainEvents() {
-        val page = new DomainObjectXxxDomainEventPage("change me");
+        var page = new DomainObjectXxxDomainEventPage("change me");
         page.addChild("#1");
         page.addChild("#2");
         page.addChild("#3");

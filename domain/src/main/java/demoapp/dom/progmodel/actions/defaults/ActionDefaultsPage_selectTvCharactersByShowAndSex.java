@@ -32,7 +32,7 @@ import demoapp.dom.progmodel.actions.TvCharacter;
 import demoapp.dom.progmodel.actions.TvShow;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
-import lombok.val;
+
 import lombok.experimental.Accessors;
 
 //tag::class[]
@@ -71,8 +71,8 @@ public class ActionDefaultsPage_selectTvCharactersByShowAndSex {
     @MemberSupport public List<TvCharacter> defaultTvCharacters(    // <3>
             final Parameters params                                 // <4>
     ) {
-        val tvShowSelected = params.tvShow();                       // <.>
-        val sexSelected = params.sex;                               // <5>
+        var tvShowSelected = params.tvShow();                       // <.>
+        var sexSelected = params.sex;                               // <5>
         return choicesTvCharacters()
                 .stream()
                 .filter(tvCharacter -> tvShowSelected == tvCharacter.getTvShow())

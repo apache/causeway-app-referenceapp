@@ -32,7 +32,7 @@ import org.apache.causeway.viewer.wicket.model.models.UiObjectWkt;
 import org.apache.causeway.viewer.wicket.ui.panels.PanelAbstract;
 
 import lombok.SneakyThrows;
-import lombok.val;
+
 
 import demoapp.dom.featured.customui.GeoapifyClient;
 import demoapp.dom.featured.customui.WhereInTheWorldPage;
@@ -66,17 +66,17 @@ extends PanelAbstract<ManagedObject, UiObjectWkt>  {
     public void onInitialize() {
         super.onInitialize();
 
-        val managedObject = getModel().getObject();                       // <.>
-        val customUiVm = (WhereInTheWorldPage) managedObject.getPojo();    // <.>
+        var managedObject = getModel().getObject();                       // <.>
+        var customUiVm = (WhereInTheWorldPage) managedObject.getPojo();    // <.>
 
-        val latitude = new Label("latitude", customUiVm.getLatitude());    // <.>
-        val longitude = new Label("longitude", customUiVm.getLongitude()); // <.>
-        val address = new Label("address", customUiVm.getAddress());       // <.>
+        var latitude = new Label("latitude", customUiVm.getLatitude());    // <.>
+        var longitude = new Label("longitude", customUiVm.getLongitude()); // <.>
+        var address = new Label("address", customUiVm.getAddress());       // <.>
 
-        val map = createMapComponent("map", customUiVm);                   // <.>
+        var map = createMapComponent("map", customUiVm);                   // <.>
 
-        val sourcesComponent = createPropertyComponent("sources");         // <.>
-        val descriptionComponent = createPropertyComponent("description"); // <.>
+        var sourcesComponent = createPropertyComponent("sources");         // <.>
+        var descriptionComponent = createPropertyComponent("description"); // <.>
 
         addOrReplace(
                 latitude, longitude, address, map,
@@ -87,7 +87,7 @@ extends PanelAbstract<ManagedObject, UiObjectWkt>  {
 //tag::createMapComponent[]
     @SneakyThrows
     private Image createMapComponent(final String id, final WhereInTheWorldPage vm)  {
-        val bytes = geoapifyClient.toJpeg(
+        var bytes = geoapifyClient.toJpeg(
                         vm.getLatitude(), vm.getLongitude(), vm.getZoom());  // <.>
         return new Image(id, new ByteArrayResource("image/jpeg", bytes));   // <.>
     }
@@ -95,11 +95,11 @@ extends PanelAbstract<ManagedObject, UiObjectWkt>  {
 
 //tag::createPropertyComponent[]
     private Component createPropertyComponent(final String propertyId) {
-        val managedObject = getModel().getManagedObject();
-        val spec = managedObject.objSpec();                                   // <.>
-        val property = spec.getPropertyElseFail(propertyId);                 // <.>
+        var managedObject = getModel().getManagedObject();
+        var spec = managedObject.objSpec();                                   // <.>
+        var property = spec.getPropertyElseFail(propertyId);                 // <.>
 
-        val scalarModel =
+        var scalarModel =
                 getModel().getPropertyModel(                                   // <.>
                     property, ViewOrEditMode.VIEWING,
                     RenderingHint.REGULAR);

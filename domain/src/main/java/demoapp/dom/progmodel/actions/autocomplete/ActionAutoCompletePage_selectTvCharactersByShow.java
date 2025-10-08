@@ -32,7 +32,7 @@ import demoapp.dom.progmodel.actions.TvCharacter;
 import demoapp.dom.progmodel.actions.TvShow;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
-import lombok.val;
+
 import lombok.experimental.Accessors;
 
 //tag::class[]
@@ -43,9 +43,9 @@ public class ActionAutoCompletePage_selectTvCharactersByShow {
     private final ActionAutoCompletePage page;
 
     @MemberSupport public ActionAutoCompletePage act(
-        @Parameter(optionality = Optionality.MANDATORY)
+        @Parameter(optionality = Optionality.MANDATORY) final
         TvShow tvShow,                                              // <.>
-        @Parameter(optionality = Optionality.MANDATORY)
+        @Parameter(optionality = Optionality.MANDATORY) final
         List<TvCharacter> tvCharacters
     ) {
         page.getSelectedTvCharacters().clear();
@@ -64,7 +64,7 @@ public class ActionAutoCompletePage_selectTvCharactersByShow {
         @MinLength(1)
         final String search                                         // <.>
     ) {
-        val tvShowSelected = params.tvShow();                       // <.>
+        var tvShowSelected = params.tvShow();                       // <.>
         return page.getTvCharacters()
                 .stream()
                 .filter(tvCharacter -> tvShowSelected == tvCharacter.getTvShow())

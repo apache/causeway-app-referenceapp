@@ -27,7 +27,7 @@ import org.apache.causeway.commons.functional.IndexedConsumer;
 import /*${showcase-fully-qualified-type}*/;
 
 import lombok.RequiredArgsConstructor;
-import lombok.val;
+
 
 import demoapp.dom.types.Samples;
 

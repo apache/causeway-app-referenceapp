@@ -32,7 +32,7 @@ import org.apache.causeway.applib.value.Blob;
 import org.apache.causeway.applib.value.Clob;
 
 import lombok.RequiredArgsConstructor;
-import lombok.val;
+
 
 import demoapp.dom._infra.values.ValueHolderRepository;
 import demoapp.dom.domain.properties.Property.commandPublishing.PropertyCommandPublishingPage;
@@ -103,7 +103,7 @@ public class PropertyMenu {
             describedAs = "Length of text fields"
     )
     public PropertyFileAcceptPage fileAccept(){
-        val page = new PropertyFileAcceptPage();
+        var page = new PropertyFileAcceptPage();
         setSampleBlob(".pdf", page::setPdfProperty);
         setSampleClob(".txt", page::setTxtProperty);
         return page;
@@ -115,7 +115,7 @@ public class PropertyMenu {
             describedAs = "Length of text fields"
     )
     public PropertyMaxLengthPage maxLength(){
-        val vm = new PropertyMaxLengthPage();
+        var vm = new PropertyMaxLengthPage();
         vm.setName(stringSamples.single());
         return vm;
     }
@@ -126,7 +126,7 @@ public class PropertyMenu {
             describedAs = "Regular expressions, such as email"
     )
     public PropertyMustSatisfyPage mustSatisfy(){
-        val vm = new PropertyMustSatisfyPage();
+        var vm = new PropertyMustSatisfyPage();
         vm.setCustomerAge(18);
         return vm;
     }
@@ -134,7 +134,7 @@ public class PropertyMenu {
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(cssClassFa="fa-infinity", describedAs = "Regular expressions, such as email")
     public PropertyOptionalityPage optionality(){
-        val vm = new PropertyOptionalityPage();
+        var vm = new PropertyOptionalityPage();
         vm.setOptionalProperty(null);
         vm.setMandatoryProperty("mandatory");
         vm.setNullableProperty(null);
@@ -147,10 +147,10 @@ public class PropertyMenu {
             describedAs = "Regular expressions, such as email"
     )
     public PropertyProjectingPage projecting(){
-        val vm = new PropertyProjectingPage();
+        var vm = new PropertyProjectingPage();
 
         propertyProjectingChildEntities.all().forEach(childEntity -> {
-            val childVm = new PropertyProjectingChildVm(childEntity);
+            var childVm = new PropertyProjectingChildVm(childEntity);
             vm.getChildren().add(childVm);
         });
 
@@ -163,7 +163,7 @@ public class PropertyMenu {
             describedAs = "Regular expressions, such as email"
     )
     public PropertyRegexPatternPage regexPattern(){
-        val page = new PropertyRegexPatternPage();
+        var page = new PropertyRegexPatternPage();
         page.setEmailAddress("joe@bloggs.com");
         return page;
     }

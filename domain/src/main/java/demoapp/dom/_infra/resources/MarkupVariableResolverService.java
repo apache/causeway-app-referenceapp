@@ -34,7 +34,7 @@ import org.apache.causeway.commons.internal.base._Refs;
 import org.apache.causeway.commons.internal.collections._Maps;
 import org.apache.causeway.core.config.CausewayConfiguration;
 
-import lombok.val;
+
 
 @Service
 @Named("demo.MarkupVariableResolverService")
@@ -49,8 +49,8 @@ public class MarkupVariableResolverService {
 
     private static Map<String, String> computeConstants(final CausewayConfiguration configuration, final Environment environment) {
 
-        val map = _Maps.<String,String>newLinkedHashMap();
-        val orm = determineOrmProfileFrom(environment);
+        var map = _Maps.<String,String>newLinkedHashMap();
+        var orm = determineOrmProfileFrom(environment);
 
         map.put("SOURCES_CAUSEWAY", "https://github.com/apache/causeway/blob/master/core/applib/src/main/java");
         map.put("SOURCES_DEMO", "https://github.com/apache/causeway-app-referenceapp/tree/master/domain/src/main/java");
@@ -68,7 +68,7 @@ public class MarkupVariableResolverService {
     }
 
     private static String determineOrmProfileFrom(final Environment environment) {
-        val activeProfiles = Arrays.asList(environment.getActiveProfiles());
+        var activeProfiles = Arrays.asList(environment.getActiveProfiles());
         if(activeProfiles.contains("demo-jpa")) {
             return "jpa";
         }
@@ -87,7 +87,7 @@ public class MarkupVariableResolverService {
      * @param input
      */
     public String resolveVariables(final String input) {
-        val stringRef = _Refs.objectRef(input);
+        var stringRef = _Refs.objectRef(input);
         constants.forEach((k, v)->{
             stringRef.update(string->string.replace(var(k), v));
         });

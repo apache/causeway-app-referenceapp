@@ -31,7 +31,7 @@ import org.apache.causeway.commons.internal.resources._Resources;
 import demoapp.dom.types.Samples;
 import lombok.Getter;
 import lombok.SneakyThrows;
-import lombok.val;
+
 
 @Service
 public class CausewayBlobsSamples implements Samples<Blob> {
@@ -52,7 +52,7 @@ public class CausewayBlobsSamples implements Samples<Blob> {
 
     @SneakyThrows
     private Blob loadBlob(final String name) {
-        val bytes = _Bytes.of(_Resources.load(CausewayBlobsSamples.class, name));
+        var bytes = _Bytes.of(_Resources.load(CausewayBlobsSamples.class, name));
         return Blob.of(name, mimeTypeFor(name), bytes);
     }
 

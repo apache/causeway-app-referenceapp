@@ -38,7 +38,7 @@ import org.apache.causeway.applib.annotation.Property;
 import demoapp.dom.services.core.eventbusservice.EventBusServiceDemoPage.UiButtonEvent;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.val;
+
 
 @Profile("demo-jpa")
 @Entity
@@ -54,7 +54,7 @@ extends EventLogEntry {
     // -- FACTORY
 
     public static EventLogEntryJpa of(final UiButtonEvent even) {
-        val x = new EventLogEntryJpa();
+        var x = new EventLogEntryJpa();
         x.setEvent("Button clicked " + LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME));
         return x;
     }

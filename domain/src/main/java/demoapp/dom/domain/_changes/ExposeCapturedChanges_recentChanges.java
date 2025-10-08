@@ -27,7 +27,7 @@ import org.apache.causeway.applib.annotation.Collection;
 import org.apache.causeway.applib.annotation.MemberSupport;
 
 import lombok.RequiredArgsConstructor;
-import lombok.val;
+
 
 //tag::class[]
 @Collection
@@ -42,7 +42,7 @@ public class ExposeCapturedChanges_recentChanges {
     @MemberSupport
 //tag::class[]
     public List<ChangesVm> coll() {
-        val list = new LinkedList<ChangesVm>();
+        var list = new LinkedList<ChangesVm>();
         subscriber
                 .streamChangedEntities()
                 .map(ChangesVm::new)

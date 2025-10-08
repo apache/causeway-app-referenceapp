@@ -40,7 +40,7 @@ import org.apache.causeway.commons.internal.hash._Hashes;
 import org.apache.causeway.commons.internal.hash._Hashes.Algorithm;
 
 import lombok.RequiredArgsConstructor;
-import lombok.val;
+
 
 /**
  * Encoding blobs for view models will exceed the length allowed for an HTTP header;
@@ -64,18 +64,18 @@ public class UrlEncodingServiceNaiveInMemory implements UrlEncodingService {
 
         // web servers might have restrictions to header sizes of eg. max 4k or 8k
         // if the encodedString is reasonable small, we pass it through
-        val encodedString = urlEncodingService.encode(bytes); // from the default urlEncodingService
+        var encodedString = urlEncodingService.encode(bytes); // from the default urlEncodingService
         if(encodedString.length()<maxIdentifierSize) {
             return EncodingType.PASS_THROUGH.encode(encodedString);
         }
 
         // if the encodedString is not reasonable small, we calculate a hash,
         // then store the encodedString in a map using this hash as the key
-        val hashBytes = _Hashes.digest(Algorithm.SHA512, bytes)
+        var hashBytes = _Hashes.digest(Algorithm.SHA512, bytes)
                 .orElseThrow(()->_Exceptions.unrecoverable("failed to generate SHA-512 hash"));
 
         // the key is exposed for web use with URLs, which requires us to encode them base64 URL safe
-        val base64Key = _Strings.ofBytes(_Bytes.asUrlBase64.apply(hashBytes), StandardCharsets.UTF_8);
+        var base64Key = _Strings.ofBytes(_Bytes.asUrlBase64.apply(hashBytes), StandardCharsets.UTF_8);
 
         map.put(base64Key, encodedString);
         return EncodingType.HASH_KEYED_CACHE.encode(base64Key);
@@ -83,17 +83,17 @@ public class UrlEncodingServiceNaiveInMemory implements UrlEncodingService {
 
     @Override
     public byte[] decode(final String prefixed) {
-        val encodingType = EncodingType.parse(prefixed);
-        val encodedStringOrBase64Key = encodingType.decode(prefixed);
+        var encodingType = EncodingType.parse(prefixed);
+        var encodedStringOrBase64Key = encodingType.decode(prefixed);
 
         switch (encodingType) {
         case PASS_THROUGH: {
-            val encodedString = encodedStringOrBase64Key;
+            var encodedString = encodedStringOrBase64Key;
             return urlEncodingService.decode(encodedString);
         }
         case HASH_KEYED_CACHE: {
-            val base64Key = encodedStringOrBase64Key;
-            val encodedString = map.get(base64Key);
+            var base64Key = encodedStringOrBase64Key;
+            var encodedString = map.get(base64Key);
             if(encodedString==null) {
                 throw new UnrecoverableException("Cache miss on view model recreation attempt. "
                         + "(This cache is specific to the Reference App.)");

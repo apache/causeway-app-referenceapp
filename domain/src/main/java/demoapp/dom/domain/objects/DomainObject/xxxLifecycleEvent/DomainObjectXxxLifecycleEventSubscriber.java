@@ -31,7 +31,7 @@ import org.apache.causeway.applib.services.bookmark.BookmarkService;
 import org.apache.causeway.applib.services.clock.ClockService;
 
 import lombok.RequiredArgsConstructor;
-import lombok.val;
+
 
 //tag::class[]
 @Service
@@ -42,8 +42,8 @@ class DomainObjectXxxLifecycleEventSubscriber {
     final ClockService clockService;
 
     @EventListener(DomainObjectXxxLifecycleEventEntity.LifecycleEvent.class)  // <.>
-    public void on(DomainObjectXxxLifecycleEventEntity.LifecycleEvent ev) {   // <1>
-        val vm = new DomainObjectLifecycleEventVm(
+    public void on(final DomainObjectXxxLifecycleEventEntity.LifecycleEvent ev) {   // <1>
+        var vm = new DomainObjectLifecycleEventVm(
                 clockService.getClock().nowAsLocalDateTime(),
                 ev.getClass().getSimpleName(),
                 bookmarkService.bookmarkFor(ev.getSource()).map(Bookmark::toString).orElse(null)
