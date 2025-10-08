@@ -93,7 +93,7 @@
                                 <configuration>
                                     <additionalProperties>
                                         <java.version>${java.version}</java.version>
-                                        <description>${project.description}</description>
+<!--                                        <description>${project.description}</description> maven fails when this resolves to null -->
                                     </additionalProperties>
                                 </configuration>
                             </execution>
