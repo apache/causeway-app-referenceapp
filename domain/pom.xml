@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Licensed to the Apache Software Foundation (ASF) under one or more contributor
-	license agreements. See the NOTICE file distributed with this work for additional
+<!-- Licensed to the Apache Software Foundation (ASF) under one or more
+contributor
+	license agreements. See the NOTICE file distributed with this work for
+additional
 	information regarding copyright ownership. The ASF licenses this file to
 	you under the Apache License, Version 2.0 (the "License"); you may not use
 	this file except in compliance with the License. You may obtain a copy of
@@ -10,22 +12,22 @@
 	OF ANY KIND, either express or implied. See the License for the specific
 	language governing permissions and limitations under the License. -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.apache.causeway.examples.apps</groupId>
-		<artifactId>reference-app-parent</artifactId>
-		<version>${revision}</version>
-		<relativePath>../pom.xml</relativePath>
-	</parent>
+    <parent>
+        <groupId>org.apache.causeway.examples.apps</groupId>
+        <artifactId>reference-app-parent</artifactId>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
 
-	<artifactId>reference-app-domain</artifactId>
-	<name>Reference App - Domain</name>
+    <artifactId>reference-app-domain</artifactId>
+    <name>Reference App - Domain</name>
 
-	<properties>
-	</properties>
+    <properties>
+    </properties>
 
     <build>
         <resources>
@@ -44,127 +46,128 @@
                 <filtering>false</filtering>
                 <directory>src/main/java</directory>
                 <includes>
-                    <!-- we include all .java too, so that we can reference it from the descriptions -->
+                    <!-- we include all .java too, so that we can reference it
+                    from the descriptions -->
                     <include>**</include>
                 </includes>
             </resource>
         </resources>
     </build>
 
-	<dependencies>
+    <dependencies>
 
-		<!-- EXTENSIONS -->
+        <!-- EXTENSIONS -->
 
-		<dependency>
-			<groupId>org.apache.causeway.extensions</groupId>
-			<artifactId>causeway-extensions-pdfjs-applib</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.causeway.extensions</groupId>
-			<artifactId>causeway-extensions-secman-integration</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.causeway.extensions</groupId>
-			<artifactId>causeway-extensions-secman-encryption-spring</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.causeway.testing</groupId>
-			<artifactId>causeway-testing-h2console-ui</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>org.apache.causeway.extensions</groupId>
+            <artifactId>causeway-extensions-pdfjs-applib</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.causeway.extensions</groupId>
+            <artifactId>causeway-extensions-secman-integration</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.causeway.extensions</groupId>
+            <artifactId>causeway-extensions-secman-encryption-spring</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.causeway.testing</groupId>
+            <artifactId>causeway-testing-h2console-ui</artifactId>
+        </dependency>
 
-		<dependency>
-			<groupId>org.apache.causeway.extensions</groupId>
-			<artifactId>causeway-extensions-sse-applib</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.causeway.valuetypes</groupId>
-			<artifactId>causeway-valuetypes-asciidoc-metamodel</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.causeway.valuetypes</groupId>
-			<artifactId>causeway-valuetypes-markdown-metamodel</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.causeway.valuetypes</groupId>
-			<artifactId>causeway-valuetypes-vega-metamodel</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.causeway.extensions</groupId>
-			<artifactId>causeway-extensions-docgen-help</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>org.apache.causeway.extensions</groupId>
+            <artifactId>causeway-extensions-sse-applib</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.causeway.valuetypes</groupId>
+            <artifactId>causeway-valuetypes-asciidoc-metamodel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.causeway.valuetypes</groupId>
+            <artifactId>causeway-valuetypes-markdown-metamodel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.causeway.valuetypes</groupId>
+            <artifactId>causeway-valuetypes-vega-metamodel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.causeway.extensions</groupId>
+            <artifactId>causeway-extensions-docgen-help</artifactId>
+        </dependency>
 
-		<!-- JPA specific -->
-		<dependency>
-			<groupId>org.apache.causeway.extensions</groupId>
-			<artifactId>causeway-extensions-secman-persistence-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.causeway.extensions</groupId>
-			<artifactId>causeway-extensions-commandlog-persistence-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.causeway.extensions</groupId>
-			<artifactId>causeway-extensions-sessionlog-persistence-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.causeway.extensions</groupId>
-			<artifactId>causeway-extensions-executionlog-persistence-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.causeway.extensions</groupId>
-			<artifactId>causeway-extensions-executionoutbox-persistence-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.causeway.extensions</groupId>
-			<artifactId>causeway-extensions-audittrail-persistence-jpa</artifactId>
-		</dependency>
+        <!-- JPA specific -->
+        <dependency>
+            <groupId>org.apache.causeway.extensions</groupId>
+            <artifactId>causeway-extensions-secman-persistence-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.causeway.extensions</groupId>
+            <artifactId>causeway-extensions-commandlog-persistence-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.causeway.extensions</groupId>
+            <artifactId>causeway-extensions-sessionlog-persistence-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.causeway.extensions</groupId>
+            <artifactId>causeway-extensions-executionlog-persistence-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.causeway.extensions</groupId>
+            <artifactId>causeway-extensions-executionoutbox-persistence-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.causeway.extensions</groupId>
+            <artifactId>causeway-extensions-audittrail-persistence-jpa</artifactId>
+        </dependency>
 
-		<dependency>
-			<groupId>org.apache.causeway.valuetypes</groupId>
-			<artifactId>causeway-valuetypes-asciidoc-persistence-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.causeway.valuetypes</groupId>
-			<artifactId>causeway-valuetypes-markdown-persistence-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.causeway.valuetypes</groupId>
-			<artifactId>causeway-valuetypes-vega-persistence-jpa</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>org.apache.causeway.valuetypes</groupId>
+            <artifactId>causeway-valuetypes-asciidoc-persistence-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.causeway.valuetypes</groupId>
+            <artifactId>causeway-valuetypes-markdown-persistence-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.causeway.valuetypes</groupId>
+            <artifactId>causeway-valuetypes-vega-persistence-jpa</artifactId>
+        </dependency>
 
 
-		<!-- OTHER DEPENDENCIES -->
+        <!-- OTHER DEPENDENCIES -->
 
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.apache.causeway.extensions</groupId>
             <artifactId>causeway-extensions-fullcalendar-applib</artifactId>
         </dependency>
 
-		<!-- test -->
-		<dependency>
-			<groupId>org.apache.causeway.testing</groupId>
-			<artifactId>causeway-testing-unittestsupport-applib</artifactId>
-			<scope>test</scope>
-		</dependency>
+        <!-- test -->
+        <dependency>
+            <groupId>org.apache.causeway.testing</groupId>
+            <artifactId>causeway-testing-unittestsupport-applib</artifactId>
+            <scope>test</scope>
+        </dependency>
 
-		<dependency>
-			<groupId>org.assertj</groupId>
-			<artifactId>assertj-core</artifactId>
-			<scope>test</scope>
-		</dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <scope>test</scope>
+        </dependency>
 
-		<!-- DEV TIME -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-configuration-processor</artifactId>
-			<optional>true</optional>
-		</dependency>
+        <!-- DEV TIME -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
 
-	</dependencies>
+    </dependencies>
 
 </project>
