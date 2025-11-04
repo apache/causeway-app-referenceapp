@@ -133,7 +133,7 @@
 						<artifactId>jib-maven-plugin</artifactId>
 						<configuration>
 							<from>
-								<image>openjdk:21-jdk-bookworm</image>
+								<image>eclipse-temurin:25-jdk</image>
 							</from>
 							<container>
 								<jvmFlags>
