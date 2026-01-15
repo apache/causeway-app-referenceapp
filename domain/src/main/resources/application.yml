@@ -88,7 +88,7 @@ causeway:
         name: Apache Causeway Demo App
         # https://stackoverflow.com/a/38983935/56880
         # in addition using special config with the project's maven-resources-plugin
-        version: 3.2.0
+        version: 2.2.0-SNAPSHOT
         about: This application demonstrates many aspects of the Apache Causeway programming model, as well as some of the most significant domain services and extensions such as the WrapperFactory, security, commands and publishing.
       credit:
         - url:  https://causeway.apache.org
