@@ -18,7 +18,7 @@
  */
 package demoapp.dom.types.causeway.clobs.holder;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 import org.apache.causeway.applib.value.Clob;
 

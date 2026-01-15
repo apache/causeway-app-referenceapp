@@ -20,7 +20,7 @@ package demoapp.dom.domain.objects.DomainObject.autoComplete;
 
 import java.util.List;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.apache.causeway.applib.annotation.Collection;
 import org.apache.causeway.applib.annotation.CollectionLayout;

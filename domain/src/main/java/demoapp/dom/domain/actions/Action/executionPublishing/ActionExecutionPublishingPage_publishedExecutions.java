@@ -3,7 +3,7 @@ package demoapp.dom.domain.actions.Action.executionPublishing;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.apache.causeway.applib.annotation.Collection;
 import org.apache.causeway.applib.annotation.MemberSupport;

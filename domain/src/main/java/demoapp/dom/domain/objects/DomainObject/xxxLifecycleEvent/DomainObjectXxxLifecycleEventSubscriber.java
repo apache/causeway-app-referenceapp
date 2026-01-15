@@ -21,7 +21,7 @@ package demoapp.dom.domain.objects.DomainObject.xxxLifecycleEvent;
 import java.util.LinkedList;
 import java.util.List;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;

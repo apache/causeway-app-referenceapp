@@ -18,7 +18,7 @@
  */
 package demoapp.dom.types.javalang.integers.holder;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 @Named("demo.WrapperIntegerHolder")
 //tag::class[]

@@ -3,8 +3,8 @@ package demoapp.dom.domain.properties.ValueSemantics.percentage;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-import jakarta.annotation.Priority;
-import jakarta.inject.Named;
+import javax.annotation.Priority;
+import javax.inject.Named;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;

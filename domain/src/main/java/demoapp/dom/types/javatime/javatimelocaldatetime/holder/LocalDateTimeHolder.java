@@ -20,7 +20,7 @@ package demoapp.dom.types.javatime.javatimelocaldatetime.holder;
 
 import java.time.LocalDateTime;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 @Named("demo.LocalDateTimeHolder")
 //tag::class[]

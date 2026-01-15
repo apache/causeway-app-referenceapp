@@ -24,13 +24,13 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Consumer;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.apache.causeway.applib.services.repository.RepositoryService;
 
 import demoapp.dom.types.Samples;
 import lombok.AccessLevel;
-import org.jspecify.annotations.NonNull;
+import org.springframework.lang.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.val;
 

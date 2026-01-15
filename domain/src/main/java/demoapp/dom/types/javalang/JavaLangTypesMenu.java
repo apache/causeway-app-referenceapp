@@ -19,7 +19,7 @@
  */
 package demoapp.dom.types.javalang;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 import org.apache.causeway.applib.annotation.Action;
 import org.apache.causeway.applib.annotation.ActionLayout;
@@ -37,7 +37,7 @@ import demoapp.dom.types.javalang.voids.JavaLangVoids;
 @DomainObjectLayout(
         named="JavaLangTypes"
 )
-@jakarta.annotation.Priority(PriorityPrecedence.EARLY)
+@javax.annotation.Priority(PriorityPrecedence.EARLY)
 public class JavaLangTypesMenu {
 
     @Action(semantics = SemanticsOf.SAFE)

@@ -18,7 +18,7 @@
  */
 package demoapp.dom.featured.causewayext.cal;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 import org.apache.causeway.applib.annotation.Action;
 import org.apache.causeway.applib.annotation.ActionLayout;
@@ -30,7 +30,7 @@ import org.apache.causeway.applib.annotation.SemanticsOf;
 @Named("demo.CalendarEventsMenu")
 @DomainService
 @DomainObjectLayout(named="CausewayExtTypes")
-@jakarta.annotation.Priority(PriorityPrecedence.EARLY)
+@javax.annotation.Priority(PriorityPrecedence.EARLY)
 public class CalendarEventsMenu {
 
     @Action(semantics = SemanticsOf.SAFE)

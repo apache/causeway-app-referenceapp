@@ -20,7 +20,7 @@ package demoapp.dom.types.javasql.javasqldate.persistence;
 
 import java.sql.Date;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 import org.apache.causeway.applib.annotation.DomainObject;
 

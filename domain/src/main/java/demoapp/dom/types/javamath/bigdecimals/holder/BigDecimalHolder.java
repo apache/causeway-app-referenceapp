@@ -20,7 +20,7 @@ package demoapp.dom.types.javamath.bigdecimals.holder;
 
 import java.math.BigDecimal;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 @Named("demo.BigDecimalHolder")
 //tag::class[]

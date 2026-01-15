@@ -20,7 +20,7 @@
 
 package demoapp.dom.progmodel.customvaluetypes.embeddedvalues;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 

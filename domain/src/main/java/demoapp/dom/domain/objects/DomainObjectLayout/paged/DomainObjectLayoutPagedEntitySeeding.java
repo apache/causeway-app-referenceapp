@@ -18,7 +18,7 @@
  */
 package demoapp.dom.domain.objects.DomainObjectLayout.paged;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 

@@ -18,7 +18,7 @@
  */
 package demoapp.dom.domain.objects.DomainObject.introspection.encapsulated;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 

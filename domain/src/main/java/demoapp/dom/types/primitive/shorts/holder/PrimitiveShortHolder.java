@@ -18,7 +18,7 @@
  */
 package demoapp.dom.types.primitive.shorts.holder;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 @Named("demo.PrimitiveShortHolder")
 //tag::class[]

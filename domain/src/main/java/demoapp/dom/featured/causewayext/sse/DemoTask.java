@@ -20,7 +20,7 @@ package demoapp.dom.featured.causewayext.sse;
 
 import java.util.concurrent.atomic.LongAdder;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 import org.apache.causeway.applib.annotation.DomainObject;
 import org.apache.causeway.applib.annotation.Editing;

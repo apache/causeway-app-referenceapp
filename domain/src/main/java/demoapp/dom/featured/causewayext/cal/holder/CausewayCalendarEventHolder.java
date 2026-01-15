@@ -18,7 +18,7 @@
  */
 package demoapp.dom.featured.causewayext.cal.holder;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 import org.apache.causeway.extensions.fullcalendar.applib.value.CalendarEvent;
 

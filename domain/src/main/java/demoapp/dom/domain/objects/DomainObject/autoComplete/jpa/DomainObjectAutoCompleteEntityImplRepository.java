@@ -18,7 +18,7 @@
  */
 package demoapp.dom.domain.objects.DomainObject.autoComplete.jpa;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;

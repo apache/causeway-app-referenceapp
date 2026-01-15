@@ -21,7 +21,7 @@ package demoapp.dom.types.javaawt.images.samples;
 import java.awt.image.BufferedImage;
 import java.util.stream.Stream;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 

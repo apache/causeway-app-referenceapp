@@ -20,7 +20,7 @@ package demoapp.dom.domain.objects.DomainObject.xxxLifecycleEvent;
 
 import java.util.List;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.apache.causeway.applib.annotation.Collection;
 import org.apache.causeway.applib.annotation.MemberSupport;

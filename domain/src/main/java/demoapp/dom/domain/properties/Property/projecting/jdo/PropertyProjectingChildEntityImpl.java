@@ -23,8 +23,8 @@ import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.PersistenceCapable;
 
-import jakarta.inject.Named;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.inject.Named;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import org.springframework.context.annotation.Profile;
 

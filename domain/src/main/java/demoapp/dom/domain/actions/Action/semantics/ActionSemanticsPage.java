@@ -18,14 +18,14 @@
  */
 package demoapp.dom.domain.actions.Action.semantics;
 
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlTransient;
-import jakarta.xml.bind.annotation.XmlType;
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.XmlType;
 
 import org.apache.causeway.applib.annotation.Action;
 import org.apache.causeway.applib.annotation.ActionLayout;
@@ -41,7 +41,7 @@ import org.apache.causeway.applib.annotation.Where;
 import org.apache.causeway.applib.services.message.MessageService;
 import org.apache.causeway.applib.services.wrapper.WrapperFactory;
 
-import static org.apache.causeway.applib.services.wrapper.control.SyncControl.defaults;
+import static org.apache.causeway.applib.services.wrapper.control.SyncControl.control;
 
 import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
 import lombok.Getter;
@@ -146,7 +146,7 @@ public class ActionSemanticsPage implements HasAsciiDocDescription {
     public ActionSemanticsPage reportPropertyForSafeAndRequestCacheable() {
         int val = 0;
         for (int i=0; i<5; i++) {                                                   // <.>
-            val = wrapperFactory.wrap(this, defaults().withSkipRules())              // <.>
+            val = wrapperFactory.wrap(this, control().withSkipRules())              // <.>
                     .queryPropertyForSafeAndRequestCacheable();
         }
         messageService.informUser(String.format(

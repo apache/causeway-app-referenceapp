@@ -3,7 +3,7 @@ package demoapp.dom.domain.objects.DomainObject.mixinMethod;
 import java.util.List;
 import java.util.Optional;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.apache.causeway.applib.annotation.Action;
 import org.apache.causeway.applib.annotation.ActionLayout;

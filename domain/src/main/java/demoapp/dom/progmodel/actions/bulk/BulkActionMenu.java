@@ -21,9 +21,9 @@ package demoapp.dom.progmodel.actions.bulk;
 import java.util.Arrays;
 import java.util.List;
 
-import jakarta.annotation.Priority;
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import javax.annotation.Priority;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.apache.causeway.applib.annotation.Action;
 import org.apache.causeway.applib.annotation.ActionLayout;

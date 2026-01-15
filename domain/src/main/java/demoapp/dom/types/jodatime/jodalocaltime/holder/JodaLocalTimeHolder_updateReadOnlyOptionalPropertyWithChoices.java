@@ -21,7 +21,7 @@ package demoapp.dom.types.jodatime.jodalocaltime.holder;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.joda.time.LocalTime;
 

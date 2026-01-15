@@ -18,7 +18,7 @@
  */
 package demoapp.dom.domain.properties.Property.snapshot;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.apache.causeway.applib.annotation.Action;
 import org.apache.causeway.applib.annotation.MemberSupport;

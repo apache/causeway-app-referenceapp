@@ -20,7 +20,7 @@ package demoapp.dom.types.javatime.javatimelocaldatetime.persistence;
 
 import java.time.LocalDateTime;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 import org.apache.causeway.applib.annotation.DomainObject;
 

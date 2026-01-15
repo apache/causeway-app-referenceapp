@@ -18,7 +18,7 @@
  */
 package demoapp.dom.types.causeway.clobs.persistence;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 

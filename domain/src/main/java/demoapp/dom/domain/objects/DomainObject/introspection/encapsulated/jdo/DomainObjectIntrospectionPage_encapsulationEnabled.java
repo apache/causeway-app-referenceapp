@@ -20,7 +20,7 @@ package demoapp.dom.domain.objects.DomainObject.introspection.encapsulated.jdo;
 
 import java.util.List;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.springframework.context.annotation.Profile;
 

@@ -20,7 +20,7 @@ package demoapp.dom.types.javatime.javatimeoffsetdatetime.holder;
 
 import java.time.OffsetDateTime;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 @Named("demo.OffsetDateTimeHolder")
 //tag::class[]

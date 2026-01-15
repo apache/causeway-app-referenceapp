@@ -18,7 +18,7 @@
  */
 package demoapp.dom.services.core.errorreportingservice;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

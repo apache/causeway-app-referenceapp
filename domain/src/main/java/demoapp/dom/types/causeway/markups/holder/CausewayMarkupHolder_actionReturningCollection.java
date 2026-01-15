@@ -21,7 +21,7 @@ package demoapp.dom.types.causeway.markups.holder;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.apache.causeway.applib.annotation.Action;
 import org.apache.causeway.applib.annotation.SemanticsOf;

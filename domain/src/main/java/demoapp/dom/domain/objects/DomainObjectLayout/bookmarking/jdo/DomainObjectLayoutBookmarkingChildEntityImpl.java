@@ -23,9 +23,9 @@ import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.PersistenceCapable;
 
-import jakarta.inject.Named;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.ManyToOne;
+import javax.inject.Named;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 
 import org.springframework.context.annotation.Profile;
 

@@ -18,7 +18,7 @@
  */
 package demoapp.dom.types.javalang.doubles.holder;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 @Named("demo.WrapperDoubleHolder")
 //tag::class[]

@@ -18,7 +18,7 @@
  */
 package demoapp.dom.domain.properties.Property.domainEvent;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;

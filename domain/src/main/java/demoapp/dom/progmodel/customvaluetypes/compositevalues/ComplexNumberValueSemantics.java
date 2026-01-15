@@ -18,7 +18,7 @@
  */
 package demoapp.dom.progmodel.customvaluetypes.compositevalues;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 import org.springframework.context.annotation.Import;
 import org.springframework.stereotype.Component;

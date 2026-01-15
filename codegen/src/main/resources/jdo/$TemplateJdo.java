@@ -18,7 +18,7 @@
  */
 package /*${java-package}*/;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 import javax.jdo.annotations.Column;
 import javax.jdo.annotations.DatastoreIdentity;
 import javax.jdo.annotations.IdGeneratorStrategy;

@@ -18,7 +18,7 @@
  */
 package demoapp.dom.types.primitive.booleans.holder;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 @Named("demo.PrimitiveBooleanHolder")
 //tag::class[]

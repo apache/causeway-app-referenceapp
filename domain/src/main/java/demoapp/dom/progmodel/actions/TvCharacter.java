@@ -18,7 +18,7 @@
  */
 package demoapp.dom.progmodel.actions;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 import org.apache.causeway.applib.annotation.DomainObject;
 import org.apache.causeway.applib.annotation.Editing;

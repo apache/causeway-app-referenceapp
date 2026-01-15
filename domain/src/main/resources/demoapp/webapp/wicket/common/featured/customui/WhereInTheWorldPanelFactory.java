@@ -18,8 +18,8 @@
  */
 package demoapp.webapp.wicket.common.featured.customui;
 
-import jakarta.annotation.Priority;
-import jakarta.inject.Inject;
+import javax.annotation.Priority;
+import javax.inject.Inject;
 
 import org.apache.wicket.Component;
 import org.apache.wicket.model.IModel;

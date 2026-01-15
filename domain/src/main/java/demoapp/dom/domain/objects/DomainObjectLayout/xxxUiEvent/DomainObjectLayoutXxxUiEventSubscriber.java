@@ -18,8 +18,8 @@
  */
 package demoapp.dom.domain.objects.DomainObjectLayout.xxxUiEvent;
 
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;

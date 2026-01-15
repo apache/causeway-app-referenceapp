@@ -104,7 +104,7 @@ extends PanelAbstract<ManagedObject, UiObjectWkt>  {
                     property, ViewOrEditMode.VIEWING,
                     RenderingHint.REGULAR);
         return getComponentFactoryRegistry().createComponent(                 // <.>
-                propertyId, UiComponentType.ATTRIBUTE_NAME_AND_VALUE, scalarModel);
+                propertyId, UiComponentType.SCALAR_NAME_AND_VALUE, scalarModel);
     }
 //end::createPropertyComponent[]
 

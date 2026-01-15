@@ -20,7 +20,7 @@ package demoapp.dom._infra.seed;
 
 import java.util.function.Supplier;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.apache.causeway.applib.events.metamodel.MetamodelListener;
 import org.apache.causeway.testing.fixtures.applib.fixturescripts.FixtureScript;
@@ -29,7 +29,7 @@ import org.apache.causeway.testing.fixtures.applib.fixturescripts.FixtureScripts
 import demoapp.dom._infra.values.ValueHolder;
 import demoapp.dom._infra.values.ValueHolderFixtureFactory;
 import demoapp.dom._infra.values.ValueHolderRepository;
-import org.jspecify.annotations.NonNull;
+import org.springframework.lang.NonNull;
 
 public abstract class SeedServiceAbstract
 implements

@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.joda.time.DateTime;
 import org.springframework.context.annotation.Profile;

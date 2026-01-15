@@ -20,7 +20,7 @@ package demoapp.dom.types.javamath.bigdecimals.persistence;
 
 import java.math.BigDecimal;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 

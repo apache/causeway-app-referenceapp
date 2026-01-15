@@ -18,7 +18,7 @@
  */
 package demoapp.dom.domain.objects.DomainObject.aliased;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.apache.causeway.applib.annotation.Property;
 import org.apache.causeway.applib.services.bookmark.BookmarkService;

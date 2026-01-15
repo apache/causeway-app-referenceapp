@@ -18,8 +18,8 @@
  */
 package demoapp.dom.domain.properties.PropertyLayout;
 
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.apache.causeway.applib.annotation.Action;
 import org.apache.causeway.applib.annotation.ActionLayout;
@@ -42,7 +42,7 @@ import demoapp.dom.domain.properties.PropertyLayout.typicalLength.PropertyLayout
 
 @Named("demo.PropertyLayoutMenu")
 @DomainService
-@jakarta.annotation.Priority(PriorityPrecedence.EARLY)
+@javax.annotation.Priority(PriorityPrecedence.EARLY)
 @RequiredArgsConstructor(onConstructor_ = { @Inject })
 //@Log4j2
 public class PropertyLayoutMenu {

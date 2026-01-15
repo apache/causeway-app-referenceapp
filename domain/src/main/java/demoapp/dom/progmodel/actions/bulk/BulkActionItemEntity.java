@@ -18,7 +18,7 @@
  */
 package demoapp.dom.progmodel.actions.bulk;
 
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import org.apache.causeway.applib.jaxb.PersistentEntityAdapter;
 

@@ -20,8 +20,8 @@ package demoapp.dom.domain.properties.Property;
 
 import java.util.function.Consumer;
 
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.apache.causeway.applib.annotation.Action;
 import org.apache.causeway.applib.annotation.ActionLayout;
@@ -52,7 +52,7 @@ import demoapp.dom.types.Samples;
 
 @Named("demo.PropertyMenu")
 @DomainService
-@jakarta.annotation.Priority(PriorityPrecedence.EARLY)
+@javax.annotation.Priority(PriorityPrecedence.EARLY)
 @RequiredArgsConstructor(onConstructor_ = {@Inject})
 public class PropertyMenu {
 

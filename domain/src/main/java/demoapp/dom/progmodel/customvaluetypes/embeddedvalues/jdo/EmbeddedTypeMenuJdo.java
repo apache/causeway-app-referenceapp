@@ -18,9 +18,9 @@
  */
 package demoapp.dom.progmodel.customvaluetypes.embeddedvalues.jdo;
 
-import jakarta.annotation.Priority;
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import javax.annotation.Priority;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.springframework.context.annotation.Profile;
 

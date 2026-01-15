@@ -19,7 +19,7 @@
  */
 package demoapp.dom.types.jodatime;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -43,7 +43,7 @@ import demoapp.dom.types.jodatime.jodalocaltime.JodaLocalTimes;
 @DomainObjectLayout(
         named="JodaTimeTypes"
 )
-@jakarta.annotation.Priority(PriorityPrecedence.EARLY)
+@javax.annotation.Priority(PriorityPrecedence.EARLY)
 public class JodaTimeTypesMenu {
 
     @Action(semantics = SemanticsOf.SAFE)

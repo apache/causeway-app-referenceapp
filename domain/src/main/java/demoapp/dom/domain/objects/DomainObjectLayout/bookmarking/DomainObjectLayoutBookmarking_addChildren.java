@@ -20,7 +20,7 @@ package demoapp.dom.domain.objects.DomainObjectLayout.bookmarking;
 
 import java.util.stream.Collectors;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.apache.causeway.applib.annotation.Action;
 import org.apache.causeway.applib.annotation.MemberSupport;

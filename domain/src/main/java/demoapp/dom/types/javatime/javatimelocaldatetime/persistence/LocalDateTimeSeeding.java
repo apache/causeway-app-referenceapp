@@ -20,7 +20,7 @@ package demoapp.dom.types.javatime.javatimelocaldatetime.persistence;
 
 import java.time.LocalDateTime;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 

@@ -18,7 +18,7 @@
  */
 package demoapp.dom.services.extensions.secman.apptenancy.persistence;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 import org.apache.causeway.applib.annotation.DomainObject;
 

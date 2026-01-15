@@ -19,7 +19,7 @@
  */
 package demoapp.dom.types.causeway;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 import org.apache.causeway.applib.annotation.Action;
 import org.apache.causeway.applib.annotation.ActionLayout;
@@ -40,7 +40,7 @@ import demoapp.dom.types.causeway.treenode.FileNodeVm;
 @DomainObjectLayout(
         named="Causeway Types"
 )
-@jakarta.annotation.Priority(PriorityPrecedence.EARLY)
+@javax.annotation.Priority(PriorityPrecedence.EARLY)
 public class CausewayTypesMenu {
 
     @Action(semantics = SemanticsOf.SAFE)

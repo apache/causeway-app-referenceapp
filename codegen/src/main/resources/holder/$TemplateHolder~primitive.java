@@ -18,7 +18,7 @@
  */
 package /*${java-package}*/;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 @Named("demo./*${showcase-name}*/Holder")
 //tag::class[]

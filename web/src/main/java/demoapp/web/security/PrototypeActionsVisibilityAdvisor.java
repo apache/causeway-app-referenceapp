@@ -18,7 +18,7 @@
  */
 package demoapp.web.security;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 import org.springframework.context.event.EventListener;
 
@@ -40,7 +40,7 @@ import org.apache.causeway.core.metamodel.inspect.Object_inspectMetamodel;
 @DomainServiceLayout(
         menuBar = DomainServiceLayout.MenuBar.TERTIARY
 )
-@jakarta.annotation.Priority(PriorityPrecedence.EARLY)
+@javax.annotation.Priority(PriorityPrecedence.EARLY)
 public class PrototypeActionsVisibilityAdvisor {
 
     @EventListener(Object_downloadMetamodelXml.ActionDomainEvent.class)

@@ -20,8 +20,8 @@ package demoapp.dom.progmodel.customvaluetypes.embeddedvalues.jpa;
 
 import java.util.List;
 
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.apache.causeway.applib.annotation.Collection;
 import org.apache.causeway.applib.annotation.DomainObject;

@@ -1,7 +1,7 @@
 package demoapp.dom.services.core.wrapperFactory;
 
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.apache.causeway.applib.annotation.Action;
 import org.apache.causeway.applib.annotation.ActionLayout;
@@ -30,9 +30,8 @@ public class PrimeNumberGenerator {
             primeNumberFactory.newPrimeNumber(nextPrime);
             wrapperFactory.asyncWrap(
                     this,
-                    AsyncControl.defaults().withSkipRules())
-            .acceptAsync(proxy->
-                    proxy.calculatePrimeNumbersAsync(nextPrime, upTo));// <.>
+                    AsyncControl.returningVoid().withSkipRules()
+            ).calculatePrimeNumbersAsync(nextPrime, upTo);          // <.>
         }
     }
 

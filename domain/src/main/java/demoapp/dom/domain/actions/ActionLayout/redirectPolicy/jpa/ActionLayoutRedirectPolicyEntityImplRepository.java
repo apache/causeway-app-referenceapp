@@ -18,7 +18,7 @@
  */
 package demoapp.dom.domain.actions.ActionLayout.redirectPolicy.jpa;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;

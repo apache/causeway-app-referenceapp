@@ -18,7 +18,7 @@
  */
 package demoapp.dom.types.jodatime.jodalocaldatetime.holder;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 import org.joda.time.LocalDateTime;
 

@@ -24,8 +24,8 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
 
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;

@@ -18,7 +18,7 @@
  */
 package demoapp.dom.domain.properties.PropertyLayout.navigable;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.springframework.stereotype.Component;
 

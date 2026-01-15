@@ -20,7 +20,7 @@ package demoapp.dom.types.javasql.javasqldate.persistence;
 
 import java.sql.Date;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 

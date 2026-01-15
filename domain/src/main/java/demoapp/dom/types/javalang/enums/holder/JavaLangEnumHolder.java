@@ -18,7 +18,7 @@
  */
 package demoapp.dom.types.javalang.enums.holder;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 import demoapp.dom._infra.samples.DemoEnum;
 

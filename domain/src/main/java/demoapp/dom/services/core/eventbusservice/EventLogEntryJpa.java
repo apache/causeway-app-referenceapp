@@ -21,11 +21,11 @@ package demoapp.dom.services.core.eventbusservice;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-import jakarta.inject.Named;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import javax.inject.Named;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.springframework.context.annotation.Profile;
 
@@ -63,12 +63,12 @@ extends EventLogEntry {
     @GeneratedValue
     private Long id;
 
-    @jakarta.persistence.Column(nullable = true)
+    @javax.persistence.Column(nullable = true)
     @Property(editing = Editing.DISABLED)
     @Getter(onMethod_ = {@Override}) @Setter(onMethod_ = {@Override})
     private String event;
 
-    @jakarta.persistence.Column(nullable = true)
+    @javax.persistence.Column(nullable = true)
     @Property(editing = Editing.ENABLED)
     @Getter(onMethod_ = {@Override}) @Setter(onMethod_ = {@Override})
     private Acknowledge acknowledge;

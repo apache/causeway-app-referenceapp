@@ -1,6 +1,6 @@
 package demoapp.dom.domain.objects.DomainObject.nature.viewmodel;
 
-import org.jspecify.annotations.Nullable;
+import org.springframework.lang.Nullable;
 
 import org.apache.causeway.applib.annotation.Action;
 

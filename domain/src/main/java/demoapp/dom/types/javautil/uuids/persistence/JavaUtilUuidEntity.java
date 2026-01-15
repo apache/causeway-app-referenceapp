@@ -20,7 +20,7 @@ package demoapp.dom.types.javautil.uuids.persistence;
 
 import java.util.UUID;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 import org.apache.causeway.applib.annotation.DomainObject;
 

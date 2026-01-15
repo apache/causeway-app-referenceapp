@@ -18,7 +18,7 @@
  */
 package demoapp.dom.types.javalang.bytes.holder;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 @Named("demo.WrapperByteHolder")
 //tag::class[]

@@ -18,7 +18,7 @@
  */
 package demoapp.dom.types.javalang.strings.holder;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 @Named("demo.JavaLangStringHolder")
 //tag::class[]

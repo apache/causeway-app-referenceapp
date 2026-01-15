@@ -20,7 +20,7 @@ package demoapp.dom.types.javatime.javatimeoffsetdatetime.persistence;
 
 import java.time.OffsetDateTime;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 

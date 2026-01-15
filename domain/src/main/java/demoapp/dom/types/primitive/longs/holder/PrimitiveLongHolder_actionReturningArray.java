@@ -18,7 +18,7 @@
  */
 package demoapp.dom.types.primitive.longs.holder;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.apache.causeway.applib.annotation.Action;
 import org.apache.causeway.applib.annotation.SemanticsOf;

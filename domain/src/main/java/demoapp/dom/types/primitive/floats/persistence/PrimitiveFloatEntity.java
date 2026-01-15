@@ -18,7 +18,7 @@
  */
 package demoapp.dom.types.primitive.floats.persistence;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 import org.apache.causeway.applib.annotation.DomainObject;
 

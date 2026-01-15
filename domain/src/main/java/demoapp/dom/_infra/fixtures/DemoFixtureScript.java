@@ -18,7 +18,7 @@
  */
 package demoapp.dom._infra.fixtures;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.apache.causeway.applib.services.registry.ServiceRegistry;
 import org.apache.causeway.testing.fixtures.applib.fixturescripts.FixtureScript;

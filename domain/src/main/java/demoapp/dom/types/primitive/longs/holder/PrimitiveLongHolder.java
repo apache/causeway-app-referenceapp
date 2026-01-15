@@ -18,7 +18,7 @@
  */
 package demoapp.dom.types.primitive.longs.holder;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 @Named("demo.PrimitiveLongHolder")
 //tag::class[]

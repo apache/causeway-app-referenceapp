@@ -22,7 +22,7 @@ import java.util.function.Supplier;
 
 import org.apache.causeway.testing.fixtures.applib.fixturescripts.FixtureScript;
 
-import org.jspecify.annotations.NonNull;
+import org.springframework.lang.NonNull;
 
 public class ValueHolderFixtureFactory {
 

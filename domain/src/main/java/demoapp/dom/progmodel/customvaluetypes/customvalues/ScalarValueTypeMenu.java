@@ -18,8 +18,8 @@
  */
 package demoapp.dom.progmodel.customvaluetypes.customvalues;
 
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.apache.causeway.applib.annotation.Action;
 import org.apache.causeway.applib.annotation.ActionLayout;
@@ -31,7 +31,7 @@ import lombok.RequiredArgsConstructor;
 
 @Named("demo.ScalarValueTypeMenu")
 @DomainService
-@jakarta.annotation.Priority(PriorityPrecedence.EARLY)
+@javax.annotation.Priority(PriorityPrecedence.EARLY)
 @RequiredArgsConstructor(onConstructor_ = {@Inject})
 public class ScalarValueTypeMenu {
 

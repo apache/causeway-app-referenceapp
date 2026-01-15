@@ -18,7 +18,7 @@
  */
 package demoapp.dom.progmodel.uihints;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 import org.apache.causeway.applib.annotation.Action;
 import org.apache.causeway.applib.annotation.ActionLayout;
@@ -27,7 +27,7 @@ import org.apache.causeway.applib.annotation.PriorityPrecedence;
 
 @Named("demo.UiHintsMenu")
 @DomainService
-@jakarta.annotation.Priority(PriorityPrecedence.EARLY)
+@javax.annotation.Priority(PriorityPrecedence.EARLY)
 public class UiHintsMenu {
 
     @Action

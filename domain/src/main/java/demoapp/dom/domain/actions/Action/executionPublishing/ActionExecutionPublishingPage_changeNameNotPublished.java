@@ -20,7 +20,7 @@ package demoapp.dom.domain.actions.Action.executionPublishing;
 
 import java.util.List;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.apache.causeway.applib.annotation.Action;
 import org.apache.causeway.applib.annotation.ActionLayout;

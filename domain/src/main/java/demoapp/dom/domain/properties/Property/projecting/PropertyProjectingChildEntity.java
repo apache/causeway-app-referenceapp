@@ -18,8 +18,8 @@
  */
 package demoapp.dom.domain.properties.Property.projecting;
 
-import jakarta.inject.Named;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.inject.Named;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import org.apache.causeway.applib.annotation.DomainObject;
 import org.apache.causeway.applib.jaxb.PersistentEntityAdapter;

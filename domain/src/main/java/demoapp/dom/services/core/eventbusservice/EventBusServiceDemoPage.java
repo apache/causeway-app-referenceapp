@@ -21,8 +21,8 @@ package demoapp.dom.services.core.eventbusservice;
 import java.util.EventObject;
 import java.util.List;
 
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.apache.causeway.applib.annotation.Action;
 import org.apache.causeway.applib.annotation.Collection;

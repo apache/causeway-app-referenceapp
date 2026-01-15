@@ -18,7 +18,7 @@
  */
 package demoapp.dom._infra.values;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 import org.apache.causeway.applib.annotation.Programmatic;
 

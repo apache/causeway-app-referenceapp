@@ -20,7 +20,7 @@ package demoapp.dom.types.javasql.javasqltimestamp.persistence;
 
 import java.sql.Timestamp;
 
-import jakarta.inject.Inject;
+import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 

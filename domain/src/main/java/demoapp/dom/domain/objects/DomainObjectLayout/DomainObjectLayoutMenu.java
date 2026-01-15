@@ -18,8 +18,8 @@
  */
 package demoapp.dom.domain.objects.DomainObjectLayout;
 
-import jakarta.annotation.Priority;
-import jakarta.inject.Named;
+import javax.annotation.Priority;
+import javax.inject.Named;
 
 import org.springframework.beans.factory.annotation.Autowired;
 

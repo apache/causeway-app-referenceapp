@@ -20,7 +20,7 @@ package demoapp.dom.types.javautil.uuids.holder;
 
 import java.util.UUID;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 @Named("demo.JavaUtilUuidHolder")
 //tag::class[]

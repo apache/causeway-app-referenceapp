@@ -18,7 +18,7 @@
  */
 package demoapp.dom.progmodel.mixins;
 
-import jakarta.inject.Named;
+import javax.inject.Named;
 
 @Named("demo.CountHolder")
 //tag::class[]

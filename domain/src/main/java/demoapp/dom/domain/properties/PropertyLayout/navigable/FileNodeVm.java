@@ -20,8 +20,8 @@ package demoapp.dom.domain.properties.PropertyLayout.navigable;
 
 import java.io.File;
 
-import jakarta.inject.Named;
-import jakarta.xml.bind.annotation.XmlRootElement;
+import javax.inject.Named;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import org.apache.causeway.applib.annotation.DomainObject;
 import org.apache.causeway.applib.annotation.DomainObjectLayout;
