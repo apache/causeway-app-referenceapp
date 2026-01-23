@@ -58,7 +58,7 @@ extends ValueHolderRepository<String, ActionLayoutRedirectPolicyEntityImpl> impl
 
     private Blob randomBlob() {
         List<Blob> list = blobSamples.stream()
-                    .filter(x -> NamedWithMimeType.CommonMimeType.PDF.matches(x.getMimeType()))
+                    .filter(x -> NamedWithMimeType.CommonMimeType.PDF.matches(x.mimeType()))
                     .collect(Collectors.toList());
         return list.get(random.nextInt(list.size()));
     }

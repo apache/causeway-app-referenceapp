@@ -179,14 +179,14 @@ public class PropertyMenu {
 
     private void setSampleBlob(final String suffix, final Consumer<Blob> blobConsumer) {
         blobSamples.stream()
-                .filter(x -> x.getName().endsWith(suffix))
+                .filter(x -> x.name().endsWith(suffix))
                 .findFirst()
                 .ifPresent(blobConsumer);
     }
 
     private void setSampleClob(final String suffix, final Consumer<Clob> clobConsumer) {
         clobSamples.stream()
-                .filter(x -> x.getName().endsWith(suffix))
+                .filter(x -> x.name().endsWith(suffix))
                 .findFirst()
                 .ifPresent(clobConsumer);
     }
