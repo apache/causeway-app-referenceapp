@@ -81,7 +81,7 @@ causeway:
   viewer:
     common:
       application:
-        menubars-layout-file: demoapp/dom/menubars.layout.xml
+        menubars-layout-file: menubars.layout.xml
         favicon-url: images/gift.svg
         brand-logo-header: images/gift_48.png
         brand-logo-signin: images/gift_256.png
