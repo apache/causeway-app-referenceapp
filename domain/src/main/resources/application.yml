@@ -118,7 +118,9 @@ causeway:
   # schema auto creation etc. ...
   persistence:
     schema:
-       autoCreateSchemas: causewayExtSecman,causewayExtCommandLog,causewayExtExecutionLog,causewayExtExecutionOutbox,causewayExtSessionLog,causewayExtAuditTrail,demo
+      autoCreateSchemas: causewayExtSecman,causewayExtCommandLog,causewayExtExecutionLog,causewayExtExecutionOutbox,causewayExtSessionLog,causewayExtAuditTrail,demo
+    #weaving:
+      #safeguardMode: REQUIRE_WEAVED
 
   extensions:
     secman:
@@ -158,6 +160,9 @@ datanucleus:
       type: none
       mode: ENABLE_SELECTIVE
 
+eclipselink:
+  weaving: static
+      
 resteasy:
   jaxrs:
     app:
