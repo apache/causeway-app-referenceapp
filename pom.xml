@@ -52,6 +52,29 @@
 		</resources>
 
 		<plugins>
+            
+            <!-- Compile -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.15.0</version>
+                <configuration>
+                    <showDeprecation>false</showDeprecation>
+                    <showWarnings>false</showWarnings>
+                    <parameters>true</parameters>
+                    <!-- Java compliance level, to be overridden with option
+                    maven.compiler.release -->
+                </configuration>
+                <!-- goal:compile binds to phase:compile -->
+                <!-- goal:testCompile binds to phase:test-compile -->
+                <dependencies>
+                    <dependency>
+                        <groupId>org.ow2.asm</groupId>
+                        <artifactId>asm</artifactId>
+                        <version>9.9.1</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

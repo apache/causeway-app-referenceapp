@@ -53,7 +53,7 @@ causeway:
         label-position: left
       collection-layout:
         paged: 15
-        table-decorator: org.apache.causeway.applib.annotation.TableDecorator.DatatablesNet
+        #table-decorator: org.apache.causeway.applib.annotation.TableDecorator.DatatablesNet
 
   core:
     meta-model:
@@ -81,7 +81,7 @@ causeway:
   viewer:
     common:
       application:
-        menubars-layout-file: demoapp/dom/menubars.layout.xml
+        menubars-layout-file: menubars.layout.xml
         favicon-url: images/gift.svg
         brand-logo-header: images/gift_48.png
         brand-logo-signin: images/gift_256.png
@@ -183,13 +183,6 @@ spring:
 
   quartz:
     job-store-type: memory
-
-vaadin:
-  compatibilityMode: false
-  whitelisted-packages: com.vaadin
-  urlMapping: "/vaadin/*"
-  servlet:
-      productionMode: true
 
 management:
   endpoint:

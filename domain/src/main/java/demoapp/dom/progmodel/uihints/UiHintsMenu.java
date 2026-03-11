@@ -31,7 +31,7 @@ import org.apache.causeway.applib.annotation.PriorityPrecedence;
 public class UiHintsMenu {
 
     @Action
-    @ActionLayout(cssClassFa="fa-css3", describedAs="cssClass()")
+    @ActionLayout(cssClassFa="fa-brands fa-css", describedAs="cssClass()")
     public Object cssClassSupportingMethod(){
         return null;
     }
@@ -40,11 +40,20 @@ public class UiHintsMenu {
     }
 
     @Action
-    @ActionLayout(cssClassFa="fa-icons", describedAs="icon()")
+    @ActionLayout(cssClassFa="fa-icons", describedAs="IconResource icon(IconSize iconSize)")
     public Object iconSupportingMethod(){
         return null;
     }
     public String disableIconSupportingMethod(){
+        return "Not yet implemented";
+    }
+
+    @Action
+    @ActionLayout(cssClassFa="fa-icons", describedAs="iconName()")
+    public Object iconNameSupportingMethod(){
+        return null;
+    }
+    public String disableIconNameSupportingMethod(){
         return "Not yet implemented";
     }
 
@@ -54,6 +63,15 @@ public class UiHintsMenu {
         return null;
     }
     public String disableLayoutSupportingMethod(){
+        return "Not yet implemented";
+    }
+
+    @Action
+    @ActionLayout(cssClassFa="fa-thin fa-tag", describedAs="title()")
+    public Object titleMethod(){
+        return null;
+    }
+    public String disableTitleMethod(){
         return "Not yet implemented";
     }
 
