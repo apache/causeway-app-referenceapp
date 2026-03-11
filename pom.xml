@@ -31,7 +31,7 @@
 	<properties>
 		<sonar.skip>true</sonar.skip>
 		<causeway.version>2.2.0-SNAPSHOT</causeway.version>
-	</properties>
+  </properties>
 
 	<build>
 		<resources>
@@ -52,29 +52,6 @@
 		</resources>
 
 		<plugins>
-            
-            <!-- Compile -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.15.0</version>
-                <configuration>
-                    <showDeprecation>false</showDeprecation>
-                    <showWarnings>false</showWarnings>
-                    <parameters>true</parameters>
-                    <!-- Java compliance level, to be overridden with option
-                    maven.compiler.release -->
-                </configuration>
-                <!-- goal:compile binds to phase:compile -->
-                <!-- goal:testCompile binds to phase:test-compile -->
-                <dependencies>
-                    <dependency>
-                        <groupId>org.ow2.asm</groupId>
-                        <artifactId>asm</artifactId>
-                        <version>9.9.1</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -88,91 +65,7 @@
 					</delimiters>
 				</configuration>
 			</plugin>
-
-			<plugin>
-				<groupId>org.apache.rat</groupId>
-				<artifactId>apache-rat-plugin</artifactId>
-				<configuration>
-					<addDefaultLicenseMatchers>true</addDefaultLicenseMatchers>
-					<excludeSubProjects>true</excludeSubProjects>
-					<excludes>
-						<exclude>**/target/**</exclude>
-						<exclude>**/target-ide/**</exclude>
-
-						<exclude>**/node_modules/**</exclude>
-						<exclude>**/node/npm</exclude>
-						<exclude>**/node/npm.cmd</exclude>
-
-						<exclude>**/*.project</exclude>
-						<exclude>**/.classpath</exclude>
-						<exclude>**/.settings/**</exclude>
-						<exclude>**/*.launch</exclude>
-
-						<exclude>**/*.iml</exclude>
-						<exclude>**/webpack.generated.js</exclude>
-
-						<exclude>**/CREDITS.TXT</exclude>
-						<exclude>**/domain/src/main/java/demoapp/dom/types/causeway/clobs/samples/**</exclude>
-						<exclude>**/domain/src/main/java/demoapp/dom/types/causeway/markups/samples/**</exclude>
-						<exclude>**/domain/src/main/java/demoapp/dom/types/causewayext/asciidocs/samples/**</exclude>
-						<exclude>**/domain/src/main/java/demoapp/dom/types/causewayext/markdowns/samples/**</exclude>
-						<exclude>**/domain/src/main/resources/banner.txt</exclude>
-						<exclude>**/domain/src/main/resources/static/**</exclude>
-						<exclude>**/domain/src/test/resources/demoapp/dom/_infra/resources/</exclude>
-						<exclude>**/wicket/src/test/e2e/cypress-scaffolding/integration/examples/*.spec.js</exclude>
-						<exclude>**/wicket/src/test/e2e/cypress-scaffolding/integration/typescript/basic.ts</exclude>
-
-						<exclude>**/*.gitkeep</exclude>
-						<exclude>**/*.pdn</exclude>
-						<exclude>**/*.svg</exclude>
-						<exclude>**/*.rtf</exclude>
-						<exclude>**/*.json</exclude>
-						<exclude>**/*.min.js</exclude>
-
-						<exclude>**/module-nav.adoc</exclude>
-						<exclude>**/component-nav.adoc</exclude>
-
-						<exclude>**/MANIFEST.MF</exclude>
-						<exclude>**/*.ucd</exclude>
-						<exclude>**/*.ucls</exclude>
-
-						<exclude>**/datanucleus.log</exclude>
-						<exclude>**/gradle/wrapper/gradle-wrapper.properties</exclude>
-						<exclude>**/gradlew</exclude>
-						<exclude>**/gradlew.bat</exclude>
-
-						<exclude>**/intellij/launch/*.xml</exclude>
-
-						<exclude>**/META-INF/services/**</exclude>
-
-						<exclude>**/samples/**</exclude>
-						<exclude>**/src/main/resources/banner.txt</exclude>
-						<exclude>**/src/main/resources/static/**</exclude>
-						<exclude>**/src/test/resources/demoapp/dom/_infra/resources/**</exclude>
-						<exclude>**/src/test/e2e/cypress-scaffolding/integration/**</exclude>
-
-						<exclude>CREDITS.TXT</exclude>
-					</excludes>
-					<licenses>
-						<license
-								implementation="org.apache.rat.analysis.license.SimplePatternBasedLicense">
-							<licenseFamilyCategory>AL2  </licenseFamilyCategory>
-							<licenseFamilyName>Apache License 2.0</licenseFamilyName>
-							<notes />
-							<patterns>
-								<pattern>Licensed to the Apache Software Foundation (ASF) under
-									one</pattern>
-							</patterns>
-						</license>
-					</licenses>
-					<licenseFamilies>
-						<licenseFamily
-								implementation="org.apache.rat.license.SimpleLicenseFamily">
-							<familyName>Apache License 2.0</familyName>
-						</licenseFamily>
-					</licenseFamilies>
-				</configuration>
-			</plugin>
+			
 		</plugins>
 	</build>
 
