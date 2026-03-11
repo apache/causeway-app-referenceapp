@@ -29,7 +29,13 @@ additional
         -Drevision=2.7.8 -->
         <causeway.version>4.0.0-SNAPSHOT</causeway.version>
         <maven.compiler.release>21</maven.compiler.release>
+        <maven-surefire-plugin.version>3.5.5</maven-surefire-plugin.version>
         <sonar.skip>true</sonar.skip>
+        
+        <!-- testing -->
+        <surefire-plugin.argLine>-Xmx384m</surefire-plugin.argLine>
+        <surefire.useModulePath>false</surefire.useModulePath> <!-- disable
+        module-path for testing, that is, put everything on the class-path -->
     </properties>
     
     <profiles>
@@ -117,6 +123,26 @@ additional
                         <version>9.9.1</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <printSummary>false</printSummary>
+                    <argLine>${surefire-plugin.argLine}</argLine>
+                    <forkCount>1C</forkCount>
+                    <reuseForks>true</reuseForks>
+                    <systemPropertyVariables>
+                        <!-- allows tests to reduce verbosity, or conditionally
+                        disable
+                                 when run with surefire; e.g.:
+                                 @DisabledIfSystemProperty(named = "isRunningWithSurefire", matches = "true")
+                                 -->
+                        <isRunningWithSurefire>true</isRunningWithSurefire>
+                    </systemPropertyVariables>
+                </configuration>
             </plugin>
 
             <plugin>
