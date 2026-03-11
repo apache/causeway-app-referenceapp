@@ -35,14 +35,15 @@ import org.apache.causeway.applib.annotation.ParameterLayout;
 import org.apache.causeway.applib.annotation.Property;
 import org.apache.causeway.applib.annotation.PropertyLayout;
 
-import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
+
 @Named("demo.ActionLayoutFieldSetVm")
 @DomainObject(nature=Nature.VIEW_MODEL)
-@DomainObjectLayout(cssClassFa="fa-solid fa-vector-square")
+@DomainObjectLayout(cssClassFa="fa-regular fa-object-group")
 @XmlRootElement(name = "root")
 @XmlType
 @XmlAccessorType(XmlAccessType.FIELD)
