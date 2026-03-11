@@ -28,7 +28,7 @@ additional
         <revision>4.0.0-SNAPSHOT</revision> <!-- can be overidden like mvn
         -Drevision=2.7.8 -->
         <causeway.version>4.0.0-SNAPSHOT</causeway.version>
-        <maven.compiler.release>21</maven.compiler.release>
+        <maven.compiler.release>25</maven.compiler.release>
         <maven-surefire-plugin.version>3.5.5</maven-surefire-plugin.version>
         <sonar.skip>true</sonar.skip>
         
