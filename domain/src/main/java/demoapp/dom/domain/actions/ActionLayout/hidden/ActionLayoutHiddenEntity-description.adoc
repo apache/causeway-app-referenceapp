@@ -17,15 +17,6 @@ include::ActionLayoutHiddenEntity_changeName.java[tags=class]
 ----
 <.> no `hidden` attribute specified, so implicitly visible
 
-* `hidden` on object forms (but not necessarily on collections):
-+
-[source,java]
-.ActionLayoutHiddenEntity_changeNameHiddenObjectForms.java
-----
-include::ActionLayoutHiddenEntity_changeNameHiddenObjectForms.java[tags=class]
-----
-<.> action should _NOT_ be visible for this entity.
-
 * `hidden` on collections (but not necessarily on object forms):
 +
 [source,java]
@@ -44,5 +35,23 @@ include::ActionLayoutHiddenEntity_changeNameHiddenEverywhere.java[tags=class]
 ----
 <.> action should _NOT_ be visible for this entity.
 
+== Table Row Actions
 
+Table Row Actions are activated (shown) based on whether the `hidden`
+attribute allows for rendering in Tables (specifically STANDALON and/or PARENTED depending on context). 
+
+* `hidden` on object forms (but not necessarily on collections):
++
+[source,java]
+.ActionLayoutHiddenEntity_changeNameHiddenObjectForms.java
+----
+include::ActionLayoutHiddenEntity_changeNameHiddenObjectForms.java[tags=class]
+----
+<.> action should _NOT_ be visible for this entity in object forms, but in tables.
+
+What happens after Action invocation (where to redirect to), is governed by the Action's return type:
+
+. `void` -> stay on current Page
+. if return type is `T` and `T` is also the object the Action is declared on or mixed in to -> stay on current Page
+. in any other case redirect to a new page (new browser-tab or window)
 

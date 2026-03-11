@@ -25,15 +25,6 @@ include::ActionLayoutHiddenEntity_changeName.java[tags=class]
 <.> action _should_ be visible for this entity when rendered both on an object form and within a collection.
 +
 
-* `hidden` on object forms (but not necessarily on collections):
-+
-[source,java]
-.ActionLayoutHiddenEntity_changeNameHiddenObjectForms.java
-----
-include::ActionLayoutHiddenEntity_changeNameHiddenObjectForms.java[tags=class]
-----
-<.> action should be visible for this entity when rendered in a collection.
-
 * `hidden` on collections (but not necessarily on object forms):
 +
 [source,java]
@@ -59,3 +50,23 @@ But although there is no difference in the UI, a hidden action _is_ part of the 
 
 A rare (but valid) use case is to invoke such a hidden action using the link:https://causeway.apache.org/refguide/${CAUSEWAY_VERSION}/applib/index/services/wrapper/WrapperFactory.html#wrap(t,-synccontrol)[WrapperFactory] (skipping rules).
 This can be for example to publish executions to any registered link:https://causeway.apache.org/refguide/${CAUSEWAY_VERSION}/applib/index/services/publishing/spi/ExecutionSubscriber.html[ExecutionSubscriber]s.
+
+== Table Row Actions
+
+Table Row Actions are activated (shown) based on whether the `hidden`
+attribute allows for rendering in Tables (specifically STANDALON and/or PARENTED depending on context). 
+
+* `hidden` on object forms (but not necessarily on collections):
++
+[source,java]
+.ActionLayoutHiddenEntity_changeNameHiddenObjectForms.java
+----
+include::ActionLayoutHiddenEntity_changeNameHiddenObjectForms.java[tags=class]
+----
+<.> action should _NOT_ be visible for this entity in object forms, but in tables.
+
+What happens after Action invocation (where to redirect to), is governed by the Action's return type:
+
+. `void` -> stay on current Page
+. if return type is `T` and `T` is also the object the Action is declared on or mixed in to -> stay on current Page
+. in any other case redirect to a new page (new browser-tab or window)
