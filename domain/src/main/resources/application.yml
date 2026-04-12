@@ -157,9 +157,10 @@ server:
       timeout: 20m
 
 spring:
+  application:
+    name: "Causeway Demo (v4)"
   banner:
     location: banner.txt
-
   quartz:
     job-store-type: memory
 
