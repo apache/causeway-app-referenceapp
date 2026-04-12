@@ -18,6 +18,7 @@
  */
 package demoapp.dom.domain.actions.ActionLayout.redirectPolicy;
 
+import org.apache.causeway.applib.annotation.ObjectSupport;
 import org.apache.causeway.applib.annotation.Property;
 import org.apache.causeway.applib.annotation.PropertyLayout;
 import org.apache.causeway.applib.annotation.Repainting;
@@ -25,6 +26,7 @@ import org.apache.causeway.applib.value.Blob;
 import org.apache.causeway.extensions.pdfjs.applib.annotations.PdfJsViewer;
 
 import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
+import demoapp.dom._infra.asciidocdesc.HasName;
 import demoapp.dom._infra.values.ValueHolder;
 
 //tag::class[]
@@ -32,12 +34,14 @@ public abstract class ActionLayoutRedirectPolicyEntity
 //end::class[]
         implements
         HasAsciiDocDescription,
+        HasName,
         ValueHolder<String>
 //tag::class[]
 {
     // ...
 //end::class[]
 
+    @ObjectSupport
     public String title() {
         return value();
     }
@@ -47,9 +51,7 @@ public abstract class ActionLayoutRedirectPolicyEntity
         return getName();
     }
 
-    public abstract String getName();
-    public abstract void setName(String value);
-
+    @Property
     public abstract Integer getCount();
     public abstract void setCount(Integer value);
 

@@ -24,11 +24,13 @@ import org.apache.causeway.applib.annotation.Property;
 import org.apache.causeway.applib.services.bookmark.BookmarkService;
 
 import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
+import demoapp.dom._infra.asciidocdesc.HasName;
 import demoapp.dom._infra.values.ValueHolder;
 
 public abstract class DomainObjectAliasedEntity
         implements
         HasAsciiDocDescription,
+        HasName,
         ValueHolder<String> {
 
     public String title() {
@@ -39,10 +41,6 @@ public abstract class DomainObjectAliasedEntity
     public String value() {
         return getName();
     }
-
-    @Property
-    public abstract String getName();
-    public abstract void setName(String value);
 
 // tag::class[]
     @Property

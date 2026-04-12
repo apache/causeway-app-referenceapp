@@ -21,7 +21,6 @@ package demoapp.dom.domain.objects.DomainObject.xxxLifecycleEvent;
 import org.apache.causeway.applib.annotation.DomainObject;
 import org.apache.causeway.applib.annotation.Nature;
 import org.apache.causeway.applib.annotation.ObjectSupport;
-import org.apache.causeway.applib.annotation.Property;
 import org.apache.causeway.applib.events.lifecycle.ObjectCreatedEvent;
 import org.apache.causeway.applib.events.lifecycle.ObjectLoadedEvent;
 import org.apache.causeway.applib.events.lifecycle.ObjectPersistedEvent;
@@ -31,6 +30,7 @@ import org.apache.causeway.applib.events.lifecycle.ObjectUpdatedEvent;
 import org.apache.causeway.applib.events.lifecycle.ObjectUpdatingEvent;
 
 import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
+import demoapp.dom._infra.asciidocdesc.HasName;
 import demoapp.dom._infra.values.ValueHolder;
 
 //tag::class[]
@@ -48,6 +48,7 @@ public abstract class DomainObjectXxxLifecycleEventEntity
 //end::class[]
         implements
         HasAsciiDocDescription,
+        HasName,
         ValueHolder<String>
 //tag::class[]
 {
@@ -89,10 +90,6 @@ public abstract class DomainObjectXxxLifecycleEventEntity
     public String value() {
         return getName();
     }
-
-    @Property
-    public abstract String getName();
-    public abstract void setName(String value);
 
 //tag::class[]
 }

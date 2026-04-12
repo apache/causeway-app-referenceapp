@@ -19,11 +19,13 @@
 package demoapp.dom.domain.properties.Property.snapshot;
 
 import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
+import demoapp.dom._infra.asciidocdesc.HasName;
 import demoapp.dom._infra.values.ValueHolder;
 
 public abstract class PropertySnapshotEntity
         implements
         HasAsciiDocDescription,
+        HasName,
         ValueHolder<String> {
 
     public String title() {
@@ -34,8 +36,5 @@ public abstract class PropertySnapshotEntity
     public String value() {
         return getName();
     }
-
-    public abstract String getName();
-    public abstract void setName(String value);
 
 }

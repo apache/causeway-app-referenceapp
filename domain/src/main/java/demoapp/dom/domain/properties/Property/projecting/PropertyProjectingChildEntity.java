@@ -25,6 +25,7 @@ import org.apache.causeway.applib.annotation.DomainObject;
 import org.apache.causeway.applib.jaxb.PersistentEntityAdapter;
 
 import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
+import demoapp.dom._infra.asciidocdesc.HasName;
 import demoapp.dom._infra.values.ValueHolder;
 
 @Named("demo.PropertyProjectingChildEntity") // shared permissions with concrete sub class
@@ -33,15 +34,13 @@ import demoapp.dom._infra.values.ValueHolder;
 public abstract class PropertyProjectingChildEntity
 implements
     HasAsciiDocDescription,
+    HasName,
     ValueHolder<String> {
 
     @Override
     public String value() {
         return getName();
     }
-
-    public abstract String getName();
-    protected abstract void setName(String value);
 
 }
 

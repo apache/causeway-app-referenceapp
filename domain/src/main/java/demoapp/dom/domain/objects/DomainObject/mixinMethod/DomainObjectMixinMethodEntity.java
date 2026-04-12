@@ -19,14 +19,15 @@
 package demoapp.dom.domain.objects.DomainObject.mixinMethod;
 
 import org.apache.causeway.applib.annotation.ObjectSupport;
-import org.apache.causeway.applib.annotation.Property;
 
 import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
+import demoapp.dom._infra.asciidocdesc.HasName;
 import demoapp.dom._infra.values.ValueHolder;
 
 public abstract class DomainObjectMixinMethodEntity
         implements
         HasAsciiDocDescription,
+        HasName,
         ValueHolder<String> {
 
     @ObjectSupport
@@ -38,9 +39,5 @@ public abstract class DomainObjectMixinMethodEntity
     public String value() {
         return getName();
     }
-
-    @Property
-    public abstract String getName();
-    public abstract void setName(String value);
 
 }

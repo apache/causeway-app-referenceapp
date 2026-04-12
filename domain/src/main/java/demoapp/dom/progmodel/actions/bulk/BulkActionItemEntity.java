@@ -23,6 +23,7 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.causeway.applib.jaxb.PersistentEntityAdapter;
 
 import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
+import demoapp.dom._infra.asciidocdesc.HasName;
 import demoapp.dom._infra.values.ValueHolder;
 
 //tag::class[]
@@ -31,6 +32,7 @@ public abstract class BulkActionItemEntity
 //end::class[]
         implements
         HasAsciiDocDescription,
+        HasName,
         ValueHolder<String>
 //tag::class[]
 {
@@ -45,9 +47,6 @@ public abstract class BulkActionItemEntity
     public String value() {
         return getName();
     }
-
-    public abstract String getName();
-    public abstract void setName(String value);
 
 //tag::class[]
 }

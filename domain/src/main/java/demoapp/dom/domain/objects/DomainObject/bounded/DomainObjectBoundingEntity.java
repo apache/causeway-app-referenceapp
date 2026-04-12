@@ -18,14 +18,14 @@
  */
 package demoapp.dom.domain.objects.DomainObject.bounded;
 
-import org.apache.causeway.applib.annotation.Property;
-
 import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
+import demoapp.dom._infra.asciidocdesc.HasName;
 import demoapp.dom._infra.values.ValueHolder;
 
 public abstract class DomainObjectBoundingEntity
         implements
         HasAsciiDocDescription,
+        HasName,
         ValueHolder<String> {
 
     public String title() {
@@ -36,9 +36,5 @@ public abstract class DomainObjectBoundingEntity
     public String value() {
         return getName();
     }
-
-    @Property
-    public abstract String getName();
-    public abstract void setName(String value);
 
 }

@@ -20,10 +20,13 @@ package demoapp.dom.domain.objects.DomainObjectLayout.bookmarking;
 
 import java.util.Set;
 
+import org.apache.causeway.applib.annotation.Action;
 import org.apache.causeway.applib.annotation.BookmarkPolicy;
+import org.apache.causeway.applib.annotation.Collection;
 import org.apache.causeway.applib.annotation.DomainObjectLayout;
 
 import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
+import demoapp.dom._infra.asciidocdesc.HasName;
 import demoapp.dom._infra.values.ValueHolder;
 
 //tag::class[]
@@ -34,6 +37,7 @@ public abstract class DomainObjectLayoutBookmarkingEntity
 //end::class[]
         implements
         HasAsciiDocDescription,
+        HasName,
         ValueHolder<String>
 //tag::class[]
 {
@@ -49,11 +53,10 @@ public abstract class DomainObjectLayoutBookmarkingEntity
         return getName();
     }
 
-    public abstract String getName();
-    public abstract void setName(String value);
-
+    @Action
     public abstract void addChild(String value);
 
+    @Collection
     public abstract Set<? extends DomainObjectLayoutBookmarkingChildEntity> getChildren();
 
 //tag::class[]

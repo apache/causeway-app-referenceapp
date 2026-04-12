@@ -19,6 +19,7 @@
 package demoapp.dom.domain.actions.Action.executionPublishing;
 
 import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
+import demoapp.dom._infra.asciidocdesc.HasName;
 import demoapp.dom._infra.values.ValueHolder;
 
 //tag::class[]
@@ -26,6 +27,7 @@ public abstract class ActionExecutionPublishingEntity
 //end::class[]
         implements
         HasAsciiDocDescription,
+        HasName,
         ValueHolder<String>
 //tag::class[]
 {
@@ -40,9 +42,6 @@ public abstract class ActionExecutionPublishingEntity
     public String value() {
         return getName();
     }
-
-    public abstract String getName();
-    public abstract void setName(String value);
 
 //tag::class[]
 }

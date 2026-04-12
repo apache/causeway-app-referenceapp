@@ -25,6 +25,7 @@ import org.apache.causeway.applib.events.ui.LayoutUiEvent;
 import org.apache.causeway.applib.events.ui.TitleUiEvent;
 
 import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
+import demoapp.dom._infra.asciidocdesc.HasName;
 import demoapp.dom._infra.values.ValueHolder;
 
 //tag::class[]
@@ -38,6 +39,7 @@ public abstract class DomainObjectLayoutXxxUiEventEntity
 //end::class[]
         implements
         HasAsciiDocDescription,
+        HasName,
         ValueHolder<String>
 //tag::class[]
 {
@@ -60,9 +62,6 @@ public abstract class DomainObjectLayoutXxxUiEventEntity
     public String value() {
         return getName();
     }
-
-    public abstract String getName();
-    public abstract void setName(String value);
 
 //tag::class[]
 }

@@ -22,15 +22,15 @@ import jakarta.inject.Named;
 
 import org.apache.causeway.applib.annotation.DomainObject;
 
+import demoapp.dom._infra.asciidocdesc.HasName;
 import demoapp.dom._infra.values.ValueHolder;
 
 @Named("demo.TenantedEntity") // shared permissions with concrete sub class
 @DomainObject
 public abstract class TenantedEntity
-implements ValueHolder<String>{
-
-    public abstract String getName();
-    public abstract void setName(String name);
+implements
+    HasName,
+    ValueHolder<String>{
 
     @Override
     public String value() {

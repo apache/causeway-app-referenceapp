@@ -16,33 +16,13 @@
  *  specific language governing permissions and limitations
  *  under the License.
  */
-package demoapp.dom.domain.actions.Action.choicesFrom;
+package demoapp.dom._infra.asciidocdesc;
 
-import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
-import demoapp.dom._infra.asciidocdesc.HasName;
-import demoapp.dom._infra.values.ValueHolder;
+import org.apache.causeway.applib.annotation.Property;
 
-//tag::class[]
-public abstract class ActionChoicesFromEntity
-//end::class[]
-        implements
-        HasAsciiDocDescription,
-        HasName,
-        ValueHolder<String>
-//tag::class[]
-{
-    // ...
-//end::class[]
+public interface HasName {
 
-    public String title() {
-        return value();
-    }
+    @Property String getName();
+    void setName(String value);
 
-    @Override
-    public String value() {
-        return getName();
-    }
-
-//tag::class[]
 }
-//end::class[]

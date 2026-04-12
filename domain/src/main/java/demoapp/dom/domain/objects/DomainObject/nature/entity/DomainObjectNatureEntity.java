@@ -19,14 +19,15 @@
 package demoapp.dom.domain.objects.DomainObject.nature.entity;
 
 import org.apache.causeway.applib.annotation.ObjectSupport;
-import org.apache.causeway.applib.annotation.Property;
 
 import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
+import demoapp.dom._infra.asciidocdesc.HasName;
 import demoapp.dom._infra.values.ValueHolder;
 
 public abstract class DomainObjectNatureEntity
         implements
         HasAsciiDocDescription,
+        HasName,
         ValueHolder<String> {
 
     @ObjectSupport public String title() {
@@ -37,9 +38,5 @@ public abstract class DomainObjectNatureEntity
     public String value() {
         return getName();
     }
-
-    @Property
-    public abstract String getName();
-    public abstract void setName(String value);
 
 }

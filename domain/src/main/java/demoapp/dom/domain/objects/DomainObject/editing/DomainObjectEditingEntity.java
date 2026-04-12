@@ -22,11 +22,13 @@ import org.apache.causeway.applib.annotation.Editing;
 import org.apache.causeway.applib.annotation.Property;
 
 import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
+import demoapp.dom._infra.asciidocdesc.HasName;
 import demoapp.dom._infra.values.ValueHolder;
 
 public abstract class DomainObjectEditingEntity
         implements
         HasAsciiDocDescription,
+        HasName,
         ValueHolder<String> {
 
     public String title() {
@@ -37,10 +39,6 @@ public abstract class DomainObjectEditingEntity
     public String value() {
         return getName();
     }
-
-    @Property
-    public abstract String getName();
-    public abstract void setName(String value);
 
     @Property(editing = Editing.DISABLED, editingDisabledReason = "This property cannot be edited")
     public abstract String getOriginalName();

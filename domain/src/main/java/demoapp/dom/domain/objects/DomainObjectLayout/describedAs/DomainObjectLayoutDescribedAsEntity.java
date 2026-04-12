@@ -21,6 +21,7 @@ package demoapp.dom.domain.objects.DomainObjectLayout.describedAs;
 import org.apache.causeway.applib.annotation.DomainObjectLayout;
 
 import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
+import demoapp.dom._infra.asciidocdesc.HasName;
 import demoapp.dom._infra.values.ValueHolder;
 
 //tag::class[]
@@ -33,6 +34,7 @@ public abstract class DomainObjectLayoutDescribedAsEntity
 //end::class[]
         implements
         HasAsciiDocDescription,
+        HasName,
         ValueHolder<String>
 //tag::class[]
 {
@@ -47,9 +49,6 @@ public abstract class DomainObjectLayoutDescribedAsEntity
     public String value() {
         return getName();
     }
-
-    public abstract String getName();
-    public abstract void setName(String value);
 
 //tag::class[]
 }
