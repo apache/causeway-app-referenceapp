@@ -21,6 +21,7 @@ package demoapp.dom.domain.objects.DomainObject.entityChangePublishing;
 import jakarta.inject.Named;
 
 import org.apache.causeway.applib.annotation.DomainObject;
+import org.apache.causeway.applib.annotation.Property;
 
 import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
 import demoapp.dom._infra.values.ValueHolder;
@@ -38,9 +39,11 @@ implements
         return getProperty();
     }
 
+    @Property
     public abstract String getProperty();
     public abstract void setProperty(String value);
 
+    @Property
     public abstract String getPropertyUpdatedByAction();
     public abstract void setPropertyUpdatedByAction(String value);
 

@@ -22,6 +22,7 @@ import jakarta.inject.Named;
 
 import org.apache.causeway.applib.annotation.DomainObject;
 import org.apache.causeway.applib.annotation.Nature;
+import org.apache.causeway.applib.annotation.Property;
 
 import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
 import demoapp.dom._infra.values.ValueHolder;
@@ -46,6 +47,7 @@ implements
         return getName();
     }
 
+    @Property
     public abstract String getName();
     public abstract void setName(String value);
 

@@ -40,6 +40,7 @@ public abstract class DomainObjectAliasedEntity
         return getName();
     }
 
+    @Property
     public abstract String getName();
     public abstract void setName(String value);
 

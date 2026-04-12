@@ -20,19 +20,25 @@ package demoapp.dom.types.javalang.shorts.holder;
 
 import jakarta.inject.Named;
 
+import org.apache.causeway.applib.annotation.Property;
+
 @Named("demo.WrapperShortHolder")
 //tag::class[]
 public interface WrapperShortHolder {
 
+    @Property
     Short getReadOnlyProperty();
     void setReadOnlyProperty(Short c);
 
+    @Property
     Short getReadWriteProperty();
     void setReadWriteProperty(Short c);
 
+    @Property
     Short getReadOnlyOptionalProperty();
     void setReadOnlyOptionalProperty(Short c);
 
+    @Property
     Short getReadWriteOptionalProperty();
     void setReadWriteOptionalProperty(Short c);
 

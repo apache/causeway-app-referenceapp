@@ -18,8 +18,12 @@
  */
 package demoapp.dom.domain.objects.DomainObject.introspection.annotOpt;
 
+import org.apache.causeway.applib.annotation.DomainObject;
+import org.apache.causeway.applib.annotation.Introspection;
+
 import demoapp.dom.domain.objects.DomainObject.introspection.DomainObjectIntrospection;
 
+@DomainObject(introspection = Introspection.ANNOTATION_OPTIONAL)
 public abstract class DomainObjectIntrospectionAnnotOptEntity
         implements DomainObjectIntrospection {
 

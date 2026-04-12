@@ -21,6 +21,7 @@ package demoapp.dom.domain.objects.DomainObject.xxxLifecycleEvent;
 import org.apache.causeway.applib.annotation.DomainObject;
 import org.apache.causeway.applib.annotation.Nature;
 import org.apache.causeway.applib.annotation.ObjectSupport;
+import org.apache.causeway.applib.annotation.Property;
 import org.apache.causeway.applib.events.lifecycle.ObjectCreatedEvent;
 import org.apache.causeway.applib.events.lifecycle.ObjectLoadedEvent;
 import org.apache.causeway.applib.events.lifecycle.ObjectPersistedEvent;
@@ -89,6 +90,7 @@ public abstract class DomainObjectXxxLifecycleEventEntity
         return getName();
     }
 
+    @Property
     public abstract String getName();
     public abstract void setName(String value);
 

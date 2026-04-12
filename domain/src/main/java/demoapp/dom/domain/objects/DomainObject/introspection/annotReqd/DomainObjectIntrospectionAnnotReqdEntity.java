@@ -18,6 +18,8 @@
  */
 package demoapp.dom.domain.objects.DomainObject.introspection.annotReqd;
 
+import org.apache.causeway.applib.annotation.Property;
+
 import demoapp.dom.domain.objects.DomainObject.introspection.DomainObjectIntrospection;
 
 public abstract class DomainObjectIntrospectionAnnotReqdEntity
@@ -28,6 +30,7 @@ public abstract class DomainObjectIntrospectionAnnotReqdEntity
         return getName();
     }
 
+    @Property
     public abstract String getName();
     public abstract void setName(String value);
 }

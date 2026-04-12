@@ -25,6 +25,7 @@ import org.apache.causeway.applib.annotation.DomainObject;
 import org.apache.causeway.applib.annotation.HomePage;
 import org.apache.causeway.applib.annotation.Nature;
 import org.apache.causeway.applib.annotation.ObjectSupport;
+import org.apache.causeway.applib.annotation.Property;
 import org.apache.causeway.applib.services.user.UserService;
 import org.apache.causeway.valuetypes.asciidoc.applib.value.AsciiDoc;
 
@@ -42,6 +43,7 @@ public class ReferenceHomePage
         return "Hello, " + userService.currentUserNameElseNobody();
     }
 
+    @Property
     public AsciiDoc getWelcome() {                                  // <.>
         return asciiDocReaderService.readFor(this, "welcome");
     }

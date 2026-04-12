@@ -38,6 +38,7 @@ public abstract class DomainObjectEditingEntity
         return getName();
     }
 
+    @Property
     public abstract String getName();
     public abstract void setName(String value);
 
@@ -45,5 +46,6 @@ public abstract class DomainObjectEditingEntity
     public abstract String getOriginalName();
     public abstract void setOriginalName(String value);
 
+    @Property
     public abstract Character getInitialCharacter();
 }
