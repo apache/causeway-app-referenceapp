@@ -23,13 +23,11 @@ import java.util.HashMap;
 import org.apache.causeway.commons.collections.Can;
 import org.apache.causeway.commons.internal.base._Strings;
 
-import demoapp.codegen.demoshowcases.value.ValueShowCase;
-
 public class DemoCodegenCli {
 
     public static void main(final String[] args) {
         var argsModel = ArgsModel.parse(args);
-        new Emitter(argsModel.projectRoot).emit(ValueShowCase.WSHORT);
+        new Emitter(argsModel.projectRoot).emitAll();
     }
 
     // -- HELPER

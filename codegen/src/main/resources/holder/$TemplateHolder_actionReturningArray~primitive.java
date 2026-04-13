@@ -39,7 +39,7 @@ public class /*${showcase-name}*/Holder_actionReturningArray {
     private final /*${showcase-name}*/Holder holder;
 
     public /*${showcase-simple-type}*/[] act() {
-        val array = new /*${showcase-simple-type}*/[(int)samples.stream().count()];
+        var array = new /*${showcase-simple-type}*/[(int)samples.stream().count()];
         samples.stream()
             .forEach(IndexedConsumer.zeroBased((index, value)->array[index] = value));
         return array;
