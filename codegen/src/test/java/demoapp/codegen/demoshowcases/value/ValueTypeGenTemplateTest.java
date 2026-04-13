@@ -26,6 +26,7 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.Objects;
 
+import org.jspecify.annotations.NonNull;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
@@ -39,13 +40,9 @@ import org.apache.causeway.commons.internal.functions._Predicates;
 import org.apache.causeway.commons.io.FileUtils;
 import org.apache.causeway.commons.io.TextUtils;
 
-import org.jspecify.annotations.NonNull;
 import lombok.SneakyThrows;
-
+import lombok.val;
 import lombok.extern.log4j.Log4j2;
-
-import demoapp.codegen.demoshowcases.value.ValueShowCase;
-import demoapp.codegen.demoshowcases.value.ValueTypeGenTemplate;
 
 @SuppressWarnings("unused")
 @Log4j2
@@ -69,19 +66,19 @@ class ValueTypeGenTemplateTest {
         // hack for Dan's PC; write out to a different git worktree
         frameWorkRoot = new File(frameWorkRoot.getParentFile(), "demo");
 
-        val demoDomainRoot = new File(frameWorkRoot, "examples/demo/domain/src/main/java");
-        val demoDomainShowCase = new File(demoDomainRoot, config.getJavaPackage().replace('.', '/'));
+        var demoDomainRoot = new File(frameWorkRoot, "examples/demo/domain/src/main/java");
+        var demoDomainShowCase = new File(demoDomainRoot, config.getJavaPackage().replace('.', '/'));
 
         // list reference source files
-        val refShowcaseFiles = FileUtils.searchFiles(demoDomainShowCase, _Predicates.alwaysTrue(), file->
+        var refShowcaseFiles = FileUtils.searchFiles(demoDomainShowCase, _Predicates.alwaysTrue(), file->
                   file.getName().endsWith(".java")
                   || file.getName().endsWith(".xml")
                   || file.getName().endsWith(".adoc")
               );
 
-        val generator = new ValueTypeGenTemplate(config);
+        var generator = new ValueTypeGenTemplate(config);
 
-        val generatedFiles = _Sets.<File>newLinkedHashSet();
+        var generatedFiles = _Sets.<File>newLinkedHashSet();
         generator.generate(generatedFiles::add);
 
         // override origin
@@ -93,15 +90,11 @@ class ValueTypeGenTemplateTest {
 
     }
 
-    static boolean PERSIST = true;
     static File outputRootDir;
 
     @BeforeAll
     static void setup() {
-        outputRootDir = PERSIST
-                ? FileUtils.makeDir(new File("C:/tmp/valueTypes"))
-                : FileUtils.tempDir("causeway-tooling-showcases");
-
+        outputRootDir = FileUtils.tempDir("causeway-tooling-showcases");
         log.info("tmp dir created in {}", outputRootDir);
     }
 
@@ -179,9 +172,8 @@ class ValueTypeGenTemplateTest {
         int lineIndex = 0;
         for(val lineA : linesA) {
             val lineB = linesB.get(lineIndex++).orElse(null);
-            if(!lineA.equals(lineB)) {
+            if(!lineA.equals(lineB))
                 return String.format("%s <-> %s", lineA, lineB);
-            }
         }
         return "";
     }

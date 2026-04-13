@@ -257,13 +257,13 @@ public class ValueTypeGenTemplate {
             return FileUtils.existingFile(templateFile(config, config.templateVariant)) // existence is optional
                     .orElseGet(()->{
                         // existence is mandatory
-                        val defaultTemplateFile = templateFile(config, TemplateVariant.DEFAULT);
+                        var defaultTemplateFile = templateFile(config, TemplateVariant.DEFAULT);
                         return FileUtils.existingFile(defaultTemplateFile)
                                 .orElseThrow(()->_Exceptions.noSuchElement("template %s not found", defaultTemplateFile));
                     });
         }
         private final File templateFile(final Config config, final TemplateVariant templateVariant) {
-            val templateFile = new File("src/main/resources",
+            var templateFile = new File("src/main/resources",
                     String.format(pathTemplate, config.fileNamePlaceholderForShowcaseName)
                     + templateVariant.suffix
                     + generator.fileSuffix)
@@ -288,7 +288,7 @@ public class ValueTypeGenTemplate {
         }
         @Override
         public void putAll(final Map<? extends String, ? extends String> other) {
-            other.forEach((key, value)->put(key, value));
+            other.forEach(this::put);
         }
         public void putRaw(final String key, final String value) {
             super.put(key, value);
@@ -302,11 +302,11 @@ public class ValueTypeGenTemplate {
 
         for(var template: config.getTemplates()) {
 
-            val templateFile = template.templateFile(config);
+            var templateFile = template.templateFile(config);
 
-            val genTarget = template.outputFile(config);
+            var genTarget = template.outputFile(config);
 
-            val templateVars = new TemplateVars(template.generator);
+            var templateVars = new TemplateVars(template.generator);
             templateVars.putAll(config.templateVariables);
             templateVars.put("java-package", template.javaPackage(config));
             templateVars.put("showcase-name", config.showcaseName);
@@ -354,7 +354,7 @@ public class ValueTypeGenTemplate {
 
     private void generateFromTemplate(
             final Map<String, String> templateVars, final File template, final File genTarget) {
-        val templateLines = TextUtils.readLinesFromFile(template, StandardCharsets.UTF_8);
+        var templateLines = TextUtils.readLinesFromFile(template, StandardCharsets.UTF_8);
 
         FileUtils.makeDir(genTarget.getParentFile());
 
@@ -364,7 +364,7 @@ public class ValueTypeGenTemplate {
     }
 
     private String templateProcessor(final Map<String, String> templateVars, final String line) {
-        val lineRef = _Refs.stringRef(line);
+        var lineRef = _Refs.stringRef(line);
         templateVars.forEach((key, value)->{
             lineRef.update(s->s.replace(key, value));
         });
