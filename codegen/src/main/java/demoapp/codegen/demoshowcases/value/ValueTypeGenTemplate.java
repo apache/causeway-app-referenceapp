@@ -196,9 +196,10 @@ public class ValueTypeGenTemplate {
         HOLDER_UPDATE_RO_PROPERTY_WITH_CHOICES("holder/%sHolder_updateReadOnlyPropertyWithChoices", Generator.JAVA),
         HOLDER_UPDATE_ROO_PROPERTY_WITH_CHOICES("holder/%sHolder_updateReadOnlyOptionalPropertyWithChoices", Generator.JAVA),
 
-        JDO("jdo/%sJdo", Generator.JAVA),
-        JDO_ENTITIES("jdo/%sJdoEntities", Generator.JAVA),
-        JDO_DESCRIPTION("jdo/%sJdo-description", Generator.DOC),
+// no longer supported
+//        JDO("jdo/%sJdo", Generator.JAVA),
+//        JDO_ENTITIES("jdo/%sJdoEntities", Generator.JAVA),
+//        JDO_DESCRIPTION("jdo/%sJdo-description", Generator.DOC),
 
         JPA("jpa/%sJpa", Generator.JAVA),
         JPA_ENTITIES("jpa/%sJpaEntities", Generator.JAVA),
@@ -227,9 +228,11 @@ public class ValueTypeGenTemplate {
                 .remove(JPA)
                 .remove(JPA_DESCRIPTION)
                 .remove(JPA_ENTITIES)
-                .remove(JDO)
-                .remove(JDO_DESCRIPTION)
-                .remove(JDO_ENTITIES);
+// no longer supported
+//                .remove(JDO)
+//                .remove(JDO_DESCRIPTION)
+//                .remove(JDO_ENTITIES)
+                ;
 
         public static Can<Template> NO_VIEWMODEL_SET = REGULAR_SET
                 .remove(VIEWMODEL)

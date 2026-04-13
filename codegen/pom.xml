@@ -56,20 +56,6 @@
 			<version>${javapoet.version}</version>
 		</dependency>
 
-		<dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-		<!-- TESTING -->
-
-		<dependency>
-			<groupId>org.apache.causeway.core</groupId>
-			<artifactId>causeway-core-internaltestsupport</artifactId>
-			<scope>test</scope>
-		</dependency>
-
 	</dependencies>
 
 </project>
