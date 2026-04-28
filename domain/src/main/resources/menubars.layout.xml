@@ -393,6 +393,8 @@ For latest we use: https://raw.githubusercontent.com/apache/causeway/master/anto
                 <mb3:serviceAction id="findMostRecent" objectType="causeway.ext.commandLog.CommandLogMenu"/>
                 <mb3:serviceAction id="findCommands" objectType="causeway.ext.commandLog.CommandLogMenu"/>
                 <mb3:serviceAction id="findAll" objectType="causeway.ext.commandLog.CommandLogMenu"/>
+                <mb3:serviceAction id="exportManager" objectType="causeway.ext.commandLog.CommandLogMenu"/>
+                <mb3:serviceAction id="replayManager" objectType="causeway.ext.commandLog.CommandLogMenu"/>
             </mb3:section>
             <mb3:section>
                 <mb3:named>Execution Log</mb3:named>

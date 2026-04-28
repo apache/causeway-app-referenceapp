@@ -13,12 +13,10 @@ import org.apache.causeway.extensions.commandlog.applib.dom.CommandLogEntryRepos
 import lombok.RequiredArgsConstructor;
 
 //tag::class[]
-@SuppressWarnings("CdiManagedBeanInconsistencyInspection")
 @Collection()
 @RequiredArgsConstructor
 public class ActionCommandPublishingPage_publishedCommands {
 
-    @SuppressWarnings("unused")
     private final ActionCommandPublishingPage page;
 
     @MemberSupport public List<? extends CommandLogEntry> coll() {
