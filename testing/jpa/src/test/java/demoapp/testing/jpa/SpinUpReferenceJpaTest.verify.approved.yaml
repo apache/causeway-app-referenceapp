@@ -373,8 +373,6 @@ ObjectSpecifications:
   - causeway.testing.fixtures.FixtureScripts(org.apache.causeway.testing.fixtures.applib.fixturescripts.FixtureScripts)
   - causeway.ext.h2Console.H2ManagerMenu(org.apache.causeway.testing.h2console.ui.services.H2ManagerMenu)
   - causeway.viewer.roRendering.SwaggerServiceMenu(org.apache.causeway.viewer.restfulobjects.rendering.service.swagger.SwaggerServiceMenu)
-  MANAGED_BEAN_NOT_CONTRIBUTING:
-  - org.apache.causeway.applib.services.i18n.TranslatableString(org.apache.causeway.applib.services.i18n.TranslatableString)
   MIXIN:
   - demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription_description(demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription_description)
   - demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription_sources(demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription_sources)
