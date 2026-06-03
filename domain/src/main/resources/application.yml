@@ -99,9 +99,9 @@ causeway:
       css: css/application.css
       js: scripts/application.js
       themes:
-        initial: Flatly
+        initial: Default
         showChooser: true
-        enabled: Cosmo,Flatly,Darkly,Sandstone,United
+        enabled: Default,Cosmo,Flatly,Darkly,Sandstone,United
 
       max-title-length-in-standalone-tables: 0
       max-title-length-in-parented-tables: 0
