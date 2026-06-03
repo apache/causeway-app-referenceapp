@@ -373,6 +373,8 @@ ObjectSpecifications:
   - causeway.testing.fixtures.FixtureScripts(org.apache.causeway.testing.fixtures.applib.fixturescripts.FixtureScripts)
   - causeway.ext.h2Console.H2ManagerMenu(org.apache.causeway.testing.h2console.ui.services.H2ManagerMenu)
   - causeway.viewer.roRendering.SwaggerServiceMenu(org.apache.causeway.viewer.restfulobjects.rendering.service.swagger.SwaggerServiceMenu)
+  MANAGED_BEAN_NOT_CONTRIBUTING:
+  - org.apache.causeway.applib.services.i18n.TranslatableString(org.apache.causeway.applib.services.i18n.TranslatableString)
   MIXIN:
   - demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription_description(demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription_description)
   - demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription_sources(demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription_sources)
@@ -882,6 +884,8 @@ ObjectSpecifications:
   - org.apache.causeway.extensions.commandlog.applib.dom.replay.ReplayableCommand_excludeFromReplay(org.apache.causeway.extensions.commandlog.applib.dom.replay.ReplayableCommand_excludeFromReplay)
   - org.apache.causeway.extensions.commandlog.applib.dom.replay.ReplayableCommand_makeExportable(org.apache.causeway.extensions.commandlog.applib.dom.replay.ReplayableCommand_makeExportable)
   - org.apache.causeway.extensions.commandlog.applib.dom.replay.ReplayableCommand_openCommandLogEntry(org.apache.causeway.extensions.commandlog.applib.dom.replay.ReplayableCommand_openCommandLogEntry)
+  - org.apache.causeway.extensions.commandlog.applib.dom.replay.ReplayableCommand_openTarget(org.apache.causeway.extensions.commandlog.applib.dom.replay.ReplayableCommand_openTarget)
+  - org.apache.causeway.extensions.commandlog.applib.dom.replay.ReplayableCommand_openTargetTR(org.apache.causeway.extensions.commandlog.applib.dom.replay.ReplayableCommand_openTargetTR)
   - org.apache.causeway.extensions.commandlog.applib.dom.replay.ReplayableCommand_replayOrRetry(org.apache.causeway.extensions.commandlog.applib.dom.replay.ReplayableCommand_replayOrRetry)
   - org.apache.causeway.extensions.docgen.help.menu.DocumentationMenu.help(org.apache.causeway.extensions.docgen.help.menu.DocumentationMenu.help)
   - org.apache.causeway.extensions.executionlog.applib.app.ExecutionLogMenu.findAll(org.apache.causeway.extensions.executionlog.applib.app.ExecutionLogMenu.findAll)
@@ -1006,6 +1010,7 @@ ObjectSpecifications:
   - java.util.Locale(java.util.Locale)
   - java.util.UUID(java.util.UUID)
   - long(long)
+  - org.apache.causeway.applib.Identifier(org.apache.causeway.applib.Identifier)
   - causeway.applib.annotation.SemanticsOf(org.apache.causeway.applib.annotation.SemanticsOf)
   - org.apache.causeway.applib.graph.tree.TreeNode(org.apache.causeway.applib.graph.tree.TreeNode)
   - org.apache.causeway.applib.graph.tree.TreePath(org.apache.causeway.applib.graph.tree.TreePath)
