@@ -38,10 +38,12 @@ import org.apache.causeway.applib.annotation.PropertyLayout;
 import org.apache.causeway.applib.annotation.ValueSemantics;
 import org.apache.causeway.applib.jaxb.JavaTimeJaxbAdapters;
 
-import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import demoapp.dom._infra.asciidocdesc.HasAsciiDocDescription;
+import demoapp.dom.types.SampleValueSemantics;
 
 //tag::class[]
 @XmlRootElement(name = "root")
@@ -72,9 +74,7 @@ public class ValueSemanticsDateRenderAdjustDaysPage implements HasAsciiDocDescri
 //tag::render-as-day-before[]
     @Property(optionality = Optionality.OPTIONAL)
     @PropertyLayout(describedAs = "end date of the date range (up to and including)")
-    @ValueSemantics(
-            dateRenderAdjustDays = ValueSemantics.AS_DAY_BEFORE         // <.>
-    )
+    @ValueSemantics(provider = SampleValueSemantics.DATE_RENDER_AS_DAY_BEFORE) // <.>
     @XmlElement(required = false)
     @XmlJavaTypeAdapter(JavaTimeJaxbAdapters.LocalDateToStringAdapter.class)
     @Getter @Setter
@@ -84,7 +84,7 @@ public class ValueSemanticsDateRenderAdjustDaysPage implements HasAsciiDocDescri
 //tag::render-as-day[]
     @Property(optionality = Optionality.OPTIONAL)
     @PropertyLayout(describedAs = "end date of the date range (excluding)")
-    @ValueSemantics(dateRenderAdjustDays = 0)                           // <.>
+    @ValueSemantics()                           // <.>
     public LocalDate getEndDateNotAdjusted() {
         return getEndDate();
     }

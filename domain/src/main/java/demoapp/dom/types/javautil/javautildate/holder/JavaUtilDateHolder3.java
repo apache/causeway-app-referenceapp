@@ -24,11 +24,13 @@ import org.apache.causeway.applib.annotation.PropertyLayout;
 import org.apache.causeway.applib.annotation.ValueSemantics;
 import org.apache.causeway.applib.annotation.Where;
 
+import demoapp.dom.types.SampleValueSemantics;
+
 //tag::class[]
 public interface JavaUtilDateHolder3 extends JavaUtilDateHolder2 {
 
     @Property
-    @ValueSemantics(dateRenderAdjustDays = -1)                    // <.>
+    @ValueSemantics(provider = SampleValueSemantics.DATE_RENDER_AS_DAY_BEFORE) // <.>
     @PropertyLayout(
             describedAs = "@ValueSemantics(dateRenderAdjustDays = -1)",
             labelPosition = LabelPosition.TOP,
@@ -38,16 +40,16 @@ public interface JavaUtilDateHolder3 extends JavaUtilDateHolder2 {
         return getReadOnlyProperty();
     }
 
-    @Property
-    @ValueSemantics(dateRenderAdjustDays = 0)                     // <.>
-    @PropertyLayout(
-            describedAs = "@ValueSemantics(dateRenderAdjustDays = 0)",
-            labelPosition = LabelPosition.TOP,
-            hidden = Where.ALL_TABLES,
-            fieldSetId = "render-day", sequence = "2")
-    default java.util.Date getReadOnlyPropertyDerivedRenderDayAsDay() {
-        return getReadOnlyProperty();
-    }
+//    @Property
+//    @ValueSemantics(dateRenderAdjustDays = 0)                     // <.>
+//    @PropertyLayout(
+//            describedAs = "@ValueSemantics(dateRenderAdjustDays = 0)",
+//            labelPosition = LabelPosition.TOP,
+//            hidden = Where.ALL_TABLES,
+//            fieldSetId = "render-day", sequence = "2")
+//    default java.util.Date getReadOnlyPropertyDerivedRenderDayAsDay() {
+//        return getReadOnlyProperty();
+//    }
 
     @Property
     @ValueSemantics                                               // <.>

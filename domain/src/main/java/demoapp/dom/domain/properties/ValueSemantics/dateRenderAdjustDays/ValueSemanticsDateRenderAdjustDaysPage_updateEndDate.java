@@ -30,6 +30,8 @@ import org.apache.causeway.applib.annotation.ValueSemantics;
 
 import lombok.RequiredArgsConstructor;
 
+import demoapp.dom.types.SampleValueSemantics;
+
 @Action(semantics = SemanticsOf.IDEMPOTENT
 )
 @ActionLayout(associateWith = "endDate", sequence = "1")
@@ -41,7 +43,7 @@ public class ValueSemanticsDateRenderAdjustDaysPage_updateEndDate {
 //tag::annotation[]
     @MemberSupport public ValueSemanticsDateRenderAdjustDaysPage act(
             @Parameter(optionality = Optionality.OPTIONAL)
-            @ValueSemantics(dateRenderAdjustDays = ValueSemantics.AS_DAY_BEFORE)          // <.>
+            @ValueSemantics(provider = SampleValueSemantics.DATE_RENDER_AS_DAY_BEFORE) // <.>
             final LocalDate endDate) {
         page.setEndDate(endDate);
         return page;
