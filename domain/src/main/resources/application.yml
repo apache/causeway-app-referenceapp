@@ -64,7 +64,7 @@ causeway:
         service-actions-only: true
         mixins-only: true
       introspector:
-        parallelize: true
+        parallelize: false
         mode: full
         policy: ANNOTATION_REQUIRED
     runtime-services:
