@@ -47,7 +47,7 @@ public class JavaSourceCompilingClassLoader extends ClassLoader  {
 
     private final JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
     private final Path root;
-    private final Map<String, ClassHandle> classHandles = _Maps.newHashMap();
+    private final Map<String, ClassHandle> classHandles = new HashMap<>();
 
     @SneakyThrows
     private JavaSourceCompilingClassLoader() {
