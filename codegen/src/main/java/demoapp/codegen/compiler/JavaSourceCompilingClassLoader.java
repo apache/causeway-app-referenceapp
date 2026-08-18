@@ -23,6 +23,7 @@ import java.io.FileInputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -31,7 +32,6 @@ import javax.tools.ToolProvider;
 
 import org.apache.causeway.commons.collections.Can;
 import org.apache.causeway.commons.internal.base._Bytes;
-import org.apache.causeway.commons.internal.collections._Maps;
 import org.apache.causeway.commons.internal.functions._Functions;
 import org.apache.causeway.commons.io.FileUtils;
 
@@ -83,9 +83,8 @@ public class JavaSourceCompilingClassLoader extends ClassLoader  {
     public Class<?> findClass(final String className) throws ClassNotFoundException {
 
         var classHandle = classHandles.get(className);
-        if(classHandle==null) {
+        if(classHandle==null)
             throw new ClassNotFoundException(className);
-        }
 
         byte[] b;
         try {
