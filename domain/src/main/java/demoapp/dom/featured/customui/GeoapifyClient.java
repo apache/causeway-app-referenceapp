@@ -21,34 +21,40 @@ package demoapp.dom.featured.customui;
 import java.io.IOException;
 import java.io.Serializable;
 import java.net.HttpURLConnection;
-import java.net.URL;
+import java.net.URI;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import jakarta.inject.Inject;
 
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import org.springframework.stereotype.Service;
 
 import org.apache.causeway.commons.internal.base._Bytes;
 
-import demoapp.dom.AppConfiguration;
 import lombok.Builder;
 import lombok.Data;
 import lombok.SneakyThrows;
 import lombok.Value;
 
+import demoapp.dom.AppConfiguration;
+
+import tools.jackson.core.ObjectReadContext;
+import tools.jackson.core.json.JsonFactory;
+import tools.jackson.databind.DeserializationFeature;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.json.JsonMapper;
+
 //tag::class[]
 @Service
 public class GeoapifyClient implements Serializable {
 
-//end::class[]
-    private final static ObjectMapper objectMapper =
-                new ObjectMapper()
-                    .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+    private static final long serialVersionUID = 1L;
+
+    //end::class[]
+    private final static ObjectMapper objectMapper = JsonMapper.builder()
+            .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
+            .build();
 
     private final String apiKey;
 
@@ -69,17 +75,22 @@ public class GeoapifyClient implements Serializable {
         //...
 //end::class[]
 
-        var url = new URL(String.format(
-                "https://api.geoapify.com/v1/geocode/search?text=%s&apiKey=%s"
-                , URLEncoder.encode(address, StandardCharsets.UTF_8)
-                , apiKey));
+        var url = URI.create("https://api.geoapify.com/v1/geocode/search?text=%s&apiKey=%s"
+            .formatted(
+                URLEncoder.encode(address, StandardCharsets.UTF_8),
+                apiKey))
+            .toURL();
 
-        var response = objectMapper.readValue(url, Response.class);
+        try (var inputStream = url.openStream()) {
+            try (var jsonParser = JsonFactory.builder().build().createParser(ObjectReadContext.empty(), inputStream)) {
+                var coors = objectMapper.readValue(jsonParser, Response.class)
+                        .getFeatures()
+                        .get(0)
+                        .getProperties();
+                return new GeocodeResponse(coors.getLat(), coors.getLon());
+            }
+        }
 
-        return new GeocodeResponse(
-                response.getFeatures().get(0).getProperties().getLat(),
-                response.getFeatures().get(0).getProperties().getLon()
-        );
 //tag::class[]
     }
 //end::class[]
@@ -115,7 +126,7 @@ public class GeoapifyClient implements Serializable {
                 , request.getLatitude()
                 , request.getZoom()
                 , apiKey);
-        var con = (HttpURLConnection) new URL(urlStr).openConnection();
+        var con = (HttpURLConnection) URI.create(urlStr).toURL().openConnection();
         var is = con.getInputStream();
         return _Bytes.of(is);
     }
